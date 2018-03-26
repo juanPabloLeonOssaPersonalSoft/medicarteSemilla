@@ -1,5 +1,4 @@
-package aplicacion.serenity.verificacionUsuario.pages;
-
+package aplicacion.serenity.verificacionusuario.pages;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.jbehave.core.model.ExamplesTable;
@@ -65,12 +64,17 @@ public class verificacionUsuarioPages extends PageObject {
         btnNuevoUsuario.click();
     }
 
-    
-    public  void checkUsuario(ExamplesTable datos){
+    public void setIngresarUsuario(ExamplesTable data) {
         esperar(2);
-        Assert.assertEquals(txtUsuario.getText(), datos.getRow(0).get("usuario"));
+        txtUsuario.type(data.getRow(0).get("usuario"));
     }
-
+    
+    public  void setVericarNombre(ExamplesTable datos){
+        txtNombres.click();
+        esperar(3);
+        Assert.assertEquals(txtNombres.getText(), datos.getRow(0).get("nombres"));
+        esperar(1);
+    }
 
     private void esperar(int timeInMilliseconds){
         try {
