@@ -51,9 +51,12 @@ medicarte_semilla.iml
 .idea/libraries/Gradle__org_glassfish_web_javax_el_2_2_4.xml
 .idea/libraries/Gradle__org_freemarker_freemarker_2_3_23.xml
 .idea/libraries/Gradle__org_fluentlenium_fluentlenium_core_0_10_2.xml
+<<<<<<< HEAD
+=======
 .idea/
 .gradle/
 src/src.iml
+>>>>>>> db60af20b1ae9e60a77eafa67b7a79562f236dad
 .gradle/
 .idea/libraries/Gradle__org_eclipse_jetty_websocket_websocket_common_9_2_15_v20160210.xml
 .idea/libraries/Gradle__org_eclipse_jetty_websocket_websocket_client_9_2_15_v20160210.xml
