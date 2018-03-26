@@ -138,4 +138,10 @@ medicarte_semilla.iml
 .gradle/4.6/fileHashes/fileHashes.bin
 .gradle/4.6/fileChanges/last-build.bin
 >>>>>>> 672cd828dc6bfec3eeddf97766037dc14379650a
+<<<<<<< HEAD
 GitHub.iml
+=======
+.idea/
+src/
+medicarteSemilla.iml
+>>>>>>> 82b77f7747d01b04f86ef76340cedab2550f8e8a
