@@ -140,5 +140,7 @@ src.iml
 .gradle/4.6/fileChanges/last-build.bin
 GitHub.iml
 .idea/
+out/
+target/
 medicarteSemilla.iml
 
