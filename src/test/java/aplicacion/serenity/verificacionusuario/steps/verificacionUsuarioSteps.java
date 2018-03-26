@@ -1,6 +1,6 @@
-package aplicacion.serenity.verificacionUsuario.steps;
+package aplicacion.serenity.verificacionusuario.steps;
 
-import aplicacion.serenity.verificacionUsuario.pages.verificacionUsuarioPages;
+import aplicacion.serenity.verificacionusuario.pages.verificacionUsuarioPages;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
@@ -14,16 +14,19 @@ public class verificacionUsuarioSteps extends ScenarioSteps {
         super(pages);
     }
 
-
-
     @Step
     public void nuevoFormulario(){
         verificacionUsuarioPages.clicNuevoUsuario();
     }
 
+
     @Step
-    public void crearUsuario(ExamplesTable datos){
-        verificacionUsuarioPages.checkNombres(datos);
-        verificacionUsuarioPages.checkPrimerApellido(datos);
+    public void ingresarUsuario(ExamplesTable datos){
+        verificacionUsuarioPages.setIngresarUsuario(datos);
+    }
+
+    @Step
+    public void verificarNombre(ExamplesTable datos){
+        verificacionUsuarioPages.setVericarNombre(datos);
     }
 }
