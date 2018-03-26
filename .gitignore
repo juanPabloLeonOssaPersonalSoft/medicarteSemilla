@@ -5,6 +5,8 @@ medicarte_semilla.iml
 .idea/modules/medicarte_semilla_main.iml
 .idea/modules.xml
 .idea/misc.xml
+.idea/modules/MedicarteSemilla_test.iml
+.idea/modules/MedicarteSemilla_main.iml
 .idea/libraries/Gradle__xpp3_xpp3_min_1_1_4c.xml
 .idea/libraries/Gradle__xmlpull_xmlpull_1_1_3_1.xml
 .idea/libraries/Gradle__xml_apis_xml_apis_1_4_01.xml
@@ -16,6 +18,8 @@ medicarte_semilla.iml
 .idea/libraries/Gradle__org_slf4j_slf4j_simple_1_7_7.xml
 .idea/libraries/Gradle__org_slf4j_slf4j_api_1_7_21.xml
 .idea/libraries/Gradle__org_seleniumhq_selenium_selenium_support_2_53_1.xml
+.idea/libraries/Gradle__org_mockito_mockito_core_1_10_19.xml
+.idea/libraries/Gradle__org_jsoup_jsoup_1_9_2.xml
 .idea/libraries/Gradle__org_seleniumhq_selenium_selenium_server_2_53_1.xml
 .idea/libraries/Gradle__org_seleniumhq_selenium_selenium_safari_driver_2_53_1.xml
 .idea/libraries/Gradle__org_seleniumhq_selenium_selenium_remote_driver_2_53_1.xml
