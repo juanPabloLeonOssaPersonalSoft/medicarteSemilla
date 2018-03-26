@@ -5,7 +5,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import org.jbehave.core.model.ExamplesTable;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
-
+import org.junit.Assert;
 
 public class verificacionUsuarioPages extends PageObject {
 
@@ -65,49 +65,12 @@ public class verificacionUsuarioPages extends PageObject {
         btnNuevoUsuario.click();
     }
 
+    
     public  void checkUsuario(ExamplesTable datos){
         esperar(2);
-        txtUsuario.type(datos.getRow(0).get("usuario"));
+        Assert.assertEquals(txtUsuario.getText(), datos.getRow(0).get("usuario"));
     }
 
-    public  void checkNombres(ExamplesTable datos){
-        esperar(2);
-        txtNombres.type(datos.getRow(0).get("nombres"));
-    }
-
-    public  void checkPrimerApellido(ExamplesTable datos){
-        esperar(2);
-        txtPrimerApellido.type(datos.getRow(0).get("primerApellido"));
-    }
-
-    public  void checkRol(ExamplesTable datos){
-        esperar(2);
-        cmbRol.click();
-        txtRol.typeAndEnter(datos.getRow(0).get("rol"));
-
-    }
-
-    public  void checkFechaInicio(ExamplesTable datos){
-        esperar(2);
-        txtFechaInicio.type(datos.getRow(0).get("fechaInicio"));
-    }
-
-
-    public  void checkEmail(ExamplesTable datos){
-        esperar(2);
-        txtEmail.type(datos.getRow(0).get("email"));
-    }
-
-    public  void checkSede(ExamplesTable datos){
-        esperar(2);
-        btnSeleccionarSede.click();
-        btnTodasSedes.click();
-        String sedePredeterminada= datos.getRow(0).get("sede");
-        String xpathOriginalSedePredeterminada= "//*[@id='simContainer']//table/tbody/tr[contains(.,'comodin')]/td[3]/label";
-        String xpatSedePredeterminada=xpathOriginalSedePredeterminada.replace("comodin",sedePredeterminada);
-        $(xpatSedePredeterminada).click();
-        btnAceptarSede.click();
-    }
 
     private void esperar(int timeInMilliseconds){
         try {
