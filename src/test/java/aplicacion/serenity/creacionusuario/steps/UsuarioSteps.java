@@ -34,4 +34,10 @@ public class UsuarioSteps extends ScenarioSteps {
         usuarioPages.SeleccionarSede(datos);
         usuarioPages.guardarUsuario();
     }
+
+    @Step
+    public void verificarErrorPage(){
+        usuarioPages.VerificarErrorPage();
+
+    }
 }

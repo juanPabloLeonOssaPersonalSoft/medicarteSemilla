@@ -24,6 +24,7 @@ public class UsuarioDefinitions {
     MenuSegundoNivelSteps menuSegundoNivelSteps;
 
     @When("ingreso las datos del nuevo usuario:$usuario")
+<<<<<<< HEAD
     //public void crearUsuarioNoProfesional(ExamplesTable usuario){
         //menuPrincipalSteps.ingresarMenuPrincipal();
         //menuPrimerNivelSteps.ingresarMenuPrimerNivel();
@@ -31,6 +32,16 @@ public class UsuarioDefinitions {
         //usuarioSteps.nuevoFormulario();
         //usuarioSteps.crearUsuario(usuario);
     //}
+=======
+    public void crearUsuarioNoProfesional(ExamplesTable usuario){
+        menuPrincipalSteps.ingresarMenuPrincipal();
+        menuPrimerNivelSteps.ingresarMenuPrimerNivel();
+        menuSegundoNivelSteps.ingresarMenuSegundoNivel();
+        usuarioSteps.nuevoFormulario();
+        usuarioSteps.crearUsuario(usuario);
+        usuarioSteps.verificarErrorPage();
+    }
+>>>>>>> c7920687deb0edcba423f2a5da5675c1a23786fe
     @Then("guardo el usuario")
     public void  verificarIngreso(){
     }

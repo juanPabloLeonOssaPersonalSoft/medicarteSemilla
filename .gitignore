@@ -53,7 +53,7 @@ medicarte_semilla.iml
 .idea/libraries/Gradle__org_fluentlenium_fluentlenium_core_0_10_2.xml
 .idea/
 .gradle/
-src/src.iml
+src.iml
 .gradle/
 .idea/libraries/Gradle__org_eclipse_jetty_websocket_websocket_common_9_2_15_v20160210.xml
 .idea/libraries/Gradle__org_eclipse_jetty_websocket_websocket_client_9_2_15_v20160210.xml
@@ -140,7 +140,5 @@ src/src.iml
 .gradle/4.6/fileChanges/last-build.bin
 GitHub.iml
 .idea/
-src/
 medicarteSemilla.iml
-out/
-target/
+
