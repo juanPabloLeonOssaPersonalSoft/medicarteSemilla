@@ -3,9 +3,13 @@ package aplicacion.serenity.creacionusuario.pages;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.jbehave.core.model.ExamplesTable;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
+import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
+
+import javax.swing.*;
 
 
 public class UsuarioPages extends PageObject {
@@ -52,7 +56,8 @@ public class UsuarioPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"simContainer\"]/ng-component/div[2]/div/div/div[2]/div[1]/table/thead/tr/th[2]/a[1]")
     WebElementFacade btnTodasSedes;
 
-
+    @FindBy(xpath = "//*[@id=\"toast-container\"]/div/div[1]/div[2]/div")
+    WebElementFacade lblTexto;
 
     public WebDriver driver;
 
@@ -130,4 +135,10 @@ public class UsuarioPages extends PageObject {
             e.printStackTrace();
         }
     }
+
+    public void VerificarErrorPage () {
+        Assert.assertEquals("Se almacenó la información correctamente.", lblTexto.getText());
+        System.out.println("Usuario correcto");
+    }
+
 }
