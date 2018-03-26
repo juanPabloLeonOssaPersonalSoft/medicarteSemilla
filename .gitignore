@@ -151,3 +151,5 @@ src/
 medicarteSemilla.iml
 >>>>>>> 82b77f7747d01b04f86ef76340cedab2550f8e8a
 >>>>>>> master
+out/
+target/
