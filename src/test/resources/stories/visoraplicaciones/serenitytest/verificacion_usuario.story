@@ -4,7 +4,7 @@ As a user
 I want to perform an action
 So that I can achieve a business goal
 
-Scenario: Verificación de usuario no profesional
+Scenario: Creación de usuario no profesional
 GivenStories: stories/visoraplicaciones/serenitytest/login.story
 When ingreso las datos del usuario a verificar:
 |usuario|
@@ -12,11 +12,4 @@ When ingreso las datos del usuario a verificar:
 Then verifico el usuario:
 |nombres|primerApellido|rol|fechaInicio|email|sede|
 |Liliana|Uribe|Medicarte|01/09/2014|luribe@medicarte.com.co|Armenia|
-
-Scenario: Modificación de usuario no profesional
-GivenStories: stories/visoraplicaciones/serenitytest/login.story
-When editar los campos:
-|nombres|primerApellido|rol|fechaInicio|email|sede|
-|Liliana|Uribe|Medicarte|01/09/2014|luribe@medicarte.com.co|Armenia|
-Then verifico la edicion
 
