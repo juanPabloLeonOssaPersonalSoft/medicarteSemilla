@@ -144,6 +144,10 @@ public class UsuarioPages extends PageObject {
     public void verificarUsuarioNoProfesional(ExamplesTable datos)
     {   esperar(2);
         Assert.assertEquals(datos.getRow(0).get("nombres"),txtNombres.getValue());
+
+        esperar(2);
+        Assert.assertEquals(datos.getRow(0).get("fechaInicio"),txtFechaInicio.getValue());
+
     }
 
 }
