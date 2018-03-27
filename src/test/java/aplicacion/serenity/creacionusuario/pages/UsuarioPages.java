@@ -67,12 +67,12 @@ public class UsuarioPages extends PageObject {
     }
 
     public void clicNuevoUsuario() {
-        esperar(2);
+        esperar(3);
         btnNuevoUsuario.click();
     }
 
     public  void ingresarUsuario(ExamplesTable datos){
-        esperar(2);
+        esperar(3);
         txtUsuario.typeAndTab(datos.getRow(0).get("usuario"));
     }
 
@@ -142,7 +142,7 @@ public class UsuarioPages extends PageObject {
     }
 
     public void verificarUsuarioNoProfesional(ExamplesTable datos)
-    {   esperar(5);
+    {   esperar(2);
         Assert.assertEquals(datos.getRow(0).get("nombres"),txtNombres.getValue());
     }
 
