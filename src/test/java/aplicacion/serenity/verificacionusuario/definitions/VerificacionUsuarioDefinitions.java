@@ -1,6 +1,4 @@
 package aplicacion.serenity.verificacionusuario.definitions;
-
-
 import aplicacion.serenity.creacionusuario.steps.UsuarioSteps;
 import aplicacion.serenity.verificacionusuario.steps.VerificacionUsuarioSteps;
 import aplicacion.serenity.menu.steps.MenuPrimerNivelSteps;

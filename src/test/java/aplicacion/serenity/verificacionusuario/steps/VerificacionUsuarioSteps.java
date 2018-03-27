@@ -21,8 +21,8 @@ public class VerificacionUsuarioSteps extends ScenarioSteps {
     }
 
     @Step
-     public void verificarUsuario(ExamplesTable datos) {
+    public void verificarUsuario(ExamplesTable datos) {
         user.verificarUsuarioNoProfesional(datos);
     }
 
-   }
+}
