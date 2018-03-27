@@ -8,8 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
-
 import javax.swing.*;
+import org.openqa.selenium.Keys;
 
 
 public class UsuarioPages extends PageObject {
@@ -144,6 +144,11 @@ public class UsuarioPages extends PageObject {
     public void verificarUsuarioNoProfesional(ExamplesTable datos)
     {   esperar(2);
         Assert.assertEquals(datos.getRow(0).get("nombres"),txtNombres.getValue());
+    }
+
+    public void setCheckRol(ExamplesTable data) {
+        Assert.assertEquals(data.getRow(0).get("rol"),txtRol.getValue());
+        esperar(1);
     }
 
 }
