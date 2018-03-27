@@ -38,8 +38,8 @@ public class VerificacionUsuarioDefinitions {
 
     }
 
-    @Then("verifico el usuario")
-    public void ThenVerificarUsuario(){
+    @Then("verifico el usuario:$usuario")
+    public void ThenVerificarUsuario(ExamplesTable usuario){
         verificacionUsuarioSteps.verificarUsuario(usuario);
     }
 }
