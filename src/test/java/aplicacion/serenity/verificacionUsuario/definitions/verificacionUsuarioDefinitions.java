@@ -1,6 +1,7 @@
 package aplicacion.serenity.verificacionUsuario.definitions;
 
 import aplicacion.serenity.creacionusuario.steps.UsuarioSteps;
+import aplicacion.serenity.verificacionUsuario.steps.verificacionUsuarioSteps;
 import aplicacion.serenity.menu.steps.MenuPrimerNivelSteps;
 import aplicacion.serenity.menu.steps.MenuPrincipalSteps;
 import aplicacion.serenity.menu.steps.MenuSegundoNivelSteps;
@@ -23,15 +24,20 @@ public class verificacionUsuarioDefinitions {
     @Steps
     MenuSegundoNivelSteps menuSegundoNivelSteps;
 
-    @When("ingreso las datos del nuevo usuario:$usuario")
+    @Steps
+    verificacionUsuarioSteps verificacionUsuarioSteps;
+
+    @When("ingreso las datos del usuario a verificar:$usuario")
     public void crearUsuarioNoProfesional(ExamplesTable usuario){
         menuPrincipalSteps.ingresarMenuPrincipal();
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
         menuSegundoNivelSteps.ingresarMenuSegundoNivel();
         usuarioSteps.nuevoFormulario();
-        usuarioSteps.crearUsuario(usuario);
+        verificacionUsuarioSteps.ingresarUsuario(usuario);
+        verificacionUsuarioSteps.verificarUsuario(usuario);
+
     }
-    @Then("guardo el usuario")
+    @Then("verifico el usuario")
     public void  verificarIngreso(){
     }
 }

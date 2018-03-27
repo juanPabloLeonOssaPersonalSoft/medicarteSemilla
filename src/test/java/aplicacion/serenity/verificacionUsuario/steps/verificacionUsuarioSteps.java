@@ -1,6 +1,6 @@
 package aplicacion.serenity.verificacionUsuario.steps;
 
-import aplicacion.serenity.verificacionUsuario.pages.verificacionUsuarioPages;
+import aplicacion.serenity.creacionusuario.pages.UsuarioPages;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
@@ -8,22 +8,21 @@ import org.jbehave.core.model.ExamplesTable;
 
 public class verificacionUsuarioSteps extends ScenarioSteps {
 
-    verificacionUsuarioPages verificacionUsuarioPages=new verificacionUsuarioPages(getDriver());
+    UsuarioPages user=new UsuarioPages(getDriver());
 
     public verificacionUsuarioSteps(Pages pages){
         super(pages);
     }
 
-
-
     @Step
-    public void nuevoFormulario(){
-        verificacionUsuarioPages.clicNuevoUsuario();
+    public void ingresarUsuario(ExamplesTable datos){
+        user.ingresarUsuario(datos);
+
     }
 
     @Step
-    public void crearUsuario(ExamplesTable datos){
-        verificacionUsuarioPages.checkNombres(datos);
-        verificacionUsuarioPages.checkPrimerApellido(datos);
+    public void verificarUsuario(ExamplesTable datos){
+        user.verificarUsuarioNoProfesional(datos);
+
     }
 }

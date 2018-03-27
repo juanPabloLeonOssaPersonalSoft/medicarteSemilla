@@ -142,3 +142,6 @@ GitHub.iml
 .idea/
 medicarteSemilla.iml
 
+build/
+out/
+target/
