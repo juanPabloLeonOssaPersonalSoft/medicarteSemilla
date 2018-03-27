@@ -44,4 +44,12 @@ public class VerificacionUsuarioDefinitions {
         verificacionUsuarioSteps.verificarUsuario(usuario);
 
     }
+
+    @When("ingreso las datos a modificar:$usuario")
+    public void ModificacionUsuario(ExamplesTable usuario) {
+    }
+
+    @Then("verifico el usuario modificado")
+    public void ThenVerificacion( ){
+    }
 }
