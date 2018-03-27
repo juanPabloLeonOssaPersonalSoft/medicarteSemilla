@@ -148,6 +148,8 @@ public class UsuarioPages extends PageObject {
         esperar(2);
         Assert.assertEquals(datos.getRow(0).get("fechaInicio"),txtFechaInicio.getValue());
 
+        Assert.assertEquals(datos.getRow(0).get("email"),txtEmail.getValue());
+
     }
 
 }
