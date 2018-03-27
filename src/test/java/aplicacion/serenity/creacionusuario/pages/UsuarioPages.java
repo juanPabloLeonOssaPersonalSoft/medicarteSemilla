@@ -20,6 +20,9 @@ public class UsuarioPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"simContainer\"]/ng-component/div[1]/div/div[2]/form/div[5]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtRol;
 
+    @FindBy(xpath = "//*[@id=\'simContainer\']/ng-component/div[1]/div/div[2]/form/div[5]/div[2]/ngl-virtual-select/a[1]/input")
+    WebElementFacade textRolSelect;
+
     @FindBy(xpath = "//*[@id=\"simContainer\"]/ng-component/div/div/div/div[2]/div[2]/button[2]")
     WebElementFacade btnNuevoUsuario;
 
@@ -151,9 +154,17 @@ public class UsuarioPages extends PageObject {
         Assert.assertEquals(datos.getRow(0).get("email"),txtEmail.getValue());
         esperar(1);
 
-        Assert.assertEquals(datos.getRow(0).get("rol"),txtRol.getValue());
+        Assert.assertEquals(datos.getRow(0).get("rol"), textRolSelect.getValue());
         esperar(1);
 
+    }
+
+    public void VerificarApellido(ExamplesTable datos) {
+        esperar(2);
+        String apellidoDefault = datos.getRow(0).get("primerApellido");
+        String apellidoIngresado = txtPrimerApellido.getValue();
+        Assert.assertEquals(datos.getRow(0).get("primerApellido"),txtPrimerApellido.getValue());
+        System.out.println("Apellido default: "+apellidoDefault+" - Apellido ingresado: "+apellidoIngresado+" - El apellido es correcto");
     }
 
 }
