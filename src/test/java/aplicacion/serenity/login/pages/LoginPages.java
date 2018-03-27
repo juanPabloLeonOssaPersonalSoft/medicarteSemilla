@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 
-@DefaultUrl("https://medicarte.personalsoft.net:4432")
+@DefaultUrl("https://pruebas.medicarte.co")
 public class LoginPages extends PageObject {
 
     @FindBy(xpath = "/html/body/login/div[2]/div/div/div/div/form/div[1]/div[2]/input")
@@ -37,6 +37,16 @@ public void ingresarPassword(ExamplesTable datos){
 
 public void clicIngresar(){
     btnIngresar.click();
+    esperar(5);
 }
+
+    private void esperar(int timeInMilliseconds){
+        try {
+            Thread.sleep(timeInMilliseconds*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

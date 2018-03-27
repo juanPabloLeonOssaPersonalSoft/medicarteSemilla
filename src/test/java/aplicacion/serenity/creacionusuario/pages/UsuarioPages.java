@@ -146,4 +146,12 @@ public class UsuarioPages extends PageObject {
         Assert.assertEquals(datos.getRow(0).get("nombres"),txtNombres.getValue());
     }
 
+    public void VerificarApellido(ExamplesTable datos) {
+        esperar(2);
+        String apellidoDefault = datos.getRow(0).get("primerApellido");
+        String apellidoIngresado = txtPrimerApellido.getValue();
+        Assert.assertEquals(datos.getRow(0).get("primerApellido"),txtPrimerApellido.getValue());
+        System.out.println("Apellido default: "+apellidoDefault+" - Apellido ingresado: "+apellidoIngresado+" - El apellido es correcto");
+    }
+
 }
