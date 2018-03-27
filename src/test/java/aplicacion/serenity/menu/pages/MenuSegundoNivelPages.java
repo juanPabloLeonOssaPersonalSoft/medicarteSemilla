@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MenuSegundoNivelPages extends PageObject {
 
-    @FindBy(xpath = "//*[@id=\"simSidebar\"]/ul/li[1]/ul/li[6]/a")
+    @FindBy(xpath = "//*[@id='simSidebar']//div[@title='Usuarios']")
     WebElementFacade btnMenuUsuarios;
 
     public WebDriver driver;
@@ -18,7 +18,7 @@ public class MenuSegundoNivelPages extends PageObject {
     }
 
     public void clicMenuUsuarios(){
-        esperar(2);
+        esperar(4);
         btnMenuUsuarios.click();
     }
 

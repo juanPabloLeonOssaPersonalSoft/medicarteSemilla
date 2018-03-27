@@ -1,6 +1,8 @@
 package aplicacion.serenity.verificacionusuario.definitions;
 
-import aplicacion.serenity.verificacionusuario.steps.verificacionUsuarioSteps;
+
+import aplicacion.serenity.creacionusuario.steps.UsuarioSteps;
+import aplicacion.serenity.verificacionusuario.steps.VerificacionUsuarioSteps;
 import aplicacion.serenity.menu.steps.MenuPrimerNivelSteps;
 import aplicacion.serenity.menu.steps.MenuPrincipalSteps;
 import aplicacion.serenity.menu.steps.MenuSegundoNivelSteps;
@@ -9,10 +11,10 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.jbehave.core.model.ExamplesTable;
 
-public class verificacionUsuarioDefinitions {
+public class VerificacionUsuarioDefinitions {
 
     @Steps
-    verificacionUsuarioSteps verificacionUsuarioSteps;
+    VerificacionUsuarioSteps verificacionUsuarioSteps;
 
     @Steps
     MenuPrincipalSteps menuPrincipalSteps;
@@ -23,17 +25,22 @@ public class verificacionUsuarioDefinitions {
     @Steps
     MenuSegundoNivelSteps menuSegundoNivelSteps;
 
+    @Steps
+    UsuarioSteps usuarioSteps;
+
+
     @When("ingreso las datos del usuario a verificar:$usuario")
-    public void verificacionUsuarios(ExamplesTable usuario){
+    public void crearUsuarioNoProfesional(ExamplesTable usuario) {
         menuPrincipalSteps.ingresarMenuPrincipal();
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
         menuSegundoNivelSteps.ingresarMenuSegundoNivel();
-        verificacionUsuarioSteps.nuevoFormulario();
+        usuarioSteps.nuevoFormulario();
         verificacionUsuarioSteps.ingresarUsuario(usuario);
-        verificacionUsuarioSteps.verificarNombre(usuario);
-    }
-    @Then("verifico el usuario")
-    public void  verificarDatos(){
 
+    }
+
+    @Then("verifico el usuario:$usuario")
+    public void ThenVerificarUsuario(ExamplesTable usuario){
+        verificacionUsuarioSteps.verificarUsuario(usuario);
     }
 }
