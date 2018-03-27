@@ -1,4 +1,5 @@
 package aplicacion.serenity.verificacionusuario.definitions;
+
 import aplicacion.serenity.creacionusuario.steps.UsuarioSteps;
 import aplicacion.serenity.verificacionusuario.steps.VerificacionUsuarioSteps;
 import aplicacion.serenity.menu.steps.MenuPrimerNivelSteps;
@@ -39,6 +40,8 @@ public class VerificacionUsuarioDefinitions {
 
     @Then("verifico el usuario:$usuario")
     public void ThenVerificarUsuario(ExamplesTable usuario){
+
         verificacionUsuarioSteps.verificarUsuario(usuario);
+
     }
 }
