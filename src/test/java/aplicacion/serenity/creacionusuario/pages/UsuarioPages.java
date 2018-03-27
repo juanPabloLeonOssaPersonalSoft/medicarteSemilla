@@ -149,12 +149,11 @@ public class UsuarioPages extends PageObject {
         Assert.assertEquals(datos.getRow(0).get("fechaInicio"),txtFechaInicio.getValue());
 
         Assert.assertEquals(datos.getRow(0).get("email"),txtEmail.getValue());
-
-    }
-
-    public void setCheckRol(ExamplesTable data) {
-        Assert.assertEquals(data.getRow(0).get("rol"),txtRol.getValue());
         esperar(1);
+
+        Assert.assertEquals(datos.getRow(0).get("rol"),txtRol.getValue());
+        esperar(1);
+
     }
 
 }
