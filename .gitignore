@@ -1,5 +1,6 @@
 medicarte_semilla.iml
 .idea/
+.idea/*
 .gradle/
 src.iml
 GitHub.iml
