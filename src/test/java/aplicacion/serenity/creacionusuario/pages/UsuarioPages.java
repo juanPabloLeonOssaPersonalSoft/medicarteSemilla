@@ -141,4 +141,15 @@ public class UsuarioPages extends PageObject {
         System.out.println("Usuario correcto");
     }
 
+    public void verificarUsuarioNoProfesional(ExamplesTable datos)
+    {   esperar(2);
+        Assert.assertEquals(datos.getRow(0).get("nombres"),txtNombres.getValue());
+
+
+        esperar(2);
+        Assert.assertEquals(datos.getRow(0).get("fechaInicio"),txtFechaInicio.getValue());
+
+        Assert.assertEquals(datos.getRow(0).get("email"),txtEmail.getValue());
+    }
+
 }
