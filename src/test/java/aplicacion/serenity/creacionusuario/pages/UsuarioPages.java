@@ -67,13 +67,13 @@ public class UsuarioPages extends PageObject {
     }
 
     public void clicNuevoUsuario() {
-        esperar(3);
+        esperar(2);
         btnNuevoUsuario.click();
     }
 
     public  void ingresarUsuario(ExamplesTable datos){
-        esperar(3);
-        txtUsuario.typeAndTab(datos.getRow(0).get("usuario"));
+        esperar(2);
+        txtUsuario.type(datos.getRow(0).get("usuario"));
     }
 
     public  void ingresarNombres(ExamplesTable datos){
