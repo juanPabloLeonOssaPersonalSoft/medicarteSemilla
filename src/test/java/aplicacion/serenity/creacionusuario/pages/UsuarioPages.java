@@ -76,7 +76,7 @@ public class UsuarioPages extends PageObject {
 
     public  void ingresarUsuario(ExamplesTable datos){
         esperar(2);
-        txtUsuario.type(datos.getRow(0).get("usuario"));
+        txtUsuario.typeAndTab(datos.getRow(0).get("usuario"));
     }
 
     public  void ingresarNombres(ExamplesTable datos){
