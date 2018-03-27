@@ -62,6 +62,9 @@ public class UsuarioPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"toast-container\"]/div/div[1]/div[2]/div")
     WebElementFacade lblTexto;
 
+    @FindBy(xpath = "//*[@id=\'simContainer\']/ng-component/div[2]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[1]")
+    WebElementFacade sedeEscogida;
+
     public WebDriver driver;
 
     public UsuarioPages(WebDriver driver){
@@ -144,8 +147,10 @@ public class UsuarioPages extends PageObject {
         System.out.println("Usuario correcto");
     }
 
-    public void verificarUsuarioNoProfesional(ExamplesTable datos)
-    {   esperar(2);
+    public void verificarUsuarioNoProfesional(ExamplesTable datos) {
+        esperar(2);
+        txtNombres.click();
+        esperar(1);
         Assert.assertEquals(datos.getRow(0).get("nombres"),txtNombres.getValue());
 
         esperar(2);
@@ -165,6 +170,14 @@ public class UsuarioPages extends PageObject {
         String apellidoIngresado = txtPrimerApellido.getValue();
         Assert.assertEquals(datos.getRow(0).get("primerApellido"),txtPrimerApellido.getValue());
         System.out.println("Apellido default: "+apellidoDefault+" - Apellido ingresado: "+apellidoIngresado+" - El apellido es correcto");
+    }
+
+    public  void  verificarSede (ExamplesTable datos) {
+        esperar(2);
+        btnSeleccionarSede.click();
+        Assert.assertEquals(datos.getRow(0).get("sede"), sedeEscogida.getTextValue());
+        esperar(2);
+        btnAceptarSede.click();
     }
 
 }

@@ -25,6 +25,8 @@ public class VerificacionUsuarioSteps extends ScenarioSteps {
 
         user.verificarUsuarioNoProfesional(datos);
         user.VerificarApellido(datos);
+        user.verificarSede(datos);
+
     }
 
 }
