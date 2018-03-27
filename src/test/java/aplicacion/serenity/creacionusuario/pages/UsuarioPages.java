@@ -172,12 +172,19 @@ public class UsuarioPages extends PageObject {
         System.out.println("Apellido default: "+apellidoDefault+" - Apellido ingresado: "+apellidoIngresado+" - El apellido es correcto");
     }
 
-    public  void  verificarSede (ExamplesTable datos) {
+    public void setCheckRol(ExamplesTable datos) {
+        Assert.assertEquals(datos.getRow(0).get("rol"), textRolSelect.getValue());
+        esperar(1);
+    }
+
+    public  void  verificarSede(ExamplesTable datos) {
         esperar(2);
         btnSeleccionarSede.click();
         Assert.assertEquals(datos.getRow(0).get("sede"), sedeEscogida.getTextValue());
         esperar(2);
         btnAceptarSede.click();
     }
+
+
 
 }
