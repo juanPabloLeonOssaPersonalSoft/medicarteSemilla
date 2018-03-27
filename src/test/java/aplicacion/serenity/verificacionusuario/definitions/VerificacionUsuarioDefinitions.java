@@ -37,11 +37,15 @@ public class VerificacionUsuarioDefinitions {
         verificacionUsuarioSteps.ingresarUsuario(usuario);
 
     }
-
     @Then("verifico el usuario:$usuario")
     public void ThenVerificarUsuario(ExamplesTable usuario){
 
         verificacionUsuarioSteps.verificarUsuario(usuario);
 
     }
+
+    @When("editar los campos:$usuario")
+
+    @Then("verifico la edicion")
+
 }
