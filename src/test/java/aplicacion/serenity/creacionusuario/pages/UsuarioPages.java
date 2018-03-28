@@ -53,6 +53,9 @@ public class UsuarioPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"simContainer\"]/ng-component/div[2]/div/div/div[2]/div[2]/button[1]")
     WebElementFacade btnAceptarSede;
 
+    @FindBy(xpath = "//*[@id=\'simContainer\']/ng-component/div[2]/div/div/div[2]/div[2]/button[2]")
+    WebElementFacade btnCancelarSede;
+
     @FindBy(xpath = "//*[@id=\"simContainer\"]/ng-component/div[1]/div/div[2]/div/button[1]")
     WebElementFacade btnGuardarUsuario;
 
@@ -142,29 +145,18 @@ public class UsuarioPages extends PageObject {
         }
     }
 
-    public void VerificarErrorPage () {
+    public void verificarErrorPage () {
         Assert.assertEquals("Se almacenó la información correctamente.", lblTexto.getText());
         System.out.println("Usuario correcto");
     }
 
-    public void verificarUsuarioNoProfesional(ExamplesTable datos) {
-        esperar(2);
+    public void setVerificarNombre(ExamplesTable datos) {
         txtNombres.click();
-        esperar(1);
-        Assert.assertEquals(datos.getRow(0).get("nombres"),txtNombres.getValue());
-
         esperar(2);
-        Assert.assertEquals(datos.getRow(0).get("fechaInicio"),txtFechaInicio.getValue());
-
-        Assert.assertEquals(datos.getRow(0).get("email"),txtEmail.getValue());
-        esperar(1);
-
-        Assert.assertEquals(datos.getRow(0).get("rol"), textRolSelect.getValue());
-        esperar(1);
-
+        Assert.assertEquals(datos.getRow(0).get("nombres"),txtNombres.getValue());
     }
 
-    public void VerificarApellido(ExamplesTable datos) {
+    public void setVerificarApellido(ExamplesTable datos) {
         esperar(2);
         String apellidoDefault = datos.getRow(0).get("primerApellido");
         String apellidoIngresado = txtPrimerApellido.getValue();
@@ -172,19 +164,38 @@ public class UsuarioPages extends PageObject {
         System.out.println("Apellido default: "+apellidoDefault+" - Apellido ingresado: "+apellidoIngresado+" - El apellido es correcto");
     }
 
-    public void setCheckRol(ExamplesTable datos) {
+    public void setVerificarFechaInicio(ExamplesTable datos) {
+        Assert.assertEquals(datos.getRow(0).get("fechaInicio"),txtFechaInicio.getValue());
+        esperar(1);
+    }
+
+    public void setVerificarEmail(ExamplesTable datos) {
+        Assert.assertEquals(datos.getRow(0).get("email"),txtEmail.getValue());
+        esperar(1);
+
+    }
+
+    public void setVerificarRol(ExamplesTable datos) {
         Assert.assertEquals(datos.getRow(0).get("rol"), textRolSelect.getValue());
         esperar(1);
     }
 
-    public  void  verificarSede(ExamplesTable datos) {
-        esperar(2);
+    public  void  setVerificarSede(ExamplesTable datos) {
         btnSeleccionarSede.click();
         Assert.assertEquals(datos.getRow(0).get("sede"), sedeEscogida.getTextValue());
-        esperar(2);
-        btnAceptarSede.click();
+        esperar(1);
+        btnCancelarSede.click();
+        esperar(1);
     }
 
 
+    public  void  setEditarRol(ExamplesTable datos) {
+
+        String rolData = datos.getRow(0).get("rol");
+        if(rolData!=null){
+           ingresarRol(datos);
+        }
+        esperar(1);
+    }
 
 }

@@ -17,5 +17,5 @@ Scenario: Edición de usuario no profesional
 GivenStories: stories/visoraplicaciones/serenitytest/login.story
 When ingreso las datos a modificar:
 |nombres|primerApellido|rol|fechaInicio|email|sede|
-|Liliana|Uribe|Medicarte|01/09/2014|luribe@medicarte.com.co|Armenia|
+||Test|||||
 Then verifico el usuario modificado

@@ -37,7 +37,7 @@ public class UsuarioSteps extends ScenarioSteps {
 
     @Step
     public void verificarErrorPage(){
-        usuarioPages.VerificarErrorPage();
+        usuarioPages.verificarErrorPage();
 
     }
 }

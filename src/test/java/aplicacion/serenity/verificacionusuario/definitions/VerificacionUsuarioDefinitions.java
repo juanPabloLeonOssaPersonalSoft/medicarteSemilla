@@ -27,7 +27,6 @@ public class VerificacionUsuarioDefinitions {
     @Steps
     UsuarioSteps usuarioSteps;
 
-
     @When("ingreso las datos del usuario a verificar:$usuario")
     public void crearUsuarioNoProfesional(ExamplesTable usuario) {
         menuPrincipalSteps.ingresarMenuPrincipal();
@@ -37,19 +36,22 @@ public class VerificacionUsuarioDefinitions {
         verificacionUsuarioSteps.ingresarUsuario(usuario);
 
     }
-
     @Then("verifico el usuario:$usuario")
     public void ThenVerificarUsuario(ExamplesTable usuario){
-
         verificacionUsuarioSteps.verificarUsuario(usuario);
-
     }
 
     @When("ingreso las datos a modificar:$usuario")
     public void ModificacionUsuario(ExamplesTable usuario) {
+        menuPrincipalSteps.ingresarMenuPrincipal();
+        menuPrimerNivelSteps.ingresarMenuPrimerNivel();
+        menuSegundoNivelSteps.ingresarMenuSegundoNivel();
+        usuarioSteps.nuevoFormulario();
+        verificacionUsuarioSteps.ingresarUsuario(usuario);
+        verificacionUsuarioSteps.editarUsuario(usuario);
     }
-
     @Then("verifico el usuario modificado")
     public void ThenVerificacion( ){
+
     }
 }
