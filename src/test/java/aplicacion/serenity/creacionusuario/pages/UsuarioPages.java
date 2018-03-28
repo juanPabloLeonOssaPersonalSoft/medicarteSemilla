@@ -227,4 +227,14 @@ public class UsuarioPages extends PageObject {
 
         }
     }
+    public  void  setEditarNombre(ExamplesTable datos) {
+        String nombreData = datos.getRow(0).get("nombres");
+        if(nombreData!=null){
+            ingresarNombres(datos);
+        }else {
+
+        }
+        esperar(1);
+    }
+
 }
