@@ -48,6 +48,9 @@ public class VerificacionUsuarioDefinitions {
         usuarioSteps.nuevoFormulario();
         verificacionUsuarioSteps.ingresarUsuario(usuario);
         verificacionUsuarioSteps.editarUsuario(usuario);
+        verificacionUsuarioSteps.editarEmail(usuario);
+        verificacionUsuarioSteps.editarFechaInicio(usuario);
+        verificacionUsuarioSteps.editarPrimerApellido(usuario);
     }
     @Then("verifico el usuario modificado")
     public void ThenVerificacion( ){

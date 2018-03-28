@@ -197,6 +197,36 @@ public class UsuarioPages extends PageObject {
         esperar(1);
     }
 
+
+
+    public  void  setEditarEmail(ExamplesTable datos) {
+       esperar(2);
+        if(datos.getRow(0).get("email")!=null){
+            ingresarEmail(datos);
+        }
+    }
+    public void setEditarFechaInicio(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("fechaInicio")!=null){
+            ingresarFechaInicio(datos);
+        }
+    }
+
+
+    public  void  setEditarPrimerApellido(ExamplesTable datos) {
+        esperar(2);
+        if (datos.getRow(0).get("primerApellido") != null) {
+            ingresarPrimerApellido(datos);
+        }
+    }
+
+    public void setEditarSede(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("sede")!=null){
+            SeleccionarSede(datos);
+
+        }
+    }
     public  void  setEditarNombre(ExamplesTable datos) {
         String nombreData = datos.getRow(0).get("nombres");
         if(nombreData!=null){
