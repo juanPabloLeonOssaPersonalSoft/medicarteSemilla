@@ -32,9 +32,30 @@ public class VerificacionUsuarioSteps extends ScenarioSteps {
 
     @Step
     public void editarUsuario(ExamplesTable datos) {
+        user.setEditarNombre(datos);
         user.setEditarRol(datos);
+    }
+
+    @Step
+    public void editarEmail(ExamplesTable datos) {
+        user.setEditarEmail(datos);
+    }
+
+    public void editarFechaInicio(ExamplesTable usuario) {
+        user.setEditarFechaInicio(usuario);
+    }
+
+    public  void editarPrimerApellido(ExamplesTable datos) {
+        user.setEditarPrimerApellido(datos);
+    }
+
+    public void editarSede(ExamplesTable datos) {
+        user.setEditarSede(datos);
+    }
+
+    @Step
+    public void checkSaveUser() {
         user.guardarUsuario();
         user.setCheckSaveUser();
     }
-
 }

@@ -40,7 +40,6 @@ public class VerificacionUsuarioDefinitions {
     public void ThenVerificarUsuario(ExamplesTable usuario){
         verificacionUsuarioSteps.verificarUsuario(usuario);
     }
-
     @When("ingreso las datos a modificar:$usuario")
     public void ModificacionUsuario(ExamplesTable usuario) {
         menuPrincipalSteps.ingresarMenuPrincipal();
@@ -49,6 +48,11 @@ public class VerificacionUsuarioDefinitions {
         usuarioSteps.nuevoFormulario();
         verificacionUsuarioSteps.ingresarUsuario(usuario);
         verificacionUsuarioSteps.editarUsuario(usuario);
+        verificacionUsuarioSteps.editarEmail(usuario);
+        verificacionUsuarioSteps.editarFechaInicio(usuario);
+        verificacionUsuarioSteps.editarSede(usuario);
+        verificacionUsuarioSteps.editarPrimerApellido(usuario);
+        verificacionUsuarioSteps.checkSaveUser();
     }
     @Then("verifico el usuario modificado")
     public void ThenVerificacion( ){

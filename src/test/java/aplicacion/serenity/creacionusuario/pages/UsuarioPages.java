@@ -4,6 +4,8 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.jbehave.core.model.ExamplesTable;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.junit.Assert;
@@ -72,7 +74,6 @@ public class UsuarioPages extends PageObject {
     WebElementFacade divConfirmSave;
 
 
-
     public WebDriver driver;
 
     public UsuarioPages(WebDriver driver){
@@ -101,10 +102,10 @@ public class UsuarioPages extends PageObject {
     }
 
     public  void ingresarRol(ExamplesTable datos){
-        esperar(2);
         cmbRol.click();
-        txtRol.typeAndEnter(datos.getRow(0).get("rol"));
-
+        txtRol.type(datos.getRow(0).get("rol"));
+        txtRol.sendKeys(Keys.ENTER);
+        esperar(1);
     }
 
     public  void ingresarFechaInicio(ExamplesTable datos){
@@ -149,6 +150,7 @@ public class UsuarioPages extends PageObject {
             e.printStackTrace();
         }
     }
+
 
     public void verificarErrorPage () {
         Assert.assertEquals("Se almacenó la información correctamente.", lblTexto.getText());
@@ -202,17 +204,56 @@ public class UsuarioPages extends PageObject {
         esperar(1);
     }
 
-    public void setCheckSaveUser(){
-        String dataMessage = "Se almacenó la información correctamente.";
-        if(divConfirmSave != null){
-            Assert.assertTrue("This was saved", true);
-            Assert.assertEquals(dataMessage, divConfirmSave.getTextValue());
-        }else{
-            Assert.assertTrue("This was not saved!", false);
+
+    public  void  setEditarEmail(ExamplesTable datos) {
+       esperar(2);
+        if(datos.getRow(0).get("email")!=null){
+            ingresarEmail(datos);
+        }
+    }
+    public void setEditarFechaInicio(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("fechaInicio")!=null){
+            ingresarFechaInicio(datos);
         }
     }
 
 
+    public  void  setEditarPrimerApellido(ExamplesTable datos) {
+        esperar(2);
+        if (datos.getRow(0).get("primerApellido") != null) {
+            ingresarPrimerApellido(datos);
+        }
+    }
+
+    public void setEditarSede(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("sede")!=null){
+            SeleccionarSede(datos);
+
+        }
+    }
+    public  void  setEditarNombre(ExamplesTable datos) {
+        String nombreData = datos.getRow(0).get("nombres");
+        if(nombreData!=null){
+            ingresarNombres(datos);
+        }else {
+
+        }
+        esperar(1);
+    }
+
+    public void setCheckSaveUser(){
+        String dataMessage = "Se almacenó la información correctamente.";
+        String messageServer = divConfirmSave.getTextValue();
+
+        if(divConfirmSave != null){
+            Assert.assertEquals(dataMessage, divConfirmSave.getTextValue());
+        }else{
+            Assert.assertTrue("Error Element, This was not saved!", false);
+        }
+        esperar(5);
+    }
 
 
 }
