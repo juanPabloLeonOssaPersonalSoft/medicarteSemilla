@@ -204,10 +204,19 @@ public class UsuarioPages extends PageObject {
         }
     }
 
+
     public  void  setEditarPrimerApellido(ExamplesTable datos) {
         esperar(2);
-        if(datos.getRow(0).get("primerApellido")!=null) {
+        if (datos.getRow(0).get("primerApellido") != null) {
             ingresarPrimerApellido(datos);
+        }
+    }
+
+    public void setEditarSede(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("sede")!=null){
+            SeleccionarSede(datos);
+
         }
     }
 }
