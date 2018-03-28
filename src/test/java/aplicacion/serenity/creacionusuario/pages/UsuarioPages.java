@@ -68,6 +68,11 @@ public class UsuarioPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/ng-component/div[2]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[1]")
     WebElementFacade sedeEscogida;
 
+    @FindBy(xpath = "//*[@id=\'toast-container\']/div/div[1]/div[2]/div")
+    WebElementFacade divConfirmSave;
+
+
+
     public WebDriver driver;
 
     public UsuarioPages(WebDriver driver){
@@ -190,12 +195,24 @@ public class UsuarioPages extends PageObject {
 
 
     public  void  setEditarRol(ExamplesTable datos) {
-
         String rolData = datos.getRow(0).get("rol");
         if(rolData!=null){
            ingresarRol(datos);
         }
         esperar(1);
     }
+
+    public void setCheckSaveUser(){
+        String dataMessage = "Se almacenó la información correctamente.";
+        if(divConfirmSave != null){
+            Assert.assertTrue("This was saved", true);
+            Assert.assertEquals(dataMessage, divConfirmSave.getTextValue());
+        }else{
+            Assert.assertTrue("This was not saved!", false);
+        }
+    }
+
+
+
 
 }
