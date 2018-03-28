@@ -50,6 +50,7 @@ public class VerificacionUsuarioDefinitions {
         verificacionUsuarioSteps.editarUsuario(usuario);
         verificacionUsuarioSteps.editarEmail(usuario);
         verificacionUsuarioSteps.editarFechaInicio(usuario);
+        verificacionUsuarioSteps.editarSede(usuario);
         verificacionUsuarioSteps.editarPrimerApellido(usuario);
     }
     @Then("verifico el usuario modificado")
