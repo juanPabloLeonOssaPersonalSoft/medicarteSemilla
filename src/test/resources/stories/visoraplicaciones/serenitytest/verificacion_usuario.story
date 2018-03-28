@@ -16,6 +16,6 @@ Then verifico el usuario:
 Scenario: Edición de usuario no profesional
 GivenStories: stories/visoraplicaciones/serenitytest/login.story
 When ingreso las datos a modificar:
-|nombres|primerApellido|rol|fechaInicio|email|sede|
-||Test|||||
+|usuario|nombres|primerApellido|rol|fechaInicio|email|sede|
+|Admin|||Test||||
 Then verifico el usuario modificado

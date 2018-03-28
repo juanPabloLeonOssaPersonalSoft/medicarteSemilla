@@ -190,7 +190,6 @@ public class UsuarioPages extends PageObject {
 
 
     public  void  setEditarRol(ExamplesTable datos) {
-
         String rolData = datos.getRow(0).get("rol");
         if(rolData!=null){
            ingresarRol(datos);

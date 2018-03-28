@@ -40,7 +40,6 @@ public class VerificacionUsuarioDefinitions {
     public void ThenVerificarUsuario(ExamplesTable usuario){
         verificacionUsuarioSteps.verificarUsuario(usuario);
     }
-
     @When("ingreso las datos a modificar:$usuario")
     public void ModificacionUsuario(ExamplesTable usuario) {
         menuPrincipalSteps.ingresarMenuPrincipal();
