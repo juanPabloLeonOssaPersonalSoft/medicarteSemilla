@@ -231,8 +231,6 @@ public class UsuarioPages extends PageObject {
         String nombreData = datos.getRow(0).get("nombres");
         if(nombreData!=null){
             ingresarNombres(datos);
-        }else {
-
         }
         esperar(1);
     }
