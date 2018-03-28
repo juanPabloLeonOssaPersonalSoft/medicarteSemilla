@@ -35,4 +35,7 @@ public class VerificacionUsuarioSteps extends ScenarioSteps {
         user.setEditarRol(datos);
     }
 
+    public void editarFechaInicio(ExamplesTable usuario) {
+        user.setEditarFechaInicio(usuario);
+    }
 }

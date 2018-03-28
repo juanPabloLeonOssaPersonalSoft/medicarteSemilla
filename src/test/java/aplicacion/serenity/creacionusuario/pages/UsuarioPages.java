@@ -197,4 +197,10 @@ public class UsuarioPages extends PageObject {
         esperar(1);
     }
 
+    public void setEditarFechaInicio(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("fechaInicio")!=null){
+            ingresarFechaInicio(datos);
+        }
+    }
 }
