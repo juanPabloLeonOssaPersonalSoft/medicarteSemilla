@@ -32,6 +32,7 @@ public class VerificacionUsuarioSteps extends ScenarioSteps {
 
     @Step
     public void editarUsuario(ExamplesTable datos) {
+        user.setEditarNombre(datos);
         user.setEditarRol(datos);
     }
 
