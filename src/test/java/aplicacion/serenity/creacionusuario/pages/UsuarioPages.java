@@ -204,7 +204,7 @@ public class UsuarioPages extends PageObject {
         }
     }
 
-    public  void  setEditarApellido(ExamplesTable datos) {
+    public  void  setEditarPrimerApellido(ExamplesTable datos) {
         esperar(2);
         if(datos.getRow(0).get("primerApellido")!=null) {
             ingresarPrimerApellido(datos);

@@ -40,6 +40,6 @@ public class VerificacionUsuarioSteps extends ScenarioSteps {
     }
 
     public  void editarPrimerApellido(ExamplesTable datos) {
-        user.setEditarApellido(datos);
+        user.setEditarPrimerApellido(datos);
     }
 }
