@@ -4,6 +4,8 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.jbehave.core.model.ExamplesTable;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.junit.Assert;
@@ -68,6 +70,10 @@ public class UsuarioPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/ng-component/div[2]/div/div/div[2]/div[1]/table/tbody/tr[1]/td[1]")
     WebElementFacade sedeEscogida;
 
+    @FindBy(xpath = "//*[@id=\'toast-container\']/div/div[1]/div[2]/div")
+    WebElementFacade divConfirmSave;
+
+
     public WebDriver driver;
 
     public UsuarioPages(WebDriver driver){
@@ -96,10 +102,10 @@ public class UsuarioPages extends PageObject {
     }
 
     public  void ingresarRol(ExamplesTable datos){
-        esperar(2);
         cmbRol.click();
-        txtRol.typeAndEnter(datos.getRow(0).get("rol"));
-
+        txtRol.type(datos.getRow(0).get("rol"));
+        txtRol.sendKeys(Keys.ENTER);
+        esperar(1);
     }
 
     public  void ingresarFechaInicio(ExamplesTable datos){
@@ -144,6 +150,7 @@ public class UsuarioPages extends PageObject {
             e.printStackTrace();
         }
     }
+
 
     public void verificarErrorPage () {
         Assert.assertEquals("Se almacenó la información correctamente.", lblTexto.getText());
@@ -198,7 +205,6 @@ public class UsuarioPages extends PageObject {
     }
 
 
-
     public  void  setEditarEmail(ExamplesTable datos) {
        esperar(2);
         if(datos.getRow(0).get("email")!=null){
@@ -234,5 +240,18 @@ public class UsuarioPages extends PageObject {
         }
         esperar(1);
     }
+
+    public void setCheckSaveUser(){
+        String dataMessage = "Se almacenó la información correctamente.";
+        String messageServer = divConfirmSave.getTextValue();
+
+        if(divConfirmSave != null){
+            Assert.assertEquals(dataMessage, divConfirmSave.getTextValue());
+        }else{
+            Assert.assertTrue("Error Element, This was not saved!", false);
+        }
+        esperar(5);
+    }
+
 
 }

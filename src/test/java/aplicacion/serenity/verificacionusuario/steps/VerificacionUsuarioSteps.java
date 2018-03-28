@@ -52,4 +52,10 @@ public class VerificacionUsuarioSteps extends ScenarioSteps {
     public void editarSede(ExamplesTable datos) {
         user.setEditarSede(datos);
     }
+
+    @Step
+    public void checkSaveUser() {
+        user.guardarUsuario();
+        user.setCheckSaveUser();
+    }
 }

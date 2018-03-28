@@ -17,7 +17,5 @@ Scenario: Edición de usuario no profesional
 GivenStories: stories/visoraplicaciones/serenitytest/login.story
 When ingreso las datos a modificar:
 |usuario|nombres|primerApellido|rol|fechaInicio|email|sede|
-|Admin|Yesenia|Garcia|Test|04/10/2015|fvelasar@gmail.com||
-
-
+|efbustam|Yesenia|Garcia|Callcenter|04/10/2015|fvelasar@gmail.com||
 Then verifico el usuario modificado
