@@ -197,6 +197,14 @@ public class UsuarioPages extends PageObject {
         esperar(1);
     }
 
+
+
+    public  void  setEditarEmail(ExamplesTable datos) {
+       esperar(2);
+        if(datos.getRow(0).get("email")!=null){
+            ingresarEmail(datos);
+        }
+    }
     public void setEditarFechaInicio(ExamplesTable datos) {
         esperar(2);
         if(datos.getRow(0).get("fechaInicio")!=null){
