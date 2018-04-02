@@ -334,7 +334,8 @@ public class PacientesPages extends PageObject {
     }
 
     public void setPrograma(ExamplesTable data) {
-        clickPrograma.type(data.getRow(0).get("programa"));
+        clickPrograma.click();
+        textPrograma.type(data.getRow(0).get("programa"));
         textPrograma.sendKeys(Keys.ENTER);
         waitEvent(1);
     }
@@ -345,7 +346,8 @@ public class PacientesPages extends PageObject {
     }
 
     public void setDrParentesco (ExamplesTable data){
-        clickDrParentesco.type(data.getRow(0).get("dr_parentesco"));
+        clickDrParentesco.click();
+        textDrParentesco.type(data.getRow(0).get("dr_parentesco"));
         textDrParentesco.sendKeys(Keys.ENTER);
         waitEvent(1);
     }
