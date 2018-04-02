@@ -13,7 +13,6 @@ import org.openqa.selenium.support.ui.Select;
 import javax.swing.*;
 import org.openqa.selenium.Keys;
 
-
 public class PacientesPages extends PageObject {
 
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[1]/div[2]/ngl-virtual-select/a[1]/span")

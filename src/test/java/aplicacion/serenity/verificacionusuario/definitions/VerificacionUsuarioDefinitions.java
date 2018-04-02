@@ -5,6 +5,7 @@ import aplicacion.serenity.verificacionusuario.steps.VerificacionUsuarioSteps;
 import aplicacion.serenity.menu.steps.MenuPrimerNivelSteps;
 import aplicacion.serenity.menu.steps.MenuPrincipalSteps;
 import aplicacion.serenity.menu.steps.MenuSegundoNivelSteps;
+import aplicacion.serenity.adminusuarios.steps.AdminUsuariosSteps;
 import net.thucydides.core.annotations.Steps;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
@@ -25,6 +26,9 @@ public class VerificacionUsuarioDefinitions {
     MenuSegundoNivelSteps menuSegundoNivelSteps;
 
     @Steps
+    AdminUsuariosSteps adminUsuariosSteps;
+
+    @Steps
     UsuarioSteps usuarioSteps;
 
     @When("ingreso las datos del usuario a verificar:$usuario")
@@ -32,7 +36,7 @@ public class VerificacionUsuarioDefinitions {
         menuPrincipalSteps.ingresarMenuPrincipal();
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
         menuSegundoNivelSteps.ingresarMenuSegundoNivel();
-        usuarioSteps.nuevoFormulario();
+        adminUsuariosSteps.nuevoFormulario();
         verificacionUsuarioSteps.ingresarUsuario(usuario);
 
     }
@@ -45,7 +49,7 @@ public class VerificacionUsuarioDefinitions {
         menuPrincipalSteps.ingresarMenuPrincipal();
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
         menuSegundoNivelSteps.ingresarMenuSegundoNivel();
-        usuarioSteps.nuevoFormulario();
+        adminUsuariosSteps.nuevoFormulario();
         verificacionUsuarioSteps.ingresarUsuario(usuario);
         verificacionUsuarioSteps.editarUsuario(usuario);
         verificacionUsuarioSteps.editarEmail(usuario);
