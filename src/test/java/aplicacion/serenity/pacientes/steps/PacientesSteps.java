@@ -20,9 +20,8 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.ingresarPrimerNombre(datos);
         pacientesPages.ingresarPrimerApellido(datos);
         pacientesPages.ingresarGenero(datos);
-        pacientesPages.ingresarFechaNacimiento(datos);
+        pacientesPages.ingresarFechaNacimiento();
         pacientesPages.setClicCerrarTooltip();
-        pacientesPages.ingresarEdad(datos);
         pacientesPages.ingresarEstadoCivil(datos);
         pacientesPages.ingresarRH(datos);
         pacientesPages.ingresarCodigoOcupacion(datos);
