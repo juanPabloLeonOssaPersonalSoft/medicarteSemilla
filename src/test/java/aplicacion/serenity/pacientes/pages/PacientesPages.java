@@ -67,9 +67,6 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[14]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtRegimen;
 
-    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[30]/div[2]/ngl-virtual-select/a[1]/input")
-    WebElementFacade modeloAtencion;
-
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[31]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade medicoTratante;
 
@@ -144,6 +141,9 @@ public class PacientesPages extends PageObject {
 
     @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
     WebElementFacade txtZona;
+
+    @FindBy(xpath = "/div/div[2]/button")
+    WebElementFacade clicCerrarTooltip;
 
     @FindBy(xpath = "//*[@id=\'toast-container\']/div[1]/div[1]/div[2]/div")
     WebElementFacade tooltipConfirmSave;
@@ -220,9 +220,11 @@ public class PacientesPages extends PageObject {
     public void ingresarPrimerApellido(ExamplesTable datos) {
         waitEvent(2);
         txtPrimerApellido.type(datos.getRow(0).get("primer_apellido"));
+        waitEvent(5);
     }
 
     public void ingresarGenero(ExamplesTable datos) {
+        waitEvent(5);
         cmbGenero.click();
         txtGenero.type(datos.getRow(0).get("genero"));
         txtGenero.sendKeys(Keys.ENTER);
@@ -354,6 +356,10 @@ public class PacientesPages extends PageObject {
                 Assert.assertEquals("fallo el guardado de informacion",dataMessage, messageServer);
             }
         }
+
+    public void setClicCerrarTooltip(){
+        clicCerrarTooltip.click();
+    }
 }
 
 
