@@ -10,4 +10,6 @@ import org.jbehave.core.annotations.When;
 import org.jbehave.core.model.ExamplesTable;
 
 public class PacientesDefinitions {
+
 }
+
