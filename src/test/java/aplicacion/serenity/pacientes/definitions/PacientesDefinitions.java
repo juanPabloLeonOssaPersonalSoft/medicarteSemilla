@@ -38,6 +38,7 @@ public class PacientesDefinitions {
     }
     @Then("guardo el paciente")
     public void  verificarIngreso(){
+        pacientesSteps.checkSavePaciente();
     }
 }
 

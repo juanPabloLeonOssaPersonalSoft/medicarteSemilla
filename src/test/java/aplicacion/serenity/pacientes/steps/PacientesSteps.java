@@ -51,7 +51,7 @@ public class PacientesSteps extends ScenarioSteps {
     }
 
     @Step
-    public void checkSavePaciente(ExamplesTable datos){
+    public void checkSavePaciente(){
         pacientesPages.setCheckSaveUser();
     }
 }
