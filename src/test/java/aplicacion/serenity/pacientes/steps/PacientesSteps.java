@@ -16,12 +16,32 @@ public class PacientesSteps extends ScenarioSteps {
     }
 
     @Step
-    public void crearPaciente(ExamplesTable datos){
+    public void addPaciente(ExamplesTable datos){
         pacientesPages.ingresarTipoId(datos);
         pacientesPages.ingresarIdentificacion(datos);
         pacientesPages.ingresarPrimerNombre(datos);
         pacientesPages.ingresarPrimerApellido(datos);
         pacientesPages.ingresarGenero(datos);
         pacientesPages.ingresarEstadoCivil(datos);
+        pacientesPages.setMedicoTratante(datos);
+        pacientesPages.setPrograma(datos);
+        pacientesPages.setDrNombres(datos);
+        pacientesPages.setDrParentesco(datos);
+        pacientesPages.setDrTelefono(datos);
+    }
+
+    @Step
+    public void checkPaciente(ExamplesTable datos){
+        pacientesPages.ingresarTipoId(datos);
+        pacientesPages.ingresarIdentificacion(datos);
+        pacientesPages.ingresarPrimerNombre(datos);
+        pacientesPages.ingresarPrimerApellido(datos);
+        pacientesPages.ingresarGenero(datos);
+        pacientesPages.ingresarEstadoCivil(datos);
+        pacientesPages.setMedicoTratante(datos);
+        pacientesPages.setPrograma(datos);
+        pacientesPages.setDrNombres(datos);
+        pacientesPages.setDrParentesco(datos);
+        pacientesPages.setDrTelefono(datos);
     }
 }
