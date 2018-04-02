@@ -71,16 +71,22 @@ public class PacientesPages extends PageObject {
     WebElementFacade txtRegimen;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[31]/div[2]/ngl-virtual-select/a[1]/input")
-    WebElementFacade medicoTratante;
+    WebElementFacade clickMedicoTratante;
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[32]/div[2]/ngl-virtual-select/a[2]/input")
+    WebElementFacade textMedicoTratante;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[32]/div[2]/ngl-virtual-select/a[1]/input")
-    WebElementFacade programa;
+    WebElementFacade clickPrograma;
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[32]/div[2]/ngl-virtual-select/a[2]/input")
+    WebElementFacade textPrograma;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']//div[@name='patientResponsible.ResponsibleName']")
     WebElementFacade drNombres;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[3]/div/div/div[2]/form/div[2]/div[2]/ngl-virtual-select/a[1]/input")
-    WebElementFacade drParentesco;
+    WebElementFacade clickDrParentesco;
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[3]/div/div/div[2]/form/div[2]/div[2]/ngl-virtual-select/a[2]/input")
+    WebElementFacade textDrParentesco;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']//div[@name='email']")
     WebElementFacade drTelefono;
@@ -323,36 +329,33 @@ public class PacientesPages extends PageObject {
     }
 
     public void setMedicoTratante(ExamplesTable data) {
-        medicoTratante.click();
-        medicoTratante.type(data.getRow(0).get("medico_tratante"));
-        medicoTratante.sendKeys(Keys.ENTER);
+        clickMedicoTratante.click();
+        textMedicoTratante.type(data.getRow(0).get("medico_tratante"));
+        textMedicoTratante.sendKeys(Keys.ENTER);
         waitEvent(1);
     }
 
     public void setPrograma(ExamplesTable data) {
-        programa.click();
-        programa.type(data.getRow(0).get("programa"));
-        programa.sendKeys(Keys.ENTER);
+        clickPrograma.type(data.getRow(0).get("programa"));
+        textPrograma.sendKeys(Keys.ENTER);
         waitEvent(1);
     }
 
     public void setDrNombres(ExamplesTable data) {
-        drNombres.clear();
         drNombres.type(data.getRow(0).get("dr_nombres"));
         waitEvent(1);
     }
 
-        public void setDrParentesco (ExamplesTable data){
-            drParentesco.click();
-            drParentesco.type(data.getRow(0).get("dr_parentesco"));
-            drParentesco.sendKeys(Keys.ENTER);
-            waitEvent(1);
-        }
-        public void setDrTelefono (ExamplesTable data){
-            drNombres.clear();
-            drTelefono.type(data.getRow(0).get("dr_telefono"));
-            waitEvent(1);
-        }
+    public void setDrParentesco (ExamplesTable data){
+        clickDrParentesco.type(data.getRow(0).get("dr_parentesco"));
+        textDrParentesco.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+    public void setDrTelefono (ExamplesTable data){
+        drTelefono.type(data.getRow(0).get("dr_telefono"));
+        waitEvent(1);
+    }
+
 
     public  void  setEditarTipoAfiliacion(ExamplesTable datos) {
         esperar(2);
@@ -405,6 +408,7 @@ public class PacientesPages extends PageObject {
                 Assert.assertEquals("fallo el guardado de informacion",dataMessage, messageServer);
             }
         }
+
 
 }
 
