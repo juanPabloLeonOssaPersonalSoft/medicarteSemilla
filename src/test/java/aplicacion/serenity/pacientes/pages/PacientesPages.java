@@ -163,16 +163,19 @@ public class PacientesPages extends PageObject {
     cmdRH.click();
     txtRH.type(datos.getRow(0).get("rh"));
     txtRH.sendKeys(Keys.ENTER);
+    waitEvent(2);
     }
 
     public  void  ingresarCodigoOcupacion(ExamplesTable datos){
         cmdCodigoOcupacion.click();
         txtCodigoOcupacion.type(datos.getRow(0).get("cod_ocupacion"));
         txtCodigoOcupacion.sendKeys(Keys.ENTER);
+        waitEvent(2);
     }
 
     public  void  ingresarFechaNacimiento(ExamplesTable datos){
         txtFechaNacimiento.type(datos.getRow(0).get("fecha_nacimiento"));
+        waitEvent(2);
     }
 
     public  void  ingresarEdad(ExamplesTable datos){
@@ -183,16 +186,15 @@ public class PacientesPages extends PageObject {
         cmdEscolaridad.click();
         txtEscolaridad.type(datos.getRow(0).get("escolaridad"));
         txtEscolaridad.sendKeys(Keys.ENTER);
+        waitEvent(2);
     }
 
     public  void  ingresarRegimen(ExamplesTable datos){
         cmdRegimen.click();
         txtRegimen.type(datos.getRow(0).get("regimen"));
         txtRegimen.sendKeys(Keys.ENTER);
+        waitEvent(2);
     }
-
-
-
 
     private void waitEvent(int timeInMilliseconds){
         try {
@@ -239,42 +241,6 @@ public class PacientesPages extends PageObject {
         cmbEstadoCivil.click();
         txtEstadoCivil.type(datos.getRow(0).get("estado_civil"));
         txtEstadoCivil.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setMedicoTratante(ExamplesTable data) {
-        medicoTratante.click();
-        medicoTratante.type(data.getRow(0).get("medico_tratante"));
-        medicoTratante.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setPrograma(ExamplesTable data) {
-        programa.click();
-        programa.type(data.getRow(0).get("programa"));
-        programa.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setDrNombres(ExamplesTable data) {
-        drNombres.click();
-        drNombres.type(data.getRow(0).get("dr_nombres"));
-        drNombres.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setDrParentesco(ExamplesTable data) {
-        drParentesco.click();
-        drParentesco.type(data.getRow(0).get("dr_parentesco"));
-        drParentesco.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-
-    public void setDrTelefono(ExamplesTable data) {
-        drTelefono.click();
-        drTelefono.type(data.getRow(0).get("dr_telefono"));
-        drTelefono.sendKeys(Keys.ENTER);
         waitEvent(1);
     }
 
@@ -359,6 +325,39 @@ public class PacientesPages extends PageObject {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setMedicoTratante(ExamplesTable data) {
+        medicoTratante.click();
+        medicoTratante.type(data.getRow(0).get("medico_tratante"));
+        medicoTratante.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+
+    public void setPrograma(ExamplesTable data) {
+        programa.click();
+        programa.type(data.getRow(0).get("programa"));
+        programa.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+
+    public void setDrNombres(ExamplesTable data) {
+        drNombres.click();
+        drNombres.type(data.getRow(0).get("dr_nombres"));
+        drNombres.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+    public void setDrParentesco(ExamplesTable data) {
+        drParentesco.click();
+        drParentesco.type(data.getRow(0).get("dr_parentesco"));
+        drParentesco.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+    public void setDrTelefono(ExamplesTable data) {
+        drTelefono.click();
+        drTelefono.type(data.getRow(0).get("dr_telefono"));
+        drTelefono.sendKeys(Keys.ENTER);
+        waitEvent(1);
     }
 
 }
