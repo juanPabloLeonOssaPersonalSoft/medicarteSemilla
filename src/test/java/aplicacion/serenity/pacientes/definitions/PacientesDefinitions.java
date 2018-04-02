@@ -23,7 +23,7 @@ public class PacientesDefinitions {
     @Steps
     MenuSegundoNivelSteps menuSegundoNivelSteps;
 
-    @When("ingreso las datos del nuevo usuario:$usuario")
+    @When("ingreso las datos del nuevo paciente:$paciente")
     public void crearPaciente(ExamplesTable paciente){
         menuPrincipalSteps.ingresarMenuPrincipal();
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
