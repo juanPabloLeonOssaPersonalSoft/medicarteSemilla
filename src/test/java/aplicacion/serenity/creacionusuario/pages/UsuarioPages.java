@@ -25,9 +25,6 @@ public class UsuarioPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/ng-component/div[1]/div/div[2]/form/div[5]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade textRolSelect;
 
-    @FindBy(xpath = "//*[@id=\"simContainer\"]/ng-component/div/div/div/div[2]/div[2]/button[2]")
-    WebElementFacade btnNuevoUsuario;
-
     @FindBy(xpath = "//*[@id=\"simContainer\"]/ng-component/div[1]/div/div[2]/form/div[1]/div[2]/input")
     WebElementFacade txtUsuario;
 
@@ -79,11 +76,6 @@ public class UsuarioPages extends PageObject {
     public UsuarioPages(WebDriver driver){
         super(driver);
         this.driver=driver;
-    }
-
-    public void clicNuevoUsuario() {
-        esperar(2);
-        btnNuevoUsuario.click();
     }
 
     public  void ingresarUsuario(ExamplesTable datos){

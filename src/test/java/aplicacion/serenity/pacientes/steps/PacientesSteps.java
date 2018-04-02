@@ -48,7 +48,6 @@ public class PacientesSteps extends ScenarioSteps {
 
     }
 
-    @Step
     public void addDatosResponsable(ExamplesTable datos){
         pacientesPages.setDrNombres(datos);
         pacientesPages.setDrParentesco(datos);
@@ -56,7 +55,7 @@ public class PacientesSteps extends ScenarioSteps {
     }
 
     @Step
-    public void checkSavePaciente(ExamplesTable datos){
+    public void checkSavePaciente(){
         pacientesPages.setCheckSaveUser();
     }
 }
