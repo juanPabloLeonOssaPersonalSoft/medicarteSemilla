@@ -37,15 +37,14 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setEtnia(datos);
         pacientesPages.setTxtTelefono(datos);
 
-        pacientesPages.setMedicoTratante(datos);
-        pacientesPages.setPrograma(datos);
-
         pacientesPages.ingresarReligion(datos);
         pacientesPages.ingresarMuncipioResidencia(datos);
         pacientesPages.ingresarDireccionDomicilio(datos);
         pacientesPages.ingresarSede(datos);
         pacientesPages.ingresarZona(datos);
 
+        pacientesPages.setMedicoTratante(datos);
+        pacientesPages.setPrograma(datos);
     }
 
     public void addDatosResponsable(ExamplesTable datos){
