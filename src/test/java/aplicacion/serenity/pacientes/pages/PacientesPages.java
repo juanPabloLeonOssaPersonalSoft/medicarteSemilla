@@ -43,6 +43,41 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtEstadoCivil;
 
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[9]/div[2]/ngl-virtual-select/a[1]/input")
+    WebElementFacade cmdRH;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[9]/div[2]/ngl-virtual-select/a[2]/input")
+    WebElementFacade txtRH;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[10]/div[2]/ngl-virtual-select/a[1]/input")
+    WebElementFacade cmdCodigoOcupacion;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[10]/div[2]/ngl-virtual-select/a[2]/input")
+    WebElementFacade txtCodigoOcupacion;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[11]/div[2]/p-calendar/span/div/div/div/select[1]")
+    WebElementFacade txtFechaNacimiento;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[12]/div[2]/input")
+    WebElementFacade txtEdad;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[1]/input")
+    WebElementFacade cmdEscolaridad;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[2]/input")
+    WebElementFacade txtEscolaridad;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[14]/div[2]/ngl-virtual-select/a[1]/input")
+    WebElementFacade cmdRegimen;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[14]/div[2]/ngl-virtual-select/a[2]/input")
+    WebElementFacade txtRegimen;
+
+
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[30]/div[2]/ngl-virtual-select/a[1]/input")
+    WebElementFacade modeloAtencion;
+
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[31]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade medicoTratante;
 
@@ -57,6 +92,7 @@ public class PacientesPages extends PageObject {
 
     @FindBy(xpath = "//*[@id=\'simContainer\']//div[@name='email']")
     WebElementFacade drTelefono;
+
 
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[15]/div[2]/ngl-virtual-select/a[1]")
@@ -93,6 +129,42 @@ public class PacientesPages extends PageObject {
     WebElementFacade txtTelefono;
 
     public WebDriver driver;
+
+
+    public  void  ingresarRH(ExamplesTable datos){
+    cmdRH.click();
+    txtRH.type(datos.getRow(0).get("rh"));
+    txtRH.sendKeys(Keys.ENTER);
+    }
+
+    public  void  ingresarCodigoOcupacion(ExamplesTable datos){
+        cmdCodigoOcupacion.click();
+        txtCodigoOcupacion.type(datos.getRow(0).get("cod_ocupacion"));
+        txtCodigoOcupacion.sendKeys(Keys.ENTER);
+    }
+
+    public  void  ingresarFechaNacimiento(ExamplesTable datos){
+        txtFechaNacimiento.type(datos.getRow(0).get("fecha_nacimiento"));
+    }
+
+    public  void  ingresarEdad(ExamplesTable datos){
+        Assert.assertEquals(datos.getRow(0).get("edad"), txtEdad.getValue());
+    }
+
+    public  void  ingresarEscolaridad(ExamplesTable datos){
+        cmdEscolaridad.click();
+        txtEscolaridad.type(datos.getRow(0).get("escolaridad"));
+        txtEscolaridad.sendKeys(Keys.ENTER);
+    }
+
+    public  void  ingresarRegimen(ExamplesTable datos){
+        cmdRegimen.click();
+        txtRegimen.type(datos.getRow(0).get("regimen"));
+        txtRegimen.sendKeys(Keys.ENTER);
+    }
+
+
+
 
     private void waitEvent(int timeInMilliseconds){
         try {
@@ -170,6 +242,7 @@ public class PacientesPages extends PageObject {
         waitEvent(1);
     }
 
+
     public void setDrTelefono(ExamplesTable data) {
         drTelefono.click();
         drTelefono.type(data.getRow(0).get("dr_telefono"));
@@ -224,4 +297,5 @@ public class PacientesPages extends PageObject {
             e.printStackTrace();
         }
     }
+
 }
