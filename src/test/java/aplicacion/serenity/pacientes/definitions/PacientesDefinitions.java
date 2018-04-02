@@ -36,7 +36,6 @@ public class PacientesDefinitions {
         adminPacientesSteps.nuevoFormularioPacientes();
         pacientesSteps.addPaciente(paciente);
         pacientesSteps.addDatosResponsable(paciente);
-
     }
 
     @Then("guardo el paciente")
