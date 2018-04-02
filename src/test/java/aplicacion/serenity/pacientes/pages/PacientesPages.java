@@ -289,10 +289,6 @@ public class PacientesPages extends PageObject {
         txtTelefono.typeAndEnter(datos.getRow(0).get("telefono"));
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e3beb1c4312c79834ebf82f42875ea411a83e81e
     public  void ingresarReligion(ExamplesTable datos){
         cmbReligion.click();
         txtReligion.type(datos.getRow(0).get("religion"));
@@ -354,10 +350,7 @@ public class PacientesPages extends PageObject {
         drNombres.clear();
         drNombres.type(data.getRow(0).get("dr_nombres"));
         waitEvent(1);
-<<<<<<< HEAD
 
-=======
->>>>>>> e3beb1c4312c79834ebf82f42875ea411a83e81e
     }
 
     public void setDrParentesco(ExamplesTable data) {
