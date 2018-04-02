@@ -127,13 +127,13 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[25]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade cmbReligion;
 
-    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[25]/div[2]/ngl-virtual-select/ngl-virtual-select-menu/div/ngl-virtual-scroll/div[2]/div[5]")
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[25]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtReligion;
 
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade cmbMuncipioResidencia;
 
-    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/ngl-virtual-select-menu/div/ngl-virtual-scroll/div[2]/div[2]")
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/a[2]/input]")
     WebElementFacade txtMunicipioRes;
 
     @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[27]/div[2]/input")
@@ -142,7 +142,7 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade cmbSede;
 
-    @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/ngl-virtual-select-menu/div/ngl-virtual-scroll/div[2]/div[2]")
+    @FindBy(xpath = "-//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtSede;
 
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
@@ -353,6 +353,49 @@ public class PacientesPages extends PageObject {
             drTelefono.type(data.getRow(0).get("dr_telefono"));
             waitEvent(1);
         }
+
+    public  void  setEditarTipoAfiliacion(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("tipo_afiliacion")!=null){
+            setTipoAfiliacion(datos);
+        }
+    }
+
+    public  void  setEditarEmpresa(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("empresa")!=null){
+            setEmpresa(datos);
+        }
+    }
+
+    public  void  setEditarIps(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("ips")!=null){
+            setIps(datos);
+        }
+    }
+
+    public  void  setEditarGrupoPoblacional(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("grupo_poblacional")!=null){
+            setGrupoPoblacional(datos);
+        }
+    }
+
+
+    public  void  setEditarEtnia(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("etnia")!=null){
+            setEtnia(datos);
+        }
+    }
+
+    public  void  setEditarTelefono(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("telefono")!=null){
+            setTxtTelefono(datos);
+        }
+    }
 
         public void setCheckSaveUser () {
             esperar(2);
