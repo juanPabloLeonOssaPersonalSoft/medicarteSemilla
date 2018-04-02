@@ -15,5 +15,5 @@ Scenario: Editar datos del paciente
 GivenStories: stories/visoraplicaciones/serenitytest/login.story
 When ingreso las datos a editar del paciente:
 |tipo_id|id|primer_nombre|primer_apellido|genero|estado_civil|rh|cod_ocupacion|fecha_nacimiento|edad|escolaridad|regimen|tipo_afiliacion|empresa|ips|grupo_poblacional|etnia|telefono|religion|municipio_residencia|direccion_domicilio|sede|zona|medico_tratante|programa|dr_nombres|dr_parentesco|dr_telefono|
-|CC|1035434045|Sancho|Panza|Masculino|Sin Dato|A+|Abogado|02/04/2018|0 Años, 0 meses y 0 dîas|Ninguno|Subsidiado||||||||||||Jaime Alberto Gonzalez|Osteoporosis|Test Test|Tío(A)|3165328176|
+|CC|1035434045|Sancho|Panza|Masculino|Sin Dato|A+|Abogado|02/04/2018|0 Años, 0 meses y 0 dîas|Ninguno|Subsidiado||||||||||||||Test Name||3005328176|
 Then verificar

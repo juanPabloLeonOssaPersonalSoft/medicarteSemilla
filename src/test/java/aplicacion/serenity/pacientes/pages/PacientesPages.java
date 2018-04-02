@@ -156,6 +156,9 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
     WebElementFacade txtZona;
 
+    @FindBy(xpath = "//*[@id=\'toast-container\']/div[1]/div[1]/div[2]/div")
+    WebElementFacade tooltipConfirmSave;
+
     public WebDriver driver;
 
 
@@ -247,43 +250,6 @@ public class PacientesPages extends PageObject {
         waitEvent(1);
     }
 
-    public void setMedicoTratante(ExamplesTable data) {
-        medicoTratante.click();
-        medicoTratante.type(data.getRow(0).get("medico_tratante"));
-        medicoTratante.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setPrograma(ExamplesTable data) {
-        programa.click();
-        programa.type(data.getRow(0).get("programa"));
-        programa.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setDrNombres(ExamplesTable data) {
-        drNombres.click();
-        drNombres.type(data.getRow(0).get("dr_nombres"));
-        drNombres.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setDrParentesco(ExamplesTable data) {
-        drParentesco.click();
-        drParentesco.type(data.getRow(0).get("dr_parentesco"));
-        drParentesco.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-
-    public void setDrTelefono(ExamplesTable data) {
-        drTelefono.click();
-        drTelefono.type(data.getRow(0).get("dr_telefono"));
-        drTelefono.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-
     public void setTipoAfiliacion(ExamplesTable datos){
         waitEvent(2);
         TipoAfiliacion.click();
@@ -323,8 +289,7 @@ public class PacientesPages extends PageObject {
         txtTelefono.typeAndEnter(datos.getRow(0).get("telefono"));
     }
 
-<<<<<<< HEAD
-=======
+
     public  void ingresarReligion(ExamplesTable datos){
         cmbReligion.click();
         txtReligion.type(datos.getRow(0).get("religion"));
@@ -383,10 +348,33 @@ public class PacientesPages extends PageObject {
     }
 
     public void setDrNombres(ExamplesTable data) {
-        drNombres.click();
+        drNombres.clear();
         drNombres.type(data.getRow(0).get("dr_nombres"));
-        drNombres.sendKeys(Keys.ENTER);
         waitEvent(1);
->>>>>>> 5e1920856222597ceba46d09cf1bb495f169418a
     }
+
+    public void setDrParentesco(ExamplesTable data) {
+        drParentesco.click();
+        drParentesco.type(data.getRow(0).get("dr_parentesco"));
+        drParentesco.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+    public void setDrTelefono(ExamplesTable data) {
+        drNombres.clear();
+        drTelefono.type(data.getRow(0).get("dr_telefono"));
+        waitEvent(1);
+    }
+
+    public void setCheckSaveUser(){
+        String dataMessage = "Se almacenó la información correctamente.";
+        String messageServer = tooltipConfirmSave.getTextValue();
+
+        if(tooltipConfirmSave != null){
+            Assert.assertEquals(dataMessage, tooltipConfirmSave.getTextValue());
+        }else{
+            Assert.assertTrue("Error Element, This was not saved!", false);
+        }
+        esperar(5);
+    }
+
 }
