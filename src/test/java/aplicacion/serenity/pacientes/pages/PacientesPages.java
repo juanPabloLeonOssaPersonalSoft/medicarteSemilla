@@ -128,6 +128,34 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[20]/div[2]/input")
     WebElementFacade txtTelefono;
 
+
+    @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[25]/div[2]/ngl-virtual-select/a[1]/input")
+    WebElementFacade cmbReligion;
+
+    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[25]/div[2]/ngl-virtual-select/ngl-virtual-select-menu/div/ngl-virtual-scroll/div[2]/div[5]")
+    WebElementFacade txtReligion;
+
+    @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/a[1]/input")
+    WebElementFacade cmbMuncipioResidencia;
+
+    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/ngl-virtual-select-menu/div/ngl-virtual-scroll/div[2]/div[2]")
+    WebElementFacade txtMunicipioRes;
+
+    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[27]/div[2]/input")
+    WebElementFacade txtDireccionDomicilio;
+
+    @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/a[1]/input")
+    WebElementFacade cmbSede;
+
+    @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/ngl-virtual-select-menu/div/ngl-virtual-scroll/div[2]/div[2]")
+    WebElementFacade txtSede;
+
+    @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
+    WebElementFacade cmbZona;
+
+    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
+    WebElementFacade txtZona;
+
     public WebDriver driver;
 
 
@@ -295,5 +323,70 @@ public class PacientesPages extends PageObject {
         txtTelefono.typeAndEnter(datos.getRow(0).get("telefono"));
     }
 
+<<<<<<< HEAD
+=======
+    public  void ingresarReligion(ExamplesTable datos){
+        cmbReligion.click();
+        txtReligion.type(datos.getRow(0).get("religion"));
+        txtReligion.sendKeys(Keys.ENTER);
+        esperar(1);
+    }
+
+    public  void ingresarMuncipioResidencia(ExamplesTable datos){
+        cmbMuncipioResidencia.click();
+        txtMunicipioRes.type(datos.getRow(0).get("municipio_residencia"));
+        txtMunicipioRes.sendKeys(Keys.ENTER);
+        esperar(1);
+    }
+
+    public  void ingresarDireccionDomicilio(ExamplesTable datos){
+        esperar(2);
+        txtDireccionDomicilio.typeAndTab(datos.getRow(0).get("direccion_domicilio"));
+    }
+
+    public  void ingresarSede(ExamplesTable datos){
+        cmbSede.click();
+        txtSede.type(datos.getRow(0).get("sede"));
+        txtSede.sendKeys(Keys.ENTER);
+        esperar(1);
+    }
+
+
+    public  void ingresarZona(ExamplesTable datos){
+        cmbZona.click();
+        txtZona.type(datos.getRow(0).get("zona"));
+        txtZona.sendKeys(Keys.ENTER);
+        esperar(1);
+    }
+
+
+    private void esperar(int timeInMilliseconds){
+        try {
+            Thread.sleep(timeInMilliseconds*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setMedicoTratante(ExamplesTable data) {
+        medicoTratante.click();
+        medicoTratante.type(data.getRow(0).get("medico_tratante"));
+        medicoTratante.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+
+    public void setPrograma(ExamplesTable data) {
+        programa.click();
+        programa.type(data.getRow(0).get("programa"));
+        programa.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+
+    public void setDrNombres(ExamplesTable data) {
+        drNombres.click();
+        drNombres.type(data.getRow(0).get("dr_nombres"));
+        drNombres.sendKeys(Keys.ENTER);
+        waitEvent(1);
+>>>>>>> 5e1920856222597ceba46d09cf1bb495f169418a
     }
 }
