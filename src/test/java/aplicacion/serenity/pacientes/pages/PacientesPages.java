@@ -75,51 +75,43 @@ public class PacientesPages extends PageObject {
     }
 
     public void setTipoAfiliacion(ExamplesTable datos){
-        esperar(2);
+        waitEvent(2);
         TipoAfiliacion.click();
         txtTipoAliciacion.typeAndEnter(datos.getRow(0).get("tipo_afiliacion"));
 
     }
 
     public void setEmpresa(ExamplesTable datos){
-        esperar(2);
+        waitEvent(2);
         Empresa.click();
         txtEmpresa.typeAndEnter(datos.getRow(0).get("empresa"));
 
     }
 
     public  void setIps(ExamplesTable datos){
-        esperar(2);
+        waitEvent(2);
         Ips.click();
         txtIps.typeAndEnter(datos.getRow(0).get("ips"));
 
     }
 
     public  void setGrupoPoblacional(ExamplesTable datos){
-        esperar(2);
+        waitEvent(2);
         GrupoPoblacional.click();
         txtGrupoPoblacional.typeAndEnter(datos.getRow(0).get("grupo_poblacional"));
 
     }
 
     public  void setEtnia(ExamplesTable datos){
-        esperar(2);
+        waitEvent(2);
         Etnia.click();
         txtEtnia.typeAndEnter(datos.getRow(0).get("etnia"));
 
     }
 
     public  void setTxtTelefono(ExamplesTable datos){
-        esperar(2);
+        waitEvent(2);
         txtTelefono.typeAndEnter(datos.getRow(0).get("telefono"));
 
-    }
-
-    private void esperar(int timeInMilliseconds){
-        try {
-            Thread.sleep(timeInMilliseconds*1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }
