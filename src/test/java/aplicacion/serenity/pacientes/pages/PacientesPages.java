@@ -128,6 +128,37 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[20]/div[2]/input")
     WebElementFacade txtTelefono;
 
+
+    @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[25]/div[2]/ngl-virtual-select/a[1]/input")
+    WebElementFacade cmbReligion;
+
+    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[25]/div[2]/ngl-virtual-select/ngl-virtual-select-menu/div/ngl-virtual-scroll/div[2]/div[5]")
+    WebElementFacade txtReligion;
+
+    @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/a[1]/input")
+    WebElementFacade cmbMuncipioResidencia;
+
+    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/ngl-virtual-select-menu/div/ngl-virtual-scroll/div[2]/div[2]")
+    WebElementFacade txtMunicipioRes;
+
+    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[27]/div[2]/input")
+    WebElementFacade txtDireccionDomicilio;
+
+    @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/a[1]/input")
+    WebElementFacade cmbSede;
+
+    @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/ngl-virtual-select-menu/div/ngl-virtual-scroll/div[2]/div[2]")
+    WebElementFacade txtSede;
+
+    @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
+    WebElementFacade cmbZona;
+
+    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
+    WebElementFacade txtZona;
+
+    @FindBy(xpath = "//*[@id=\'toast-container\']/div[1]/div[1]/div[2]/div")
+    WebElementFacade tooltipConfirmSave;
+
     public WebDriver driver;
 
 
@@ -135,16 +166,19 @@ public class PacientesPages extends PageObject {
     cmdRH.click();
     txtRH.type(datos.getRow(0).get("rh"));
     txtRH.sendKeys(Keys.ENTER);
+    waitEvent(2);
     }
 
     public  void  ingresarCodigoOcupacion(ExamplesTable datos){
         cmdCodigoOcupacion.click();
         txtCodigoOcupacion.type(datos.getRow(0).get("cod_ocupacion"));
         txtCodigoOcupacion.sendKeys(Keys.ENTER);
+        waitEvent(2);
     }
 
     public  void  ingresarFechaNacimiento(ExamplesTable datos){
         txtFechaNacimiento.type(datos.getRow(0).get("fecha_nacimiento"));
+        waitEvent(2);
     }
 
     public  void  ingresarEdad(ExamplesTable datos){
@@ -155,12 +189,14 @@ public class PacientesPages extends PageObject {
         cmdEscolaridad.click();
         txtEscolaridad.type(datos.getRow(0).get("escolaridad"));
         txtEscolaridad.sendKeys(Keys.ENTER);
+        waitEvent(2);
     }
 
     public  void  ingresarRegimen(ExamplesTable datos){
         cmdRegimen.click();
         txtRegimen.type(datos.getRow(0).get("regimen"));
         txtRegimen.sendKeys(Keys.ENTER);
+        waitEvent(2);
     }
 
 
@@ -214,6 +250,92 @@ public class PacientesPages extends PageObject {
         waitEvent(1);
     }
 
+    public void setTipoAfiliacion(ExamplesTable datos){
+        waitEvent(2);
+        TipoAfiliacion.click();
+        txtTipoAliciacion.typeAndEnter(datos.getRow(0).get("tipo_afiliacion"));
+
+    }
+
+    public void setEmpresa(ExamplesTable datos){
+        waitEvent(2);
+        Empresa.click();
+        txtEmpresa.typeAndEnter(datos.getRow(0).get("empresa"));
+
+    }
+
+    public  void setIps(ExamplesTable datos){
+        waitEvent(2);
+        Ips.click();
+        txtIps.typeAndEnter(datos.getRow(0).get("ips"));
+
+    }
+
+    public  void setGrupoPoblacional(ExamplesTable datos){
+        waitEvent(2);
+        GrupoPoblacional.click();
+        txtGrupoPoblacional.typeAndEnter(datos.getRow(0).get("grupo_poblacional"));
+
+    }
+
+    public  void setEtnia(ExamplesTable datos){
+        waitEvent(2);
+        Etnia.click();
+        txtEtnia.typeAndEnter(datos.getRow(0).get("etnia"));
+    }
+
+    public  void setTxtTelefono(ExamplesTable datos){
+        waitEvent(2);
+        txtTelefono.typeAndEnter(datos.getRow(0).get("telefono"));
+    }
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> e3beb1c4312c79834ebf82f42875ea411a83e81e
+    public  void ingresarReligion(ExamplesTable datos){
+        cmbReligion.click();
+        txtReligion.type(datos.getRow(0).get("religion"));
+        txtReligion.sendKeys(Keys.ENTER);
+        esperar(1);
+    }
+
+    public  void ingresarMuncipioResidencia(ExamplesTable datos){
+        cmbMuncipioResidencia.click();
+        txtMunicipioRes.type(datos.getRow(0).get("municipio_residencia"));
+        txtMunicipioRes.sendKeys(Keys.ENTER);
+        esperar(1);
+    }
+
+    public  void ingresarDireccionDomicilio(ExamplesTable datos){
+        esperar(2);
+        txtDireccionDomicilio.typeAndTab(datos.getRow(0).get("direccion_domicilio"));
+    }
+
+    public  void ingresarSede(ExamplesTable datos){
+        cmbSede.click();
+        txtSede.type(datos.getRow(0).get("sede"));
+        txtSede.sendKeys(Keys.ENTER);
+        esperar(1);
+    }
+
+
+    public  void ingresarZona(ExamplesTable datos){
+        cmbZona.click();
+        txtZona.type(datos.getRow(0).get("zona"));
+        txtZona.sendKeys(Keys.ENTER);
+        esperar(1);
+    }
+
+
+    private void esperar(int timeInMilliseconds){
+        try {
+            Thread.sleep(timeInMilliseconds*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void setMedicoTratante(ExamplesTable data) {
         medicoTratante.click();
         medicoTratante.type(data.getRow(0).get("medico_tratante"));
@@ -229,10 +351,13 @@ public class PacientesPages extends PageObject {
     }
 
     public void setDrNombres(ExamplesTable data) {
-        drNombres.click();
+        drNombres.clear();
         drNombres.type(data.getRow(0).get("dr_nombres"));
-        drNombres.sendKeys(Keys.ENTER);
         waitEvent(1);
+<<<<<<< HEAD
+
+=======
+>>>>>>> e3beb1c4312c79834ebf82f42875ea411a83e81e
     }
 
     public void setDrParentesco(ExamplesTable data) {
@@ -241,61 +366,22 @@ public class PacientesPages extends PageObject {
         drParentesco.sendKeys(Keys.ENTER);
         waitEvent(1);
     }
-
-
     public void setDrTelefono(ExamplesTable data) {
-        drTelefono.click();
+        drNombres.clear();
         drTelefono.type(data.getRow(0).get("dr_telefono"));
-        drTelefono.sendKeys(Keys.ENTER);
         waitEvent(1);
     }
 
+    public void setCheckSaveUser(){
+        String dataMessage = "Se almacenó la información correctamente.";
+        String messageServer = tooltipConfirmSave.getTextValue();
 
-    public void setTipoAfiliacion(ExamplesTable datos){
-        esperar(2);
-        TipoAfiliacion.click();
-        txtTipoAliciacion.typeAndEnter(datos.getRow(0).get("tipo_afiliacion"));
-
-    }
-
-    public void setEmpresa(ExamplesTable datos){
-        esperar(2);
-        Empresa.click();
-        txtEmpresa.typeAndEnter(datos.getRow(0).get("empresa"));
-
-    }
-
-    public  void setIps(ExamplesTable datos){
-        esperar(2);
-        Ips.click();
-        txtIps.typeAndEnter(datos.getRow(0).get("ips"));
-
-    }
-
-    public  void setGrupoPoblacional(ExamplesTable datos){
-        esperar(2);
-        GrupoPoblacional.click();
-        txtGrupoPoblacional.typeAndEnter(datos.getRow(0).get("grupo_poblacional"));
-
-    }
-
-    public  void setEtnia(ExamplesTable datos){
-        esperar(2);
-        Etnia.click();
-        txtEtnia.typeAndEnter(datos.getRow(0).get("etnia"));
-    }
-
-    public  void setTxtTelefono(ExamplesTable datos){
-        esperar(2);
-        txtTelefono.typeAndEnter(datos.getRow(0).get("telefono"));
-    }
-
-    private void esperar(int timeInMilliseconds){
-        try {
-            Thread.sleep(timeInMilliseconds*1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if(tooltipConfirmSave != null){
+            Assert.assertEquals(dataMessage, tooltipConfirmSave.getTextValue());
+        }else{
+            Assert.assertTrue("Error Element, This was not saved!", false);
         }
+        esperar(5);
     }
 
 }
