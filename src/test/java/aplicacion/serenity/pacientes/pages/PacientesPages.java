@@ -354,6 +354,49 @@ public class PacientesPages extends PageObject {
             waitEvent(1);
         }
 
+    public  void  setEditarTipoAfiliacion(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("tipo_afiliacion")!=null){
+            setTipoAfiliacion(datos);
+        }
+    }
+
+    public  void  setEditarEmpresa(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("empresa")!=null){
+            setEmpresa(datos);
+        }
+    }
+
+    public  void  setEditarIps(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("ips")!=null){
+            setIps(datos);
+        }
+    }
+
+    public  void  setEditarGrupoPoblacional(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("grupo_poblacional")!=null){
+            setGrupoPoblacional(datos);
+        }
+    }
+
+
+    public  void  setEditarEtnia(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("etnia")!=null){
+            setEtnia(datos);
+        }
+    }
+
+    public  void  setEditarTelefono(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("telefono")!=null){
+            setTxtTelefono(datos);
+        }
+    }
+
         public void setCheckSaveUser () {
             esperar(2);
             String dataMessage = "Se almacenó la información correctamente.";
