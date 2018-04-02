@@ -135,16 +135,19 @@ public class PacientesPages extends PageObject {
     cmdRH.click();
     txtRH.type(datos.getRow(0).get("rh"));
     txtRH.sendKeys(Keys.ENTER);
+    waitEvent(2);
     }
 
     public  void  ingresarCodigoOcupacion(ExamplesTable datos){
         cmdCodigoOcupacion.click();
         txtCodigoOcupacion.type(datos.getRow(0).get("cod_ocupacion"));
         txtCodigoOcupacion.sendKeys(Keys.ENTER);
+        waitEvent(2);
     }
 
     public  void  ingresarFechaNacimiento(ExamplesTable datos){
         txtFechaNacimiento.type(datos.getRow(0).get("fecha_nacimiento"));
+        waitEvent(2);
     }
 
     public  void  ingresarEdad(ExamplesTable datos){
@@ -155,12 +158,14 @@ public class PacientesPages extends PageObject {
         cmdEscolaridad.click();
         txtEscolaridad.type(datos.getRow(0).get("escolaridad"));
         txtEscolaridad.sendKeys(Keys.ENTER);
+        waitEvent(2);
     }
 
     public  void  ingresarRegimen(ExamplesTable datos){
         cmdRegimen.click();
         txtRegimen.type(datos.getRow(0).get("regimen"));
         txtRegimen.sendKeys(Keys.ENTER);
+        waitEvent(2);
     }
 
 
