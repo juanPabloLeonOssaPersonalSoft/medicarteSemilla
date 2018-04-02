@@ -28,6 +28,7 @@ public class AdminPacientesPages extends PageObject {
     public void clicNuevoPaciente() {
         waitEvent(2);
         btnNuevoPaciente.click();
+        waitEvent(4);
     }
 
 }

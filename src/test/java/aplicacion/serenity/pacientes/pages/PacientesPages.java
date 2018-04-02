@@ -4,13 +4,8 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.jbehave.core.model.ExamplesTable;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
-import org.junit.Assert;
-import org.openqa.selenium.support.ui.Select;
-import javax.swing.*;
 import org.openqa.selenium.Keys;
 
 public class PacientesPages extends PageObject {
@@ -122,7 +117,6 @@ public class PacientesPages extends PageObject {
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[20]/div[2]/input")
     WebElementFacade txtTelefono;
-
 
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[25]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade cmbReligion;
@@ -260,14 +254,12 @@ public class PacientesPages extends PageObject {
         waitEvent(2);
         Ips.click();
         txtIps.typeAndEnter(datos.getRow(0).get("ips"));
-
     }
 
     public void setGrupoPoblacional(ExamplesTable datos) {
         waitEvent(2);
         GrupoPoblacional.click();
         txtGrupoPoblacional.typeAndEnter(datos.getRow(0).get("grupo_poblacional"));
-
     }
 
     public void setEtnia(ExamplesTable datos) {
@@ -280,7 +272,6 @@ public class PacientesPages extends PageObject {
         waitEvent(2);
         txtTelefono.typeAndEnter(datos.getRow(0).get("telefono"));
     }
-
 
     public void ingresarReligion(ExamplesTable datos) {
         cmbReligion.click();
@@ -308,14 +299,12 @@ public class PacientesPages extends PageObject {
         esperar(1);
     }
 
-
     public void ingresarZona(ExamplesTable datos) {
         cmbZona.click();
         txtZona.type(datos.getRow(0).get("zona"));
         txtZona.sendKeys(Keys.ENTER);
         esperar(1);
     }
-
 
     private void esperar(int timeInMilliseconds) {
         try {
