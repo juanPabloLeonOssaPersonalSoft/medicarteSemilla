@@ -29,15 +29,18 @@ public class PacientesDefinitions {
     AdminPacientesSteps adminPacientesSteps;
 
     @When("ingreso las datos del nuevo paciente:$paciente")
-    public void crearPaciente(ExamplesTable paciente){
+    public void crearPaciente(ExamplesTable paciente) {
         menuPrincipalSteps.ingresarMenuPrincipal();
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
         menuSegundoNivelSteps.ingresarMenuPacientes();
         adminPacientesSteps.nuevoFormularioPacientes();
         pacientesSteps.addPaciente(paciente);
+        pacientesSteps.addDatosResponsable(paciente);
+
     }
+
     @Then("guardo el paciente")
-    public void  verificarIngreso(){
+    public void verificarIngreso() {
         pacientesSteps.checkSavePaciente();
     }
 }
