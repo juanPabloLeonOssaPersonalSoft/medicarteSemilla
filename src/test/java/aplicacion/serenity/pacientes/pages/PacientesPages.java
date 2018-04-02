@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.Select;
 
 public class PacientesPages extends PageObject {
 
@@ -127,7 +128,7 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade cmbMuncipioResidencia;
 
-    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/a[2]/input]")
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtMunicipioRes;
 
     @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[27]/div[2]/input")
@@ -136,14 +137,14 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade cmbSede;
 
-    @FindBy(xpath = "-//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/a[2]/input")
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtSede;
 
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
-    WebElementFacade cmbZona;
+    WebElementFacade SelZona;
 
-    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
-    WebElementFacade txtZona;
+ //   @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
+  //  WebElementFacade txtZona;
 
     @FindBy(xpath = "//*[@id=\'toast-container\']/div[1]/div[1]/div[2]/div")
     WebElementFacade tooltipConfirmSave;
@@ -300,10 +301,10 @@ public class PacientesPages extends PageObject {
     }
 
     public void ingresarZona(ExamplesTable datos) {
-        cmbZona.click();
-        txtZona.type(datos.getRow(0).get("zona"));
-        txtZona.sendKeys(Keys.ENTER);
-        esperar(1);
+        waitEvent(2);
+        String Zona=datos.getRow(0).get("zona");
+        Select dropdown = new Select(SelZona);
+        dropdown.selectByVisibleText(Zona);
     }
 
     private void esperar(int timeInMilliseconds) {
