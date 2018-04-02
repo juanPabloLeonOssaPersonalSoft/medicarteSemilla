@@ -29,7 +29,7 @@ public class PacientesDefinitions {
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
         menuSegundoNivelSteps.ingresarMenuPacientes();
         /*NuevoPacienteSteps.nuevoPaciente();*/
-        pacientesSteps.crearPaciente(paciente);
+        pacientesSteps.addPaciente(paciente);
     }
 }
 
