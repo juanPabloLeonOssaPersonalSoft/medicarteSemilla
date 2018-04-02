@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 public class MenuPrimerNivelPages extends PageObject {
 
     @FindBy(xpath = "//*[@id=\'simSidebar\']/ul/li[1]/a")
+
     WebElementFacade btnMenuAdministracion;
 
 
