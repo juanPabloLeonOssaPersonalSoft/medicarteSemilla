@@ -128,6 +128,9 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[20]/div[2]/input")
     WebElementFacade txtTelefono;
 
+    @FindBy(xpath = "//*[@id=\'toast-container\']/div[1]/div[1]/div[2]/div")
+    WebElementFacade tooltipConfirmSave;
+
     public WebDriver driver;
 
 
@@ -279,9 +282,8 @@ public class PacientesPages extends PageObject {
     }
 
     public void setDrNombres(ExamplesTable data) {
-        drNombres.click();
+        drNombres.clear();
         drNombres.type(data.getRow(0).get("dr_nombres"));
-        drNombres.sendKeys(Keys.ENTER);
         waitEvent(1);
     }
     public void setDrParentesco(ExamplesTable data) {
@@ -291,10 +293,21 @@ public class PacientesPages extends PageObject {
         waitEvent(1);
     }
     public void setDrTelefono(ExamplesTable data) {
-        drTelefono.click();
+        drNombres.clear();
         drTelefono.type(data.getRow(0).get("dr_telefono"));
-        drTelefono.sendKeys(Keys.ENTER);
         waitEvent(1);
+    }
+
+    public void setCheckSaveUser(){
+        String dataMessage = "Se almacenó la información correctamente.";
+        String messageServer = tooltipConfirmSave.getTextValue();
+
+        if(tooltipConfirmSave != null){
+            Assert.assertEquals(dataMessage, tooltipConfirmSave.getTextValue());
+        }else{
+            Assert.assertTrue("Error Element, This was not saved!", false);
+        }
+        esperar(5);
     }
 
 }
