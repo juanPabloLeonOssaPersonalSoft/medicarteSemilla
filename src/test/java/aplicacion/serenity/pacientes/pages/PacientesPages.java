@@ -156,6 +156,9 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
     WebElementFacade txtZona;
 
+    @FindBy(xpath = "//*[@id=\'toast-container\']/div[1]/div[1]/div[2]/div")
+    WebElementFacade tooltipConfirmSave;
+
     public WebDriver driver;
 
 
@@ -246,22 +249,6 @@ public class PacientesPages extends PageObject {
         txtEstadoCivil.sendKeys(Keys.ENTER);
         waitEvent(1);
     }
-
-    public void setDrParentesco(ExamplesTable data) {
-        drParentesco.click();
-        drParentesco.type(data.getRow(0).get("dr_parentesco"));
-        drParentesco.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-
-    public void setDrTelefono(ExamplesTable data) {
-        drTelefono.click();
-        drTelefono.type(data.getRow(0).get("dr_telefono"));
-        drTelefono.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
 
     public void setTipoAfiliacion(ExamplesTable datos){
         waitEvent(2);
@@ -364,13 +351,37 @@ public class PacientesPages extends PageObject {
     }
 
     public void setDrNombres(ExamplesTable data) {
-        drNombres.click();
+        drNombres.clear();
         drNombres.type(data.getRow(0).get("dr_nombres"));
-        drNombres.sendKeys(Keys.ENTER);
         waitEvent(1);
 <<<<<<< HEAD
 
 =======
 >>>>>>> e3beb1c4312c79834ebf82f42875ea411a83e81e
     }
+
+    public void setDrParentesco(ExamplesTable data) {
+        drParentesco.click();
+        drParentesco.type(data.getRow(0).get("dr_parentesco"));
+        drParentesco.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+    public void setDrTelefono(ExamplesTable data) {
+        drNombres.clear();
+        drTelefono.type(data.getRow(0).get("dr_telefono"));
+        waitEvent(1);
+    }
+
+    public void setCheckSaveUser(){
+        String dataMessage = "Se almacenó la información correctamente.";
+        String messageServer = tooltipConfirmSave.getTextValue();
+
+        if(tooltipConfirmSave != null){
+            Assert.assertEquals(dataMessage, tooltipConfirmSave.getTextValue());
+        }else{
+            Assert.assertTrue("Error Element, This was not saved!", false);
+        }
+        esperar(5);
+    }
+
 }
