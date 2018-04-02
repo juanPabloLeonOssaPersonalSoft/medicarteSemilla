@@ -50,6 +50,12 @@ public class PacientesPages extends PageObject {
     WebElementFacade txtCodigoOcupacion;
 
     @FindBy(xpath = "//*[@id=\"inputFechaNacimiento\"]")
+    WebElementFacade clickInput;
+
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
+    WebElementFacade clickDia;
+
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/ng-component/div[1]/div/div[2]/form/div[6]/div[2]/p-calendar/span/input  ")
     WebElementFacade txtFechaNacimiento;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[12]/div[2]/input")
@@ -165,6 +171,8 @@ public class PacientesPages extends PageObject {
     }
 
     public void ingresarFechaNacimiento(ExamplesTable datos) {
+        clickInput.click();
+        clickDia.click();
         txtFechaNacimiento.type(datos.getRow(0).get("fecha_nacimiento"));
         waitEvent(2);
     }
