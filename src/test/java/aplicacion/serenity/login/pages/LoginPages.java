@@ -7,7 +7,11 @@ import org.jbehave.core.model.ExamplesTable;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
+<<<<<<< HEAD
 @DefaultUrl("https://medicarte.personalsoft.net:4432")
+=======
+@DefaultUrl("https://pruebas.medicarte.co/#/login")
+>>>>>>> 1fb54d156fd53b08aeabc6260936bcd933981de7
 public class LoginPages extends PageObject {
 
     @FindBy(xpath = "/html/body/login/div[2]/div/div/div/div/form/div[1]/div[2]/input")
