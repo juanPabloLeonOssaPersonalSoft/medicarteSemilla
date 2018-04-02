@@ -247,27 +247,6 @@ public class PacientesPages extends PageObject {
         waitEvent(1);
     }
 
-    public void setMedicoTratante(ExamplesTable data) {
-        medicoTratante.click();
-        medicoTratante.type(data.getRow(0).get("medico_tratante"));
-        medicoTratante.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setPrograma(ExamplesTable data) {
-        programa.click();
-        programa.type(data.getRow(0).get("programa"));
-        programa.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setDrNombres(ExamplesTable data) {
-        drNombres.click();
-        drNombres.type(data.getRow(0).get("dr_nombres"));
-        drNombres.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
     public void setDrParentesco(ExamplesTable data) {
         drParentesco.click();
         drParentesco.type(data.getRow(0).get("dr_parentesco"));
@@ -323,8 +302,6 @@ public class PacientesPages extends PageObject {
         txtTelefono.typeAndEnter(datos.getRow(0).get("telefono"));
     }
 
-<<<<<<< HEAD
-=======
     public  void ingresarReligion(ExamplesTable datos){
         cmbReligion.click();
         txtReligion.type(datos.getRow(0).get("religion"));
@@ -387,6 +364,5 @@ public class PacientesPages extends PageObject {
         drNombres.type(data.getRow(0).get("dr_nombres"));
         drNombres.sendKeys(Keys.ENTER);
         waitEvent(1);
->>>>>>> 5e1920856222597ceba46d09cf1bb495f169418a
     }
 }
