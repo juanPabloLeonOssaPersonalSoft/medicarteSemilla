@@ -14,13 +14,6 @@ public class UsuarioSteps extends ScenarioSteps {
         super(pages);
     }
 
-
-
-    @Step
-    public void nuevoFormulario(){
-        usuarioPages.clicNuevoUsuario();
-    }
-
     @Step
     public void crearUsuario(ExamplesTable datos){
         usuarioPages.ingresarUsuario(datos);
