@@ -26,11 +26,6 @@ public class PacientesSteps   extends ScenarioSteps {
 
     @Step
     public void checkPaciente(ExamplesTable datos){
-        pacientesPages.setMedicoTratante(datos);
-        pacientesPages.setPrograma(datos);
-        pacientesPages.setDrNombres(datos);
-        pacientesPages.setDrParentesco(datos);
-        pacientesPages.setDrTelefono(datos);
     }
 
 }

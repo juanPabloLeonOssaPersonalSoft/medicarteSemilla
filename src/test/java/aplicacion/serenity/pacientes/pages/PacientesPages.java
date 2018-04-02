@@ -80,42 +80,6 @@ public class PacientesPages extends PageObject {
     }
 
 
-    public void setMedicoTratante(ExamplesTable data) {
-        medicoTratante.click();
-        medicoTratante.type(data.getRow(0).get("medico_tratante"));
-        medicoTratante.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setPrograma(ExamplesTable data) {
-        programa.click();
-        programa.type(data.getRow(0).get("programa"));
-        programa.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setDrNombres(ExamplesTable data) {
-        drNombres.click();
-        drNombres.type(data.getRow(0).get("dr_nombres"));
-        drNombres.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setDrParentesco(ExamplesTable data) {
-        drParentesco.click();
-        drParentesco.type(data.getRow(0).get("dr_parentesco"));
-        drParentesco.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-    public void setDrTelefono(ExamplesTable data) {
-        drTelefono.click();
-        drTelefono.type(data.getRow(0).get("dr_telefono"));
-        drTelefono.sendKeys(Keys.ENTER);
-        waitEvent(1);
-    }
-
-
     public void setTipoAfiliacion(ExamplesTable datos){
         esperar(2);
         TipoAfiliacion.click();
@@ -164,4 +128,38 @@ public class PacientesPages extends PageObject {
             e.printStackTrace();
         }
     }
+
+    public void setMedicoTratante(ExamplesTable data) {
+        medicoTratante.click();
+        medicoTratante.type(data.getRow(0).get("medico_tratante"));
+        medicoTratante.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+
+    public void setPrograma(ExamplesTable data) {
+        programa.click();
+        programa.type(data.getRow(0).get("programa"));
+        programa.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+
+    public void setDrNombres(ExamplesTable data) {
+        drNombres.click();
+        drNombres.type(data.getRow(0).get("dr_nombres"));
+        drNombres.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+    public void setDrParentesco(ExamplesTable data) {
+        drParentesco.click();
+        drParentesco.type(data.getRow(0).get("dr_parentesco"));
+        drParentesco.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+    public void setDrTelefono(ExamplesTable data) {
+        drTelefono.click();
+        drTelefono.type(data.getRow(0).get("dr_telefono"));
+        drTelefono.sendKeys(Keys.ENTER);
+        waitEvent(1);
+    }
+
 }
