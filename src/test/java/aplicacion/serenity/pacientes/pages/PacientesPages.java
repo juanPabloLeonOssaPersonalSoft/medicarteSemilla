@@ -49,7 +49,13 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[10]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtCodigoOcupacion;
 
-    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[11]/div[2]/p-calendar/span/div/div/div/select[1]")
+    @FindBy(xpath = "//*[@id=\'inputFechaNacimiento\']")
+    WebElementFacade clickInput;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
+    WebElementFacade clickDia;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/ng-component/div[1]/div/div[2]/form/div[6]/div[2]/p-calendar/span/input")
     WebElementFacade txtFechaNacimiento;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[12]/div[2]/input")
@@ -118,13 +124,13 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[25]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade cmbReligion;
 
-    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[25]/div[2]/ngl-virtual-select/ngl-virtual-select-menu/div/ngl-virtual-scroll/div[2]/div[5]")
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[25]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtReligion;
 
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade cmbMuncipioResidencia;
 
-    @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/ngl-virtual-select-menu/div/ngl-virtual-scroll/div[2]/div[2]")
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[26]/div[2]/ngl-virtual-select/a[2]/input]")
     WebElementFacade txtMunicipioRes;
 
     @FindBy(xpath = " //*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[27]/div[2]/input")
@@ -133,7 +139,7 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade cmbSede;
 
-    @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/ngl-virtual-select-menu/div/ngl-virtual-scroll/div[2]/div[2]")
+    @FindBy(xpath = "-//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[28]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtSede;
 
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
@@ -165,6 +171,8 @@ public class PacientesPages extends PageObject {
     }
 
     public void ingresarFechaNacimiento(ExamplesTable datos) {
+        clickInput.click();
+        clickDia.click();
         txtFechaNacimiento.type(datos.getRow(0).get("fecha_nacimiento"));
         waitEvent(2);
     }
