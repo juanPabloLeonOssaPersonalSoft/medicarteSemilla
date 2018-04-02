@@ -15,4 +15,24 @@ import org.openqa.selenium.Keys;
 
 
 public class PacientesPages extends PageObject {
+
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[1]/div[2]/ngl-virtual-select/a[1]/span")
+    WebElementFacade cmbTipoId;
+
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[2]/div[2]/input")
+    WebElementFacade txtIdentificacion;
+
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[3]/div[2]/input")
+    WebElementFacade txtPrimerNombre;
+
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[5]/div[2]/input")
+    WebElementFacade txtPrimerApellido;
+
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[7]/div[2]/ngl-virtual-select/a[1]/span")
+    WebElementFacade cmbGenero;
+
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/ngl-virtual-select/a[1]/span")
+    WebElementFacade cmbEstadoCivil;
+
+
 }
