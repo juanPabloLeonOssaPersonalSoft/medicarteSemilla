@@ -40,5 +40,21 @@ public class PacientesDefinitions {
     public void verificarIngreso() {
         pacientesSteps.checkSavePaciente();
     }
+
+    @When("ingreso las datos a editar del paciente:$paciente")
+    public void editarPaciente(ExamplesTable paciente) {
+        menuPrincipalSteps.ingresarMenuPrincipal();
+        menuPrimerNivelSteps.ingresarMenuPrimerNivel();
+        menuSegundoNivelSteps.ingresarMenuPacientes();
+        adminPacientesSteps.nuevoFormularioPacientes();
+        //falta
+        pacientesSteps.EditPaciente(paciente);
+        pacientesSteps.EditDatosResponsable(paciente);
+    }
+
+    @Then("verificar")
+    public void verificarEdicion() {
+        //falta
+    }
 }
 

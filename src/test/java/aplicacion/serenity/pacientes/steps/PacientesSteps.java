@@ -41,13 +41,28 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setMedicoTratante(datos);
         pacientesPages.setPrograma(datos);
     }
-
+    @Step
     public void addDatosResponsable(ExamplesTable data){
         pacientesPages.setDrNombres(data);
         pacientesPages.setDrParentesco(data);
         pacientesPages.setDrTelefono(data);
     }
 
+    @Step
+    public void EditPaciente(ExamplesTable datos){
+
+        pacientesPages.setEditarTipoAfiliacion(datos);
+        pacientesPages.setEditarEmpresa(datos);
+        pacientesPages.setEditarIps(datos);
+        pacientesPages.setEditarGrupoPoblacional(datos);
+        pacientesPages.setEditarEtnia(datos);
+        pacientesPages.setEditarTelefono(datos);
+
+    }
+    @Step
+    public void EditDatosResponsable(ExamplesTable data){
+
+    }
     @Step
     public void checkSavePaciente(){
         pacientesPages.setCheckSaveUser();
