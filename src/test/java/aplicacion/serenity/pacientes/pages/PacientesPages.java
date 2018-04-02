@@ -50,7 +50,13 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[10]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtCodigoOcupacion;
 
-    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[11]/div[2]/p-calendar/span/div/div/div/select[1]")
+    @FindBy(xpath = "//*[@id=\'inputFechaNacimiento\']")
+    WebElementFacade clickInput;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
+    WebElementFacade clickDia;
+
+    @FindBy(xpath = "//*[@id=\'simContainer\']/ng-component/div[1]/div/div[2]/form/div[6]/div[2]/p-calendar/span/input")
     WebElementFacade txtFechaNacimiento;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[12]/div[2]/input")
@@ -166,6 +172,8 @@ public class PacientesPages extends PageObject {
     }
 
     public void ingresarFechaNacimiento(ExamplesTable datos) {
+        clickInput.click();
+        clickDia.click();
         txtFechaNacimiento.type(datos.getRow(0).get("fecha_nacimiento"));
         waitEvent(2);
     }
@@ -346,6 +354,49 @@ public class PacientesPages extends PageObject {
             drTelefono.type(data.getRow(0).get("dr_telefono"));
             waitEvent(1);
         }
+
+    public  void  setEditarTipoAfiliacion(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("tipo_afiliacion")!=null){
+            setTipoAfiliacion(datos);
+        }
+    }
+
+    public  void  setEditarEmpresa(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("empresa")!=null){
+            setEmpresa(datos);
+        }
+    }
+
+    public  void  setEditarIps(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("ips")!=null){
+            setIps(datos);
+        }
+    }
+
+    public  void  setEditarGrupoPoblacional(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("grupo_poblacional")!=null){
+            setGrupoPoblacional(datos);
+        }
+    }
+
+
+    public  void  setEditarEtnia(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("etnia")!=null){
+            setEtnia(datos);
+        }
+    }
+
+    public  void  setEditarTelefono(ExamplesTable datos) {
+        esperar(2);
+        if(datos.getRow(0).get("telefono")!=null){
+            setTxtTelefono(datos);
+        }
+    }
 
         public void setCheckSaveUser () {
             esperar(2);
