@@ -1,5 +1,6 @@
 package aplicacion.serenity.pacientes.steps;
 
+import aplicacion.serenity.creacionusuario.pages.UsuarioPages;
 import net.thucydides.core.steps.ScenarioSteps;
 import aplicacion.serenity.pacientes.pages.PacientesPages;
 import net.thucydides.core.annotations.Step;
@@ -7,8 +8,7 @@ import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.jbehave.core.model.ExamplesTable;
 
-public class PacientesSteps   extends ScenarioSteps {
-
+public class PacientesSteps extends ScenarioSteps {
     PacientesPages pacientesPages=new PacientesPages(getDriver());
 
     public PacientesSteps(Pages pages){
@@ -17,7 +17,18 @@ public class PacientesSteps   extends ScenarioSteps {
 
     @Step
     public void addPaciente(ExamplesTable datos){
-        pacientesPages.setMedicoTratante(datos);
+        pacientesPages.ingresarTipoId(datos);
+        pacientesPages.ingresarIdentificacion(datos);
+        pacientesPages.ingresarPrimerNombre(datos);
+        pacientesPages.ingresarPrimerApellido(datos);
+        pacientesPages.ingresarGenero(datos);
+        pacientesPages.ingresarEstadoCivil(datos);
+        pacientesPages.ingresarRH(datos);
+        pacientesPages.ingresarCodigoOcupacion(datos);
+        pacientesPages.ingresarFechaNacimiento(datos);
+        pacientesPages.ingresarEdad(datos);
+        pacientesPages.ingresarEscolaridad(datos);
+        pacientesPages.ingresarRegimen(datos);
         pacientesPages.setPrograma(datos);
         pacientesPages.setDrNombres(datos);
         pacientesPages.setDrParentesco(datos);
@@ -26,11 +37,16 @@ public class PacientesSteps   extends ScenarioSteps {
 
     @Step
     public void checkPaciente(ExamplesTable datos){
+        pacientesPages.ingresarTipoId(datos);
+        pacientesPages.ingresarIdentificacion(datos);
+        pacientesPages.ingresarPrimerNombre(datos);
+        pacientesPages.ingresarPrimerApellido(datos);
+        pacientesPages.ingresarGenero(datos);
+        pacientesPages.ingresarEstadoCivil(datos);
         pacientesPages.setMedicoTratante(datos);
         pacientesPages.setPrograma(datos);
         pacientesPages.setDrNombres(datos);
         pacientesPages.setDrParentesco(datos);
         pacientesPages.setDrTelefono(datos);
     }
-
 }

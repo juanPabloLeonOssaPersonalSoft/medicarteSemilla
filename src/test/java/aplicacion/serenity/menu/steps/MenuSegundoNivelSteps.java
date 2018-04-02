@@ -19,4 +19,9 @@ public class MenuSegundoNivelSteps extends ScenarioSteps {
     public void ingresarMenuSegundoNivel() {
         menuSegundoNivelPages.clicMenuUsuarios();
     }
+
+    @Step
+    public void ingresarMenuPacientes() {
+        menuSegundoNivelPages.clicMenuPacientes();
+    }
 }

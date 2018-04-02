@@ -10,6 +10,9 @@ public class MenuSegundoNivelPages extends PageObject {
     @FindBy(xpath = "//*[@id='simSidebar']//div[@title='Usuarios']")
     WebElementFacade btnMenuUsuarios;
 
+    @FindBy(xpath = "//*[@id='simSidebar']//div[@title='Pacientes']")
+    WebElementFacade btnMenuPacientes;
+
     public WebDriver driver;
 
     public MenuSegundoNivelPages(WebDriver driver){
@@ -20,6 +23,11 @@ public class MenuSegundoNivelPages extends PageObject {
     public void clicMenuUsuarios(){
         esperar(4);
         btnMenuUsuarios.click();
+    }
+
+    public void clicMenuPacientes(){
+        esperar(4);
+        btnMenuPacientes.click();
     }
 
     private void esperar(int timeInMilliseconds){
