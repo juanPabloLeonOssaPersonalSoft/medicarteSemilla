@@ -15,13 +15,13 @@ public class PacientesSteps extends ScenarioSteps {
 
     @Step
     public void addPaciente(ExamplesTable datos){
-        pacientesPages.ingresarTipoId(datos);
+       pacientesPages.ingresarTipoId(datos);
         pacientesPages.ingresarIdentificacion(datos);
         pacientesPages.ingresarPrimerNombre(datos);
         pacientesPages.ingresarPrimerApellido(datos);
         pacientesPages.ingresarGenero(datos);
-        pacientesPages.ingresarFechaNacimiento(datos);
-        pacientesPages.ingresarEdad(datos);
+        pacientesPages.ingresarFechaNacimiento();
+        pacientesPages.setClicCerrarTooltip();
         pacientesPages.ingresarEstadoCivil(datos);
         pacientesPages.ingresarRH(datos);
         pacientesPages.ingresarCodigoOcupacion(datos);
