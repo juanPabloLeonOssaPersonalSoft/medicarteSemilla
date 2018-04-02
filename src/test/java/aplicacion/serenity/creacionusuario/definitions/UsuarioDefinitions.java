@@ -4,6 +4,7 @@ import aplicacion.serenity.creacionusuario.steps.UsuarioSteps;
 import aplicacion.serenity.menu.steps.MenuPrimerNivelSteps;
 import aplicacion.serenity.menu.steps.MenuPrincipalSteps;
 import aplicacion.serenity.menu.steps.MenuSegundoNivelSteps;
+import aplicacion.serenity.adminusuarios.steps.AdminUsuariosSteps;
 import net.thucydides.core.annotations.Steps;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
@@ -23,12 +24,15 @@ public class UsuarioDefinitions {
     @Steps
     MenuSegundoNivelSteps menuSegundoNivelSteps;
 
+    @Steps
+    AdminUsuariosSteps adminSteps;
+
     @When("ingreso las datos del nuevo usuario:$usuario")
     public void crearUsuarioNoProfesional(ExamplesTable usuario){
         menuPrincipalSteps.ingresarMenuPrincipal();
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
         menuSegundoNivelSteps.ingresarMenuSegundoNivel();
-        usuarioSteps.nuevoFormulario();
+        adminSteps.nuevoFormulario();
         usuarioSteps.crearUsuario(usuario);
         usuarioSteps.verificarErrorPage();
     }

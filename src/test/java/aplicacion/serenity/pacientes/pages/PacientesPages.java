@@ -73,8 +73,6 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[14]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtRegimen;
 
-
-
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[30]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade modeloAtencion;
 
@@ -92,8 +90,6 @@ public class PacientesPages extends PageObject {
 
     @FindBy(xpath = "//*[@id=\'simContainer\']//div[@name='email']")
     WebElementFacade drTelefono;
-
-
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[15]/div[2]/ngl-virtual-select/a[1]")
     WebElementFacade TipoAfiliacion;
@@ -130,7 +126,6 @@ public class PacientesPages extends PageObject {
 
     public WebDriver driver;
 
-
     public  void  ingresarRH(ExamplesTable datos){
     cmdRH.click();
     txtRH.type(datos.getRow(0).get("rh"));
@@ -162,9 +157,6 @@ public class PacientesPages extends PageObject {
         txtRegimen.type(datos.getRow(0).get("regimen"));
         txtRegimen.sendKeys(Keys.ENTER);
     }
-
-
-
 
     private void waitEvent(int timeInMilliseconds){
         try {
