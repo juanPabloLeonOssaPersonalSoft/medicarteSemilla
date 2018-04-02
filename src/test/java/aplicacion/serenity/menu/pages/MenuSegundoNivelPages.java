@@ -28,6 +28,7 @@ public class MenuSegundoNivelPages extends PageObject {
     public void clicMenuPacientes(){
         esperar(4);
         btnMenuPacientes.click();
+        esperar(4);
     }
 
     private void esperar(int timeInMilliseconds){

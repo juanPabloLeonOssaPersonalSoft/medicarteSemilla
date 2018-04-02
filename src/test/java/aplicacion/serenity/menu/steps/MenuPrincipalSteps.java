@@ -4,7 +4,6 @@ import aplicacion.serenity.menu.pages.MenuPrincipalPages;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.jbehave.core.model.ExamplesTable;
 
 public class MenuPrincipalSteps extends ScenarioSteps {
 

@@ -1,7 +1,5 @@
 package aplicacion.serenity.pacientes.definitions;
 
-import aplicacion.serenity.adminpacientes.pages.AdminPacientesPages;
-import aplicacion.serenity.creacionusuario.steps.UsuarioSteps;
 import aplicacion.serenity.pacientes.steps.PacientesSteps;
 import aplicacion.serenity.menu.steps.MenuPrimerNivelSteps;
 import aplicacion.serenity.menu.steps.MenuPrincipalSteps;
@@ -29,7 +27,7 @@ public class PacientesDefinitions {
     AdminPacientesSteps adminPacientesSteps;
 
     @When("ingreso las datos del nuevo paciente:$paciente")
-    public void crearPaciente(ExamplesTable paciente) {
+    public void addPaciente(ExamplesTable paciente) {
         menuPrincipalSteps.ingresarMenuPrincipal();
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
         menuSegundoNivelSteps.ingresarMenuPacientes();
