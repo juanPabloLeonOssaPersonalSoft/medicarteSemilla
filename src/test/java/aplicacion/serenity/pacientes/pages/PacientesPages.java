@@ -375,6 +375,37 @@ public class PacientesPages extends PageObject {
         }
     }
 
+    public  void  setEditarReligion(ExamplesTable datos) {
+        if(datos.getRow(0).get("religion")!=null){
+            ingresarReligion(datos);
+        }
+    }
+
+    public  void  setEditarMunicipioRes(ExamplesTable datos) {
+        if(datos.getRow(0).get("municipio_residencia")!=null){
+            ingresarMuncipioResidencia(datos);
+        }
+    }
+
+    public  void  setEditarDireccion(ExamplesTable datos) {
+        if(datos.getRow(0).get("direccion_domicilio")!=null){
+            ingresarDireccionDomicilio(datos);
+        }
+    }
+
+    public  void  setEditarSede(ExamplesTable datos) {
+        if(datos.getRow(0).get("sede")!=null){
+            ingresarSede(datos);
+        }
+    }
+
+    public  void  setEditarZona(ExamplesTable datos) {
+        if(datos.getRow(0).get("zona")!=null){
+            ingresarZona(datos);
+        }
+
+    }
+
     public void guardarPaciente() {
         btnGuardarPaciente.click();
     }
