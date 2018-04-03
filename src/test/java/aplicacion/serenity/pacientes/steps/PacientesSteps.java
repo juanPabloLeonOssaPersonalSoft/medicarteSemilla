@@ -21,10 +21,10 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.ingresarPrimerApellido(datos);
         pacientesPages.ingresarGenero(datos);
         pacientesPages.ingresarFechaNacimiento();
+        pacientesPages.setClicCerrarTooltip();
         pacientesPages.ingresarEstadoCivil(datos);
         pacientesPages.ingresarRH(datos);
         pacientesPages.ingresarCodigoOcupacion(datos);
-        pacientesPages.ingresarFechaNacimiento();
         pacientesPages.ingresarEscolaridad(datos);
         pacientesPages.ingresarRegimen(datos);
         pacientesPages.setTipoAfiliacion(datos);
@@ -47,6 +47,7 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setDrNombres(data);
         pacientesPages.setDrParentesco(data);
         pacientesPages.setDrTelefono(data);
+        pacientesPages.guardarPaciente();
     }
 
     @Step
