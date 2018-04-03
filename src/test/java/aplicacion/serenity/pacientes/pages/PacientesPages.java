@@ -53,7 +53,7 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[12]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtCodigoOcupacion;
 
-    @FindBy(xpath = "//*[@id=\"inputFechaNacimiento\"]")
+    @FindBy(xpath = "//*[@id=\'inputFechaNacimiento\']]")
     WebElementFacade clickInput;
 
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
@@ -319,8 +319,27 @@ public class PacientesPages extends PageObject {
         textDrParentesco.type(data.getRow(0).get("dr_parentesco"));
         textDrParentesco.sendKeys(Keys.ENTER);
     }
+
     public void setDrTelefono (ExamplesTable data){
         drTelefono.type(data.getRow(0).get("dr_telefono"));
+    }
+
+    public  void  setEditarPrimerNombre(ExamplesTable datos) {
+        if(datos.getRow(0).get("primer_nombre")!=null){
+            ingresarPrimerNombre(datos);
+        }
+    }
+
+    public  void  setEditarPrimerApellido(ExamplesTable datos) {
+        if(datos.getRow(0).get("primer_apellido")!=null){
+            ingresarPrimerApellido(datos);
+        }
+    }
+
+    public  void  setEditarGenero(ExamplesTable datos) {
+        if(datos.getRow(0).get("genero")!=null){
+            ingresarGenero(datos);
+        }
     }
 
     public  void  setEditarTipoAfiliacion(ExamplesTable datos) {
@@ -359,6 +378,7 @@ public class PacientesPages extends PageObject {
         }
     }
 
+
     public  void  setEditarFechaNacimiento() {
         clickInput.click();
         clickDia.click();
@@ -389,8 +409,81 @@ public class PacientesPages extends PageObject {
     }
 
     public  void  setEditarRegimen(ExamplesTable datos) {
-        if(datos.getRow(0).get("regimen")!=null){
+        if (datos.getRow(0).get("regimen") != null) {
             ingresarRegimen(datos);
+        }
+    }
+
+    public  void  setEditarReligion(ExamplesTable datos) {
+        if(datos.getRow(0).get("religion")!=null){
+            ingresarReligion(datos);
+        }
+    }
+
+    public  void  setEditarMunicipioRes(ExamplesTable datos) {
+        if(datos.getRow(0).get("municipio_residencia")!=null){
+            ingresarMuncipioResidencia(datos);
+        }
+    }
+
+    public  void  setEditarDireccion(ExamplesTable datos) {
+        if(datos.getRow(0).get("direccion_domicilio")!=null){
+            ingresarDireccionDomicilio(datos);
+        }
+    }
+
+    public  void  setEditarSede(ExamplesTable datos) {
+        if(datos.getRow(0).get("sede")!=null){
+            ingresarSede(datos);
+        }
+    }
+
+    public  void  setEditarZona(ExamplesTable datos) {
+        if(datos.getRow(0).get("zona")!=null){
+            ingresarZona(datos);
+        }
+    }
+
+
+
+
+    public void setEditMedicoTratante(ExamplesTable data) {
+        String medicoEntrante = "medico_tratante";
+        if(data.getRow(0).get(medicoEntrante)!=null){
+            clickMedicoTratante.click();
+            textMedicoTratante.type(data.getRow(0).get(medicoEntrante));
+        }
+    }
+
+    public void setEditPrograma(ExamplesTable data) {
+        String programa = "programa";
+        if(data.getRow(0).get(programa)!=null) {
+            clickPrograma.click();
+            textPrograma.type(data.getRow(0).get(programa));
+            textPrograma.sendKeys(Keys.ENTER);
+        }
+    }
+
+    public void setEditDrNombres(ExamplesTable data) {
+        String nombres = "dr_nombres";
+        if(data.getRow(0).get(nombres)!=null) {
+            drNombres.type(data.getRow(0).get(nombres));
+        }
+    }
+
+    public void setEditDrParentesco (ExamplesTable data){
+        String parentesco = "dr_parentesco";
+        if(data.getRow(0).get(parentesco)!=null) {
+            clickDrParentesco.click();
+            textDrParentesco.type(data.getRow(0).get(parentesco));
+            textDrParentesco.sendKeys(Keys.ENTER);
+        }
+    }
+
+    public void setEditDrTelefono (ExamplesTable data){
+        String telefono = "dr_telefono";
+        if(data.getRow(0).get(telefono)!=null) {
+            drTelefono.type(data.getRow(0).get(telefono));
         }
     }
 
