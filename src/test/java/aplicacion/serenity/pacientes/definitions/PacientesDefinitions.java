@@ -47,7 +47,7 @@ public class PacientesDefinitions {
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
         menuSegundoNivelSteps.ingresarMenuPacientes();
         adminPacientesSteps.nuevoFormularioPacientes();
-        //falta
+        pacientesSteps.ingresarIdentificacion(paciente);
         pacientesSteps.EditPaciente(paciente);
         pacientesSteps.EditDatosResponsable(paciente);
     }

@@ -70,4 +70,8 @@ public class PacientesSteps extends ScenarioSteps {
     public void checkSavePaciente(){
         pacientesPages.setCheckSaveUser();
     }
+
+    public void ingresarIdentificacion(ExamplesTable paciente) {
+        pacientesPages.ingresarIdentificacion(paciente);
+    }
 }
