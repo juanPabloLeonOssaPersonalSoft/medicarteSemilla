@@ -53,11 +53,14 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[12]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtCodigoOcupacion;
 
-    @FindBy(xpath = "//*[@id=\"inputFechaNacimiento\"]")
+    @FindBy(xpath = "//*[@id=\'inputFechaNacimiento\']")
     WebElementFacade clickInput;
 
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
     WebElementFacade clickDia;
+
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[2]/a")
+    WebElementFacade clickDiaEdicion;
 
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[1]/span")
     WebElementFacade cmdEscolaridad;
@@ -155,8 +158,17 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[4]/button[1]")
     WebElementFacade btnGuardarPaciente;
 
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[5]/button[1]")
+    WebElementFacade btnEditarPaciente;
+
     @FindBy(xpath = "//*[@id=\'toast-container\']/div[1]/div[1]/div[2]/div")
     WebElementFacade tooltipConfirmSave;
+
+    @FindBy(xpath = "//*[@id=\"modal-medico-tratante\"]/div/div/div[1]/button/span")
+    WebElementFacade clicCerrarVentana;
+
+    @FindBy(xpath = "//*[@id=\"inputFechaNacimiento\"]")
+    WebElementFacade txtFechaNacimiento;
 
     public WebDriver driver;
 
@@ -186,9 +198,12 @@ public class PacientesPages extends PageObject {
     }
 
     public void ingresarFechaNacimiento() {
-        clickInput.click();
-        clickDia.click();
+        waitEvent(2);
+       clickInput.click();
+       clickDia.click();
+       waitEvent(2);
     }
+
 
    public void ingresarEscolaridad(ExamplesTable datos) {
         cmdEscolaridad.click();
@@ -205,6 +220,12 @@ public class PacientesPages extends PageObject {
     public void setClicCerrarTooltip(){
         clicCerrarTooltip.click();
     }
+
+    public void setClicCerrarVentana(){
+        clicCerrarVentana.click();
+        waitEvent(1);
+    }
+
 
 
     public void ingresarTipoId(ExamplesTable datos) {
@@ -232,6 +253,7 @@ public class PacientesPages extends PageObject {
         txtGenero.type(datos.getRow(0).get("genero"));
         txtGenero.sendKeys(Keys.ENTER);
     }
+
 
    public void ingresarEstadoCivil(ExamplesTable datos) {
         cmbEstadoCivil.click();
@@ -317,8 +339,28 @@ public class PacientesPages extends PageObject {
         textDrParentesco.type(data.getRow(0).get("dr_parentesco"));
         textDrParentesco.sendKeys(Keys.ENTER);
     }
+
     public void setDrTelefono (ExamplesTable data){
         drTelefono.type(data.getRow(0).get("dr_telefono"));
+    }
+
+    public  void  setEditarPrimerNombre(ExamplesTable datos) {
+        if(datos.getRow(0).get("primer_nombre")!=null){
+            ingresarPrimerNombre(datos);
+        }
+    }
+
+    public  void  setEditarPrimerApellido(ExamplesTable datos) {
+        if(datos.getRow(0).get("primer_apellido")!=null){
+            ingresarPrimerApellido(datos);
+        }
+    }
+
+    public  void  setEditarGenero(ExamplesTable datos) {
+        if(datos.getRow(0).get("genero")!=null){
+            ingresarGenero(datos);
+            waitEvent(3);
+        }
     }
 
     public  void  setEditarTipoAfiliacion(ExamplesTable datos) {
@@ -337,6 +379,7 @@ public class PacientesPages extends PageObject {
         if(datos.getRow(0).get("ips")!=null){
             setIps(datos);
         }
+
     }
 
     public  void  setEditarGrupoPoblacional(ExamplesTable datos) {
@@ -354,6 +397,42 @@ public class PacientesPages extends PageObject {
     public  void  setEditarTelefono(ExamplesTable datos) {
         if(datos.getRow(0).get("telefono")!=null){
             setTxtTelefono(datos);
+        }
+    }
+
+
+    public  void  setEditarFechaNacimiento(ExamplesTable datos) {
+        txtFechaNacimiento.typeAndTab(datos.getRow(0).get("fecha_nacimiento"));
+
+    }
+
+    public  void  setEditarEstadoCivil(ExamplesTable datos) {
+        if(datos.getRow(0).get("estado_civil")!=null){
+            ingresarEstadoCivil(datos);
+        }
+    }
+
+    public  void  setEditarRH(ExamplesTable datos) {
+        if(datos.getRow(0).get("rh")!=null){
+            ingresarRH(datos);
+        }
+    }
+
+    public  void  setEditarCodigoOcupacio(ExamplesTable datos) {
+        if(datos.getRow(0).get("cod_ocupacion")!=null){
+            ingresarCodigoOcupacion(datos);
+        }
+    }
+
+    public  void  setEditarEscolaridad(ExamplesTable datos) {
+        if(datos.getRow(0).get("escolaridad")!=null){
+            ingresarEscolaridad(datos);
+        }
+    }
+
+    public  void  setEditarRegimen(ExamplesTable datos) {
+        if (datos.getRow(0).get("regimen") != null) {
+            ingresarRegimen(datos);
         }
     }
 
@@ -385,11 +464,59 @@ public class PacientesPages extends PageObject {
         if(datos.getRow(0).get("zona")!=null){
             ingresarZona(datos);
         }
+    }
 
+
+
+
+    public void setEditMedicoTratante(ExamplesTable data) {
+        String medicoEntrante = "medico_tratante";
+        if(data.getRow(0).get(medicoEntrante)!=null){
+            clickMedicoTratante.click();
+            textMedicoTratante.type(data.getRow(0).get(medicoEntrante));
+        }
+    }
+
+    public void setEditPrograma(ExamplesTable data) {
+        String programa = "programa";
+        if(data.getRow(0).get(programa)!=null) {
+            clickPrograma.click();
+            textPrograma.type(data.getRow(0).get(programa));
+            textPrograma.sendKeys(Keys.ENTER);
+        }
+    }
+
+    public void setEditDrNombres(ExamplesTable data) {
+        String nombres = "dr_nombres";
+        if(data.getRow(0).get(nombres)!=null) {
+            drNombres.type(data.getRow(0).get(nombres));
+        }
+    }
+
+    public void setEditDrParentesco (ExamplesTable data){
+        String parentesco = "dr_parentesco";
+        if(data.getRow(0).get(parentesco)!=null) {
+            clickDrParentesco.click();
+            textDrParentesco.type(data.getRow(0).get(parentesco));
+            textDrParentesco.sendKeys(Keys.ENTER);
+        }
+    }
+
+    public void setEditDrTelefono (ExamplesTable data){
+        String telefono = "dr_telefono";
+        if(data.getRow(0).get(telefono)!=null) {
+            drTelefono.type(data.getRow(0).get(telefono));
+        }
     }
 
     public void guardarPaciente() {
         btnGuardarPaciente.click();
+        waitEvent(1);
+    }
+
+    public void editarPaciente() {
+        btnEditarPaciente.click();
+        waitEvent(5);
     }
 
         public void setCheckSaveUser () {

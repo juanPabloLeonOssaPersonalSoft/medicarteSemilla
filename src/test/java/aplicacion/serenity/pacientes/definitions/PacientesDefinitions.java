@@ -34,6 +34,7 @@ public class PacientesDefinitions {
         adminPacientesSteps.nuevoFormularioPacientes();
         pacientesSteps.addPaciente(paciente);
         pacientesSteps.addDatosResponsable(paciente);
+        pacientesSteps.savePaciente();
     }
 
     @Then("guardo el paciente")
@@ -42,7 +43,7 @@ public class PacientesDefinitions {
     }
 
     @When("ingreso las datos a editar del paciente:$paciente")
-    public void editarPaciente(ExamplesTable paciente) {
+    public void EditPaciente(ExamplesTable paciente) {
         menuPrincipalSteps.ingresarMenuPrincipal();
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
         menuSegundoNivelSteps.ingresarMenuPacientes();
@@ -50,11 +51,12 @@ public class PacientesDefinitions {
         pacientesSteps.ingresarIdentificacion(paciente);
         pacientesSteps.EditPaciente(paciente);
         pacientesSteps.EditDatosResponsable(paciente);
+        pacientesSteps.editPaciente();
     }
 
     @Then("verificar")
     public void verificarEdicion() {
-        //falta
+        pacientesSteps.checkSavePaciente();
     }
 }
 

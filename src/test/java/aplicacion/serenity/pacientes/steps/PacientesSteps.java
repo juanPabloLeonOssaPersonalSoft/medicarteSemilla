@@ -48,33 +48,61 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setDrNombres(data);
         pacientesPages.setDrParentesco(data);
         pacientesPages.setDrTelefono(data);
-        pacientesPages.guardarPaciente();
     }
 
     @Step
     public void EditPaciente(ExamplesTable datos){
-
+        pacientesPages.setEditarPrimerNombre(datos);
+        pacientesPages.setEditarPrimerApellido(datos);
+        pacientesPages.setEditarGenero(datos);
+        pacientesPages.setEditarFechaNacimiento(datos);
+        pacientesPages.setClicCerrarTooltip();
+        pacientesPages.setEditarEstadoCivil(datos);
+        pacientesPages.setEditarRH(datos);
+        pacientesPages.setEditarCodigoOcupacio(datos);
+        pacientesPages.setEditarRegimen(datos);
         pacientesPages.setEditarTipoAfiliacion(datos);
         pacientesPages.setEditarEmpresa(datos);
         pacientesPages.setEditarIps(datos);
+        pacientesPages.setClicCerrarVentana();
         pacientesPages.setEditarGrupoPoblacional(datos);
+
         pacientesPages.setEditarEtnia(datos);
         pacientesPages.setEditarTelefono(datos);
+        pacientesPages.setClicCerrarVentana();
         pacientesPages.setEditarReligion(datos);
         pacientesPages.setEditarMunicipioRes(datos);
         pacientesPages.setEditarDireccion(datos);
         pacientesPages.setEditarSede(datos);
         pacientesPages.setEditarZona(datos);
+        pacientesPages.setEditMedicoTratante(datos);
+        pacientesPages.setEditPrograma(datos);
+        pacientesPages.setClicCerrarVentana();
     }
+
     @Step
     public void EditDatosResponsable(ExamplesTable data){
-
+        pacientesPages.setEditDrNombres(data);
+        pacientesPages.setEditDrParentesco(data);
+        pacientesPages.setEditDrTelefono(data);
     }
+
+    @Step
+    public void savePaciente(){
+        pacientesPages.guardarPaciente();
+    }
+
+    @Step
+    public void editPaciente(){
+        pacientesPages.editarPaciente();
+    }
+
     @Step
     public void checkSavePaciente(){
         pacientesPages.setCheckSaveUser();
     }
 
+    @Step
     public void ingresarIdentificacion(ExamplesTable paciente) {
         pacientesPages.ingresarIdentificacion(paciente);
     }
