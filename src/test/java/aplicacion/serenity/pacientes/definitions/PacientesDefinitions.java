@@ -26,7 +26,7 @@ public class PacientesDefinitions {
     @Steps
     AdminPacientesSteps adminPacientesSteps;
 
-    @When("ingreso las datos del nuevo paciente:$paciente")
+    /*@When("ingreso las datos del nuevo paciente:$paciente")
     public void addPaciente(ExamplesTable paciente) {
         menuPrincipalSteps.ingresarMenuPrincipal();
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
@@ -39,7 +39,7 @@ public class PacientesDefinitions {
     @Then("guardo el paciente")
     public void verificarIngreso() {
         pacientesSteps.checkSavePaciente();
-    }
+    }*/
 
     @When("ingreso las datos a editar del paciente:$paciente")
     public void editarPaciente(ExamplesTable paciente) {

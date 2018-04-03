@@ -158,6 +158,10 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'toast-container\']/div[1]/div[1]/div[2]/div")
     WebElementFacade tooltipConfirmSave;
 
+    @FindBy(xpath = "//*[@id=\"modal-medico-tratante\"]/div/div/div[1]/button/span")
+    WebElementFacade clicCerrarVentana;
+
+
     public WebDriver driver;
 
     public PacientesPages(WebDriver driver) {
@@ -205,6 +209,12 @@ public class PacientesPages extends PageObject {
     public void setClicCerrarTooltip(){
         clicCerrarTooltip.click();
     }
+
+    public void setClicCerrarVentana(){
+        clicCerrarVentana.click();
+        waitEvent(1);
+    }
+
 
 
     public void ingresarTipoId(ExamplesTable datos) {
@@ -356,6 +366,7 @@ public class PacientesPages extends PageObject {
         if(datos.getRow(0).get("ips")!=null){
             setIps(datos);
         }
+
     }
 
     public  void  setEditarGrupoPoblacional(ExamplesTable datos) {

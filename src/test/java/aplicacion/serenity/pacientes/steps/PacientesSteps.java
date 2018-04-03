@@ -61,9 +61,11 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setEditarTipoAfiliacion(datos);
         pacientesPages.setEditarEmpresa(datos);
         pacientesPages.setEditarIps(datos);
+        pacientesPages.setClicCerrarVentana();
         pacientesPages.setEditarGrupoPoblacional(datos);
         pacientesPages.setEditarEtnia(datos);
         pacientesPages.setEditarTelefono(datos);
+        pacientesPages.setClicCerrarVentana();
         pacientesPages.setEditarReligion(datos);
         pacientesPages.setEditarMunicipioRes(datos);
         pacientesPages.setEditarDireccion(datos);
