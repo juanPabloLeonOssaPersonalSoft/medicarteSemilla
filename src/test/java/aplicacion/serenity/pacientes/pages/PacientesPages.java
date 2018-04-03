@@ -34,37 +34,47 @@ public class PacientesPages extends PageObject {
 
     @FindBy(xpath = " //*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[10]/div[2]/ngl-virtual-select/a[1]/span")
     WebElementFacade cmbEstadoCivil;
+
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[10]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtEstadoCivil;
 
-   /* @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[11]/div[2]/ngl-virtual-select/a[1]/span")
+    @FindBy(xpath = "//*[@id=\"toast-container\"]/div/div[2]/button")
+    WebElementFacade clicCerrarTooltip;
+
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[11]/div[2]/ngl-virtual-select/a[1]/span")
     WebElementFacade cmdRH;
+
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[11]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtRH;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[12]/div[2]/ngl-virtual-select/a[1]/span")
     WebElementFacade cmdCodigoOcupacion;
-    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[12]/div[2]/ngl-virtual-select/a[2]/input")
-    WebElementFacade txtCodigoOcupacion;*/
 
-    @FindBy(xpath = "//*[@id=\'inputFechaNacimiento\']")
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[12]/div[2]/ngl-virtual-select/a[2]/input")
+    WebElementFacade txtCodigoOcupacion;
+
+    @FindBy(xpath = "//*[@id=\"inputFechaNacimiento\"]")
     WebElementFacade clickInput;
-    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
+
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
     WebElementFacade clickDia;
 
-   /* WebElementFacade cmdEscolaridad;
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[1]/span")
+    WebElementFacade cmdEscolaridad;
+
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtEscolaridad;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[14]/div[2]/ngl-virtual-select/a[1]/span")
     WebElementFacade cmdRegimen;
-    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[14]/div[2]/ngl-virtual-select/a[2]/input")
-    WebElementFacade txtRegimen;*/
 
-    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[31]/div[2]/ngl-virtual-select/a[1]/input")
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[14]/div[2]/ngl-virtual-select/a[2]/input")
+    WebElementFacade txtRegimen;
+
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[31]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade clickMedicoTratante;
 
-    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[32]/div[2]/ngl-virtual-select/a[2]/input")
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[31]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade textMedicoTratante;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[32]/div[2]/ngl-virtual-select/a[1]/input")
@@ -73,16 +83,16 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[32]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade textPrograma;
 
-    @FindBy(xpath = "//*[@id=\'simContainer\']//div[@name='patientResponsible.ResponsibleName']")
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[3]/div/div/div[2]/form/div[1]/div[2]/input")
     WebElementFacade drNombres;
 
-    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[3]/div/div/div[2]/form/div[2]/div[2]/ngl-virtual-select/a[1]/input")
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[3]/div/div/div[2]/form/div[2]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade clickDrParentesco;
 
-    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[3]/div/div/div[2]/form/div[2]/div[2]/ngl-virtual-select/a[2]/input")
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[3]/div/div/div[2]/form/div[2]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade textDrParentesco;
 
-    @FindBy(xpath = "//*[@id=\'simContainer\']//div[@name='email']")
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[3]/div/div/div[2]/form/div[3]/div[2]/input")
     WebElementFacade drTelefono;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[15]/div[2]/ngl-virtual-select/a[1]")
@@ -142,6 +152,9 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id='simContainer']/admin-patients/div[2]/div/div[2]/form/div[29]/div[2]/select")
     WebElementFacade SelZona;
 
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[4]/button[1]")
+    WebElementFacade btnGuardarPaciente;
+
     @FindBy(xpath = "//*[@id=\'toast-container\']/div[1]/div[1]/div[2]/div")
     WebElementFacade tooltipConfirmSave;
 
@@ -160,7 +173,7 @@ public class PacientesPages extends PageObject {
         }
     }
 
-   /* public void ingresarRH(ExamplesTable datos) {
+   public void ingresarRH(ExamplesTable datos) {
         cmdRH.click();
         txtRH.type(datos.getRow(0).get("rh"));
         txtRH.sendKeys(Keys.ENTER);
@@ -170,14 +183,14 @@ public class PacientesPages extends PageObject {
         cmdCodigoOcupacion.click();
         txtCodigoOcupacion.type(datos.getRow(0).get("cod_ocupacion"));
         txtCodigoOcupacion.sendKeys(Keys.ENTER);
-    }*/
+    }
 
     public void ingresarFechaNacimiento() {
         clickInput.click();
         clickDia.click();
     }
 
-   /* public void ingresarEscolaridad(ExamplesTable datos) {
+   public void ingresarEscolaridad(ExamplesTable datos) {
         cmdEscolaridad.click();
         txtEscolaridad.type(datos.getRow(0).get("escolaridad"));
         txtEscolaridad.sendKeys(Keys.ENTER);
@@ -187,7 +200,12 @@ public class PacientesPages extends PageObject {
         cmdRegimen.click();
         txtRegimen.type(datos.getRow(0).get("regimen"));
         txtRegimen.sendKeys(Keys.ENTER);
-    }*/
+    }
+
+    public void setClicCerrarTooltip(){
+        clicCerrarTooltip.click();
+    }
+
 
     public void ingresarTipoId(ExamplesTable datos) {
         cmbTipoId.click();
@@ -196,7 +214,7 @@ public class PacientesPages extends PageObject {
     }
 
     public void ingresarIdentificacion(ExamplesTable datos) {
-        txtIdentificacion.type(datos.getRow(0).get("id"));
+        txtIdentificacion.typeAndTab(datos.getRow(0).get("id"));
     }
 
     public void ingresarPrimerNombre(ExamplesTable datos) {
@@ -215,7 +233,7 @@ public class PacientesPages extends PageObject {
         txtGenero.sendKeys(Keys.ENTER);
     }
 
-    public void ingresarEstadoCivil(ExamplesTable datos) {
+   public void ingresarEstadoCivil(ExamplesTable datos) {
         cmbEstadoCivil.click();
         txtEstadoCivil.type(datos.getRow(0).get("estado_civil"));
         txtEstadoCivil.sendKeys(Keys.ENTER);
@@ -367,6 +385,11 @@ public class PacientesPages extends PageObject {
         if(datos.getRow(0).get("zona")!=null){
             ingresarZona(datos);
         }
+
+    }
+
+    public void guardarPaciente() {
+        btnGuardarPaciente.click();
     }
 
         public void setCheckSaveUser () {
