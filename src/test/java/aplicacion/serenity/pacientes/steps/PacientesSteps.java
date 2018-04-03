@@ -7,6 +7,7 @@ import net.thucydides.core.pages.Pages;
 import org.jbehave.core.model.ExamplesTable;
 
 public class PacientesSteps extends ScenarioSteps {
+
     PacientesPages pacientesPages=new PacientesPages(getDriver());
 
     public PacientesSteps(Pages pages){
@@ -21,12 +22,12 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.ingresarPrimerApellido(datos);
         pacientesPages.ingresarGenero(datos);
         pacientesPages.ingresarFechaNacimiento();
+        pacientesPages.setClicCerrarTooltip();
         pacientesPages.ingresarEstadoCivil(datos);
-       /* pacientesPages.ingresarRH(datos);
-        pacientesPages.ingresarCodigoOcupacion(datos);*/
-        pacientesPages.ingresarFechaNacimiento();
-       /* pacientesPages.ingresarEscolaridad(datos);
-        pacientesPages.ingresarRegimen(datos);*/
+        pacientesPages.ingresarRH(datos);
+        pacientesPages.ingresarCodigoOcupacion(datos);
+        pacientesPages.ingresarEscolaridad(datos);
+        pacientesPages.ingresarRegimen(datos);
         pacientesPages.setTipoAfiliacion(datos);
         pacientesPages.setEmpresa(datos);
         pacientesPages.setIps(datos);
@@ -47,6 +48,7 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setDrNombres(data);
         pacientesPages.setDrParentesco(data);
         pacientesPages.setDrTelefono(data);
+        pacientesPages.guardarPaciente();
     }
 
     @Step
@@ -71,5 +73,9 @@ public class PacientesSteps extends ScenarioSteps {
     @Step
     public void checkSavePaciente(){
         pacientesPages.setCheckSaveUser();
+    }
+
+    public void ingresarIdentificacion(ExamplesTable paciente) {
+        pacientesPages.ingresarIdentificacion(paciente);
     }
 }
