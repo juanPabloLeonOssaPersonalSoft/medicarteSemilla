@@ -402,7 +402,8 @@ public class PacientesPages extends PageObject {
 
 
     public  void  setEditarFechaNacimiento(ExamplesTable datos) {
-        txtFechaNacimiento.typeAndTab(datos.getRow(0).get("fecha_nacimiento"));
+        txtFechaNacimiento.typeAndEnter(datos.getRow(0).get("fecha_nacimiento"));
+        waitEvent(2);
 
     }
 
