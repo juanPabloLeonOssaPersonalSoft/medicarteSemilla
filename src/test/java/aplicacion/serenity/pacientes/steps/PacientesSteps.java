@@ -48,7 +48,6 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setDrNombres(data);
         pacientesPages.setDrParentesco(data);
         pacientesPages.setDrTelefono(data);
-        pacientesPages.guardarPaciente();
     }
 
     @Step
@@ -79,6 +78,15 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setEditDrNombres(data);
         pacientesPages.setEditDrParentesco(data);
         pacientesPages.setEditDrTelefono(data);
+    }
+
+    @Step
+    public void savePaciente(){
+        pacientesPages.guardarPaciente();
+    }
+
+    @Step
+    public void editPaciente(){
         pacientesPages.editarPaciente();
     }
 

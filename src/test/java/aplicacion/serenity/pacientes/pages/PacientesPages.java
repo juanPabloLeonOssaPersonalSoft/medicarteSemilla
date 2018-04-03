@@ -460,8 +460,6 @@ public class PacientesPages extends PageObject {
         String telefono = "dr_telefono";
         if(data.getRow(0).get(telefono)!=null) {
             drTelefono.type(data.getRow(0).get(telefono));
-            waitEvent(5);
- //           System.out.println("ERROR yoni: "+btnGuardarPaciente);
         }
     }
 
