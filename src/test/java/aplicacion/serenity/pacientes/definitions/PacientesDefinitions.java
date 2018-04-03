@@ -42,7 +42,7 @@ public class PacientesDefinitions {
     }
 
     @When("ingreso las datos a editar del paciente:$paciente")
-    public void editarPaciente(ExamplesTable paciente) {
+    public void EditPaciente(ExamplesTable paciente) {
         menuPrincipalSteps.ingresarMenuPrincipal();
         menuPrimerNivelSteps.ingresarMenuPrimerNivel();
         menuSegundoNivelSteps.ingresarMenuPacientes();
@@ -54,7 +54,7 @@ public class PacientesDefinitions {
 
     @Then("verificar")
     public void verificarEdicion() {
-        //falta
+        pacientesSteps.checkSavePaciente();
     }
 }
 

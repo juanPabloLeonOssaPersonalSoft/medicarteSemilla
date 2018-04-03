@@ -155,8 +155,15 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[4]/button[1]")
     WebElementFacade btnGuardarPaciente;
 
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[5]/button[1]")
+    WebElementFacade btnEditarPaciente;
+
     @FindBy(xpath = "//*[@id=\'toast-container\']/div[1]/div[1]/div[2]/div")
     WebElementFacade tooltipConfirmSave;
+
+    @FindBy(xpath = "//*[@id=\"modal-medico-tratante\"]/div/div/div[1]/button/span")
+    WebElementFacade clicCerrarVentana;
+
 
     public WebDriver driver;
 
@@ -206,6 +213,12 @@ public class PacientesPages extends PageObject {
     public void setClicCerrarTooltip(){
         clicCerrarTooltip.click();
     }
+
+    public void setClicCerrarVentana(){
+        clicCerrarVentana.click();
+        waitEvent(1);
+    }
+
 
 
     public void ingresarTipoId(ExamplesTable datos) {
@@ -358,6 +371,7 @@ public class PacientesPages extends PageObject {
         if(datos.getRow(0).get("ips")!=null){
             setIps(datos);
         }
+
     }
 
     public  void  setEditarGrupoPoblacional(ExamplesTable datos) {
@@ -483,11 +497,19 @@ public class PacientesPages extends PageObject {
         String telefono = "dr_telefono";
         if(data.getRow(0).get(telefono)!=null) {
             drTelefono.type(data.getRow(0).get(telefono));
+            waitEvent(5);
+ //           System.out.println("ERROR yoni: "+btnGuardarPaciente);
         }
     }
 
     public void guardarPaciente() {
         btnGuardarPaciente.click();
+        waitEvent(1);
+    }
+
+    public void editarPaciente() {
+        btnEditarPaciente.click();
+        waitEvent(5);
     }
 
         public void setCheckSaveUser () {
