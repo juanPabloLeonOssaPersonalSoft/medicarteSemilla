@@ -34,6 +34,7 @@ public class PacientesDefinitions {
         adminPacientesSteps.nuevoFormularioPacientes();
         pacientesSteps.addPaciente(paciente);
         pacientesSteps.addDatosResponsable(paciente);
+        pacientesSteps.savePaciente();
     }
 
     @Then("guardo el paciente")
@@ -50,6 +51,7 @@ public class PacientesDefinitions {
         pacientesSteps.ingresarIdentificacion(paciente);
         pacientesSteps.EditPaciente(paciente);
         pacientesSteps.EditDatosResponsable(paciente);
+        pacientesSteps.editPaciente();
     }
 
     @Then("verificar")

@@ -59,6 +59,9 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[2]/a")
     WebElementFacade clickDia;
 
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[1]/td[7]/a")
+    WebElementFacade clickDiaEdicion;
+
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[1]/span")
     WebElementFacade cmdEscolaridad;
 
@@ -354,6 +357,7 @@ public class PacientesPages extends PageObject {
     public  void  setEditarGenero(ExamplesTable datos) {
         if(datos.getRow(0).get("genero")!=null){
             ingresarGenero(datos);
+            waitEvent(3);
         }
     }
 
@@ -396,7 +400,10 @@ public class PacientesPages extends PageObject {
 
 
     public  void  setEditarFechaNacimiento() {
-        ingresarFechaNacimiento();
+            clickInput.click();
+            clickDiaEdicion.click();
+            waitEvent(3);
+
     }
 
     public  void  setEditarEstadoCivil(ExamplesTable datos) {
@@ -499,8 +506,6 @@ public class PacientesPages extends PageObject {
         String telefono = "dr_telefono";
         if(data.getRow(0).get(telefono)!=null) {
             drTelefono.type(data.getRow(0).get(telefono));
-            waitEvent(5);
- //           System.out.println("ERROR yoni: "+btnGuardarPaciente);
         }
     }
 
