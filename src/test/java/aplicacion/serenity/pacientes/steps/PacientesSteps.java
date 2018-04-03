@@ -58,7 +58,11 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setEditarGrupoPoblacional(datos);
         pacientesPages.setEditarEtnia(datos);
         pacientesPages.setEditarTelefono(datos);
-
+        pacientesPages.setEditarReligion(datos);
+        pacientesPages.setEditarMunicipioRes(datos);
+        pacientesPages.setEditarDireccion(datos);
+        pacientesPages.setEditarSede(datos);
+        pacientesPages.setEditarZona(datos);
     }
     @Step
     public void EditDatosResponsable(ExamplesTable data){
