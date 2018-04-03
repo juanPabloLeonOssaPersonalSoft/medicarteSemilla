@@ -37,7 +37,7 @@ public void ingresarPassword(ExamplesTable datos){
 public void clicIngresar(){
 
     btnIngresar.click();
-    esperar(5);
+    esperar(3);
 }
 
     private void esperar(int timeInMilliseconds){

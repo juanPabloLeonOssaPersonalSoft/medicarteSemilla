@@ -19,7 +19,7 @@ public class MenuPrincipalPages extends PageObject {
     }
 
     public void clicMenuPrincipal(){
-        esperar(2);
+        esperar(1);
         btnMenuPrincipal.click();
     }
 

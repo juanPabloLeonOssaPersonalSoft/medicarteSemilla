@@ -21,14 +21,14 @@ public class MenuSegundoNivelPages extends PageObject {
     }
 
     public void clicMenuUsuarios(){
-        esperar(4);
+        esperar(1);
         btnMenuUsuarios.click();
     }
 
     public void clicMenuPacientes(){
-        esperar(4);
+        esperar(1);
         btnMenuPacientes.click();
-        esperar(4);
+        esperar(1);
     }
 
     private void esperar(int timeInMilliseconds){

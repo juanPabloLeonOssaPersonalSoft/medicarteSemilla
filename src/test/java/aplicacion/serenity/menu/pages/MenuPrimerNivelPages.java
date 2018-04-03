@@ -21,7 +21,7 @@ public class MenuPrimerNivelPages extends PageObject {
 
 
     public void clicMenuAdministracion(){
-        esperar(2);
+        esperar(1);
         btnMenuAdministracion.click();
     }
 
