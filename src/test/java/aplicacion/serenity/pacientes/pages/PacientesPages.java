@@ -186,8 +186,8 @@ public class PacientesPages extends PageObject {
     }
 
     public void ingresarFechaNacimiento() {
-        clickInput.click();
-        clickDia.click();
+       clickInput.click();
+       clickDia.click();
     }
 
 
@@ -380,8 +380,7 @@ public class PacientesPages extends PageObject {
 
 
     public  void  setEditarFechaNacimiento() {
-        clickInput.click();
-        clickDia.click();
+        ingresarFechaNacimiento();
     }
 
     public  void  setEditarEstadoCivil(ExamplesTable datos) {
