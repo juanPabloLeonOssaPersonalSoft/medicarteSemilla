@@ -55,7 +55,7 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setEditarPrimerNombre(datos);
         pacientesPages.setEditarPrimerApellido(datos);
         pacientesPages.setEditarGenero(datos);
-        pacientesPages.setEditarFechaNacimiento();
+        pacientesPages.setEditarFechaNacimiento(datos);
         pacientesPages.setClicCerrarTooltip();
         pacientesPages.setEditarEstadoCivil(datos);
         pacientesPages.setEditarRH(datos);
@@ -66,6 +66,7 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setEditarIps(datos);
         pacientesPages.setClicCerrarVentana();
         pacientesPages.setEditarGrupoPoblacional(datos);
+
         pacientesPages.setEditarEtnia(datos);
         pacientesPages.setEditarTelefono(datos);
         pacientesPages.setClicCerrarVentana();

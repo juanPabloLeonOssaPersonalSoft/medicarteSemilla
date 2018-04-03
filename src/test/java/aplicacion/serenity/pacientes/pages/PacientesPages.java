@@ -56,10 +56,10 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'inputFechaNacimiento\']")
     WebElementFacade clickInput;
 
-    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[2]/a")
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
     WebElementFacade clickDia;
 
-    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[1]/td[7]/a")
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[2]/a")
     WebElementFacade clickDiaEdicion;
 
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[1]/span")
@@ -167,6 +167,8 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"modal-medico-tratante\"]/div/div/div[1]/button/span")
     WebElementFacade clicCerrarVentana;
 
+    @FindBy(xpath = "//*[@id=\"inputFechaNacimiento\"]")
+    WebElementFacade txtFechaNacimiento;
 
     public WebDriver driver;
 
@@ -399,10 +401,8 @@ public class PacientesPages extends PageObject {
     }
 
 
-    public  void  setEditarFechaNacimiento() {
-            clickInput.click();
-            clickDiaEdicion.click();
-            waitEvent(3);
+    public  void  setEditarFechaNacimiento(ExamplesTable datos) {
+        txtFechaNacimiento.typeAndTab(datos.getRow(0).get("fecha_nacimiento"));
 
     }
 
