@@ -7,6 +7,7 @@ import net.thucydides.core.pages.Pages;
 import org.jbehave.core.model.ExamplesTable;
 
 public class PacientesSteps extends ScenarioSteps {
+
     PacientesPages pacientesPages=new PacientesPages(getDriver());
 
     public PacientesSteps(Pages pages){

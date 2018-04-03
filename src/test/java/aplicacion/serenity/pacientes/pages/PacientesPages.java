@@ -53,16 +53,16 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[12]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtCodigoOcupacion;
 
-    @FindBy(xpath = "//*[@id=\'inputFechaNacimiento\']")
+    @FindBy(xpath = "//*[@id=\"inputFechaNacimiento\"]")
     WebElementFacade clickInput;
 
-    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
     WebElementFacade clickDia;
 
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[1]/span")
     WebElementFacade cmdEscolaridad;
 
-    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[2]/input")
+    @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtEscolaridad;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[14]/div[2]/ngl-virtual-select/a[1]/span")
@@ -173,7 +173,7 @@ public class PacientesPages extends PageObject {
         }
     }
 
-    public void ingresarRH(ExamplesTable datos) {
+   public void ingresarRH(ExamplesTable datos) {
         cmdRH.click();
         txtRH.type(datos.getRow(0).get("rh"));
         txtRH.sendKeys(Keys.ENTER);
@@ -190,7 +190,7 @@ public class PacientesPages extends PageObject {
         clickDia.click();
     }
 
-    public void ingresarEscolaridad(ExamplesTable datos) {
+   public void ingresarEscolaridad(ExamplesTable datos) {
         cmdEscolaridad.click();
         txtEscolaridad.type(datos.getRow(0).get("escolaridad"));
         txtEscolaridad.sendKeys(Keys.ENTER);
