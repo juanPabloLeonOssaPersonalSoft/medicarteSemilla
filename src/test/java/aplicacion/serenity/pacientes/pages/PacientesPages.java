@@ -317,6 +317,7 @@ public class PacientesPages extends PageObject {
         textDrParentesco.type(data.getRow(0).get("dr_parentesco"));
         textDrParentesco.sendKeys(Keys.ENTER);
     }
+
     public void setDrTelefono (ExamplesTable data){
         drTelefono.type(data.getRow(0).get("dr_telefono"));
     }
@@ -403,7 +404,49 @@ public class PacientesPages extends PageObject {
         if(datos.getRow(0).get("zona")!=null){
             ingresarZona(datos);
         }
+    }
 
+
+
+
+    public void setEditMedicoTratante(ExamplesTable data) {
+        String medicoEntrante = "medico_tratante";
+        if(data.getRow(0).get(medicoEntrante)!=null){
+            clickMedicoTratante.click();
+            textMedicoTratante.type(data.getRow(0).get(medicoEntrante));
+        }
+    }
+
+    public void setEditPrograma(ExamplesTable data) {
+        String programa = "programa";
+        if(data.getRow(0).get(programa)!=null) {
+            clickPrograma.click();
+            textPrograma.type(data.getRow(0).get(programa));
+            textPrograma.sendKeys(Keys.ENTER);
+        }
+    }
+
+    public void setEditDrNombres(ExamplesTable data) {
+        String nombres = "dr_nombres";
+        if(data.getRow(0).get(nombres)!=null) {
+            drNombres.type(data.getRow(0).get(nombres));
+        }
+    }
+
+    public void setEditDrParentesco (ExamplesTable data){
+        String parentesco = "dr_parentesco";
+        if(data.getRow(0).get(parentesco)!=null) {
+            clickDrParentesco.click();
+            textDrParentesco.type(data.getRow(0).get(parentesco));
+            textDrParentesco.sendKeys(Keys.ENTER);
+        }
+    }
+
+    public void setEditDrTelefono (ExamplesTable data){
+        String telefono = "dr_telefono";
+        if(data.getRow(0).get(telefono)!=null) {
+            drTelefono.type(data.getRow(0).get(telefono));
+        }
     }
 
     public void guardarPaciente() {
