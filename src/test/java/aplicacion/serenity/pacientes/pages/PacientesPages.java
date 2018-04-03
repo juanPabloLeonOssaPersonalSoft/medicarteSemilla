@@ -190,6 +190,7 @@ public class PacientesPages extends PageObject {
         clickDia.click();
     }
 
+
    public void ingresarEscolaridad(ExamplesTable datos) {
         cmdEscolaridad.click();
         txtEscolaridad.type(datos.getRow(0).get("escolaridad"));
@@ -232,6 +233,7 @@ public class PacientesPages extends PageObject {
         txtGenero.type(datos.getRow(0).get("genero"));
         txtGenero.sendKeys(Keys.ENTER);
     }
+
 
    public void ingresarEstadoCivil(ExamplesTable datos) {
         cmbEstadoCivil.click();
@@ -354,6 +356,41 @@ public class PacientesPages extends PageObject {
     public  void  setEditarTelefono(ExamplesTable datos) {
         if(datos.getRow(0).get("telefono")!=null){
             setTxtTelefono(datos);
+        }
+    }
+
+    public  void  setEditarFechaNacimiento() {
+        clickInput.click();
+        clickDia.click();
+    }
+
+    public  void  setEditarEstadoCivil(ExamplesTable datos) {
+        if(datos.getRow(0).get("estado_civil")!=null){
+            ingresarEstadoCivil(datos);
+        }
+    }
+
+    public  void  setEditarRH(ExamplesTable datos) {
+        if(datos.getRow(0).get("rh")!=null){
+            ingresarRH(datos);
+        }
+    }
+
+    public  void  setEditarCodigoOcupacio(ExamplesTable datos) {
+        if(datos.getRow(0).get("cod_ocupacion")!=null){
+            ingresarCodigoOcupacion(datos);
+        }
+    }
+
+    public  void  setEditarEscolaridad(ExamplesTable datos) {
+        if(datos.getRow(0).get("escolaridad")!=null){
+            ingresarEscolaridad(datos);
+        }
+    }
+
+    public  void  setEditarRegimen(ExamplesTable datos) {
+        if(datos.getRow(0).get("regimen")!=null){
+            ingresarRegimen(datos);
         }
     }
 
