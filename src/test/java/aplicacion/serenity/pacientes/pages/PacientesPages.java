@@ -196,7 +196,7 @@ public class PacientesPages extends PageObject {
     }
 
     public void ingresarIdentificacion(ExamplesTable datos) {
-        txtIdentificacion.type(datos.getRow(0).get("id"));
+        txtIdentificacion.typeAndTab(datos.getRow(0).get("id"));
     }
 
     public void ingresarPrimerNombre(ExamplesTable datos) {
