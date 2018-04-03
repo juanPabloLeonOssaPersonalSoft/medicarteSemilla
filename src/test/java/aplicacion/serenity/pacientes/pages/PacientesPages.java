@@ -321,6 +321,24 @@ public class PacientesPages extends PageObject {
         drTelefono.type(data.getRow(0).get("dr_telefono"));
     }
 
+    public  void  setEditarPrimerNombre(ExamplesTable datos) {
+        if(datos.getRow(0).get("primer_nombre")!=null){
+            ingresarPrimerNombre(datos);
+        }
+    }
+
+    public  void  setEditarPrimerApellido(ExamplesTable datos) {
+        if(datos.getRow(0).get("primer_apellido")!=null){
+            ingresarPrimerApellido(datos);
+        }
+    }
+
+    public  void  setEditarGenero(ExamplesTable datos) {
+        if(datos.getRow(0).get("genero")!=null){
+            ingresarGenero(datos);
+        }
+    }
+
     public  void  setEditarTipoAfiliacion(ExamplesTable datos) {
         if(datos.getRow(0).get("tipo_afiliacion")!=null){
             setTipoAfiliacion(datos);
