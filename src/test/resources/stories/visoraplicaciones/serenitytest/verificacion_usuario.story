@@ -11,11 +11,11 @@ When ingreso las datos del usuario a verificar:
 |Admin|
 Then verifico el usuario:
 |nombres|primerApellido|rol|fechaInicio|email|sede|
-|Liliana|Uribe|Medicarte|01/09/2014|luribe@medicarte.com.co|Armenia|
+|Fabian|Bustamante|Medicarte|01/09/2014|fabian20@medicarte.com.co|Armenia|
 
 Scenario: Edición de usuario no profesional
 GivenStories: stories/visoraplicaciones/serenitytest/login.story
 When ingreso las datos a modificar:
 |usuario|nombres|primerApellido|rol|fechaInicio|email|sede|
-|Admin|Liliana|Uribe|Medicarte|01/09/2014|luribe@medicarte.com.co|Armenia|
+|efbustam|Fabian|Bustamante|Medicarte|01/09/2014|fabian20@medicarte.com.co|Armenia|
 Then verifico el usuario modificado
