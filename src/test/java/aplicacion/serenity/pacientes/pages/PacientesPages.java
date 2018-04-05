@@ -226,8 +226,6 @@ public class PacientesPages extends PageObject {
         waitEvent(1);
     }
 
-
-
     public void ingresarTipoId(ExamplesTable datos) {
         cmbTipoId.click();
         txtTipoId.type(datos.getRow(0).get("tipo_id"));
@@ -390,7 +388,6 @@ public class PacientesPages extends PageObject {
     public  void  setEditarFechaNacimiento(ExamplesTable datos) {
         txtFechaNacimiento.typeAndEnter(datos.getRow(0).get("fecha_nacimiento"));
         waitEvent(2);
-
     }
 
     public  void  setEditarEstadoCivil(ExamplesTable datos) {
@@ -463,14 +460,11 @@ public class PacientesPages extends PageObject {
         waitEvent(5);
     }
 
-        public void setCheckSaveUser () {
-            String dataMessage = "Se almacenó la información correctamente.";
-            String messageServer = tooltipConfirmSave.getTextValue();
-            if (tooltipConfirmSave.isVisible()) {
-                Assert.assertEquals("fallo el guardado de informacion",dataMessage, messageServer);
-            }
+    public void setCheckSaveUser() {
+        String dataMessage = "Se almacenó la información correctamente.";
+        String messageServer = tooltipConfirmSave.getTextValue();
+        if (tooltipConfirmSave.isVisible()) {
+            Assert.assertEquals("fallo el guardado de informacion",dataMessage, messageServer);
         }
-
+    }
 }
-
-
