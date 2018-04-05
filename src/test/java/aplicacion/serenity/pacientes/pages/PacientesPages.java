@@ -304,32 +304,40 @@ public class PacientesPages extends PageObject {
     }
 
     public void ingresarReligion(ExamplesTable datos) {
-        cmbReligion.click();
-        txtReligion.type(datos.getRow(0).get("religion"));
-        txtReligion.sendKeys(Keys.ENTER);
+        if(datos.getRow(0).get("religion")!=null){
+            cmbReligion.click();
+            txtReligion.typeAndEnter(datos.getRow(0).get("religion"));
+        }
     }
 
     public void ingresarMuncipioResidencia(ExamplesTable datos) {
-        cmbMuncipioResidencia.click();
-        txtMunicipioRes.type(datos.getRow(0).get("municipio_residencia"));
-        txtMunicipioRes.sendKeys(Keys.ENTER);
+        if(datos.getRow(0).get("municipio_residencia")!=null){
+            cmbMuncipioResidencia.click();
+            txtMunicipioRes.typeAndEnter(datos.getRow(0).get("municipio_residencia"));
+        }
     }
 
     public void ingresarDireccionDomicilio(ExamplesTable datos) {
-        txtDireccionDomicilio.typeAndTab(datos.getRow(0).get("direccion_domicilio"));
+        if(datos.getRow(0).get("direccion_domicilio")!=null){
+            txtDireccionDomicilio.typeAndEnter(datos.getRow(0).get("direccion_domicilio"));
+        }
     }
 
     public void ingresarSede(ExamplesTable datos) {
-        cmbSede.click();
-        txtSede.type(datos.getRow(0).get("sede"));
-        txtSede.sendKeys(Keys.ENTER);
+        if(datos.getRow(0).get("sede")!=null){
+            cmbSede.click();
+            txtSede.typeAndEnter(datos.getRow(0).get("sede"));
+        }
     }
 
     public void ingresarZona(ExamplesTable datos) {
-        String Zona=datos.getRow(0).get("zona");
-        Select dropdown = new Select(SelZona);
-        dropdown.selectByVisibleText(Zona);
+        if(datos.getRow(0).get("zona")!=null){
+            String Zona=datos.getRow(0).get("zona");
+            Select dropdown = new Select(SelZona);
+            dropdown.selectByVisibleText(Zona);
+        }
     }
+
 
     public void setMedicoTratante(ExamplesTable data) {
         clickMedicoTratante.click();
@@ -413,36 +421,6 @@ public class PacientesPages extends PageObject {
         }
     }
 
-    public  void  setEditarReligion(ExamplesTable datos) {
-        if(datos.getRow(0).get("religion")!=null){
-            ingresarReligion(datos);
-        }
-    }
-
-    public  void  setEditarMunicipioRes(ExamplesTable datos) {
-        if(datos.getRow(0).get("municipio_residencia")!=null){
-            ingresarMuncipioResidencia(datos);
-        }
-    }
-
-    public  void  setEditarDireccion(ExamplesTable datos) {
-        if(datos.getRow(0).get("direccion_domicilio")!=null){
-            ingresarDireccionDomicilio(datos);
-        }
-    }
-
-    public  void  setEditarSede(ExamplesTable datos) {
-        if(datos.getRow(0).get("sede")!=null){
-            ingresarSede(datos);
-        }
-    }
-
-    public  void  setEditarZona(ExamplesTable datos) {
-        if(datos.getRow(0).get("zona")!=null){
-            ingresarZona(datos);
-        }
-    }
-    
     public void setEditMedicoTratante(ExamplesTable data) {
         String medicoEntrante = "medico_tratante";
         if(data.getRow(0).get(medicoEntrante)!=null){
