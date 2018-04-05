@@ -2,6 +2,7 @@ package aplicacion.serenity.creacionusuario.pages;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.hamcrest.MatcherAssert;
 import org.jbehave.core.model.ExamplesTable;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +19,7 @@ public class UsuarioPages extends PageObject {
     WebElementFacade txtRol;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/ng-component/div[1]/div/div[2]/form/div[5]/div[2]/ngl-virtual-select/a[1]/input")
-    WebElementFacade textRolSelect;
+    WebElementFacade selectRol;
 
     @FindBy(xpath = "//*[@id=\"simContainer\"]/ng-component/div[1]/div/div[2]/form/div[1]/div[2]/input")
     WebElementFacade txtUsuario;
@@ -138,10 +139,9 @@ public class UsuarioPages extends PageObject {
         }
     }
 
-
-    public void verificarErrorPage () {
-        Assert.assertEquals("Se almacenó la información correctamente.", lblTexto.getText());
-        System.out.println("Usuario correcto");
+    public void verificarErrorPage() {
+        MatcherAssert.assertThat("no se almaceno la información","Se almacenó la información correctamente.".equals(lblTexto.getText()));
+        //Assert.assertEquals("Se almacenó la información correctamente.", lblTexto.getText());
     }
 
     public void setVerificarNombre(ExamplesTable datos) {
@@ -152,10 +152,7 @@ public class UsuarioPages extends PageObject {
 
     public void setVerificarApellido(ExamplesTable datos) {
         esperar(2);
-        String apellidoDefault = datos.getRow(0).get("primerApellido");
-        String apellidoIngresado = txtPrimerApellido.getValue();
         Assert.assertEquals(datos.getRow(0).get("primerApellido"),txtPrimerApellido.getValue());
-        System.out.println("Apellido default: "+apellidoDefault+" - Apellido ingresado: "+apellidoIngresado+" - El apellido es correcto");
     }
 
     public void setVerificarFechaInicio(ExamplesTable datos) {
@@ -166,11 +163,10 @@ public class UsuarioPages extends PageObject {
     public void setVerificarEmail(ExamplesTable datos) {
         Assert.assertEquals(datos.getRow(0).get("email"),txtEmail.getValue());
         esperar(1);
-
-    }
+   }
 
     public void setVerificarRol(ExamplesTable datos) {
-        Assert.assertEquals(datos.getRow(0).get("rol"), textRolSelect.getValue());
+        Assert.assertEquals(datos.getRow(0).get("rol"), selectRol.getValue());
         esperar(1);
     }
 
@@ -181,7 +177,6 @@ public class UsuarioPages extends PageObject {
         btnCancelarSede.click();
         esperar(1);
     }
-
 
     public  void  setEditarRol(ExamplesTable datos) {
         String rolData = datos.getRow(0).get("rol");
@@ -217,7 +212,6 @@ public class UsuarioPages extends PageObject {
         esperar(2);
         if(datos.getRow(0).get("sede")!=null){
             SeleccionarSede(datos);
-
         }
     }
     public  void  setEditarNombre(ExamplesTable datos) {
@@ -230,15 +224,9 @@ public class UsuarioPages extends PageObject {
 
     public void setCheckSaveUser(){
         String dataMessage = "Se almacenó la información correctamente.";
-        String messageServer = divConfirmSave.getTextValue();
-
         if(divConfirmSave != null){
             Assert.assertEquals(dataMessage, divConfirmSave.getTextValue());
-        }else{
-            Assert.assertTrue("Error Element, This was not saved!", false);
         }
-        esperar(5);
     }
-
 
 }
