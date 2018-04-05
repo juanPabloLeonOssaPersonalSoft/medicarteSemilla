@@ -223,9 +223,8 @@ public class UsuarioPages extends PageObject {
     }
 
     public void setCheckSaveUser(){
-        String dataMessage = "Se almacenó la información correctamente.";
         if(divConfirmSave != null){
-            Assert.assertEquals(dataMessage, divConfirmSave.getTextValue());
+            MatcherAssert.assertThat("no se almaceno la información",!"Se almacenó la información correctamente.".equals(divConfirmSave.getTextValue()));
         }
     }
 
