@@ -70,21 +70,21 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setEtnia(datos);
         pacientesPages.setTxtTelefono(datos); 
         pacientesPages.setClicCerrarVentana();
-        pacientesPages.setEditarReligion(datos);
-        pacientesPages.setEditarMunicipioRes(datos);
-        pacientesPages.setEditarDireccion(datos);
-        pacientesPages.setEditarSede(datos);
-        pacientesPages.setEditarZona(datos);
-        pacientesPages.setMedicoTratante(datos);
-        pacientesPages.setPrograma(datos);
+        pacientesPages.ingresarReligion(datos);
+        pacientesPages.ingresarMuncipioResidencia(datos);
+        pacientesPages.ingresarDireccionDomicilio(datos);
+        pacientesPages.ingresarSede(datos);
+        pacientesPages.ingresarZona(datos);
+        pacientesPages.setEditMedicoTratante(datos);
+        pacientesPages.setEditPrograma(datos);
         pacientesPages.setClicCerrarVentana();
     }
 
     @Step
     public void EditDatosResponsable(ExamplesTable data){
-        pacientesPages.setDrNombres(data);
-        pacientesPages.setDrParentesco(data);
-        pacientesPages.setDrTelefono(data);
+        pacientesPages.setEditDrNombres(data);
+        pacientesPages.setEditDrParentesco(data);
+        pacientesPages.setEditDrTelefono(data);
     }
 
     @Step

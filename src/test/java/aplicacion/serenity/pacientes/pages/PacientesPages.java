@@ -59,6 +59,9 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
     WebElementFacade clickDia;
 
+    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[2]/a")
+    WebElementFacade clickDiaEdicion;
+
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[1]/span")
     WebElementFacade cmdEscolaridad;
 
@@ -223,6 +226,8 @@ public class PacientesPages extends PageObject {
         waitEvent(1);
     }
 
+
+
     public void ingresarTipoId(ExamplesTable datos) {
         cmbTipoId.click();
         txtTipoId.type(datos.getRow(0).get("tipo_id"));
@@ -299,61 +304,60 @@ public class PacientesPages extends PageObject {
     }
 
     public void ingresarReligion(ExamplesTable datos) {
-        cmbReligion.click();
-        txtReligion.type(datos.getRow(0).get("religion"));
-        txtReligion.sendKeys(Keys.ENTER);
+        if(datos.getRow(0).get("religion")!=null){
+            cmbReligion.click();
+            txtReligion.typeAndEnter(datos.getRow(0).get("religion"));
+        }
     }
 
     public void ingresarMuncipioResidencia(ExamplesTable datos) {
-        cmbMuncipioResidencia.click();
-        txtMunicipioRes.type(datos.getRow(0).get("municipio_residencia"));
-        txtMunicipioRes.sendKeys(Keys.ENTER);
+        if(datos.getRow(0).get("municipio_residencia")!=null){
+            cmbMuncipioResidencia.click();
+            txtMunicipioRes.typeAndEnter(datos.getRow(0).get("municipio_residencia"));
+        }
     }
 
     public void ingresarDireccionDomicilio(ExamplesTable datos) {
-        txtDireccionDomicilio.typeAndTab(datos.getRow(0).get("direccion_domicilio"));
+        if(datos.getRow(0).get("direccion_domicilio")!=null){
+            txtDireccionDomicilio.typeAndEnter(datos.getRow(0).get("direccion_domicilio"));
+        }
     }
 
     public void ingresarSede(ExamplesTable datos) {
-        cmbSede.click();
-        txtSede.type(datos.getRow(0).get("sede"));
-        txtSede.sendKeys(Keys.ENTER);
+        if(datos.getRow(0).get("sede")!=null){
+            cmbSede.click();
+            txtSede.typeAndEnter(datos.getRow(0).get("sede"));
+        }
     }
 
     public void ingresarZona(ExamplesTable datos) {
-        String Zona=datos.getRow(0).get("zona");
-        Select dropdown = new Select(SelZona);
-        dropdown.selectByVisibleText(Zona);
+        if(datos.getRow(0).get("zona")!=null){
+            String Zona=datos.getRow(0).get("zona");
+            Select dropdown = new Select(SelZona);
+            dropdown.selectByVisibleText(Zona);
+        }
     }
 
     public void setMedicoTratante(ExamplesTable data) {
-        if(data.getRow(0).get("medico_tratante")!=null) {
-            clickMedicoTratante.click();
-            textMedicoTratante.type(data.getRow(0).get("medico_tratante"));
-            textMedicoTratante.sendKeys(Keys.ENTER);
-        }
+        clickMedicoTratante.click();
+        textMedicoTratante.type(data.getRow(0).get("medico_tratante"));
+        textMedicoTratante.sendKeys(Keys.ENTER);
     }
 
     public void setPrograma(ExamplesTable data) {
-        if(data.getRow(0).get("programa")!=null) {
-            clickPrograma.click();
-            textPrograma.type(data.getRow(0).get("programa"));
-            textPrograma.sendKeys(Keys.ENTER);
-        }
+        clickPrograma.click();
+        textPrograma.type(data.getRow(0).get("programa"));
+        textPrograma.sendKeys(Keys.ENTER);
     }
 
     public void setDrNombres(ExamplesTable data) {
-        if(data.getRow(0).get("dr_nombres")!=null) {
-            drNombres.type(data.getRow(0).get("dr_nombres"));
-        }
+        drNombres.type(data.getRow(0).get("dr_nombres"));
     }
 
     public void setDrParentesco (ExamplesTable data){
-        if(data.getRow(0).get("dr_parentesco")!=null) {
-            clickDrParentesco.click();
-            textDrParentesco.type(data.getRow(0).get("dr_parentesco"));
-            textDrParentesco.sendKeys(Keys.ENTER);
-        }
+        clickDrParentesco.click();
+        textDrParentesco.type(data.getRow(0).get("dr_parentesco"));
+        textDrParentesco.sendKeys(Keys.ENTER);
     }
 
     public void setDrTelefono (ExamplesTable data){
@@ -385,6 +389,7 @@ public class PacientesPages extends PageObject {
         waitEvent(3);
     }
 
+
     public  void  setEditarEstadoCivil(ExamplesTable datos) {
         if(datos.getRow(0).get("estado_civil")!=null){
             ingresarEstadoCivil(datos);
@@ -414,34 +419,45 @@ public class PacientesPages extends PageObject {
             ingresarRegimen(datos);
         }
     }
-
-    public  void  setEditarReligion(ExamplesTable datos) {
-        if(datos.getRow(0).get("religion")!=null){
-            ingresarReligion(datos);
+    
+    
+    public void setEditMedicoTratante(ExamplesTable data) {
+        String medicoEntrante = "medico_tratante";
+        if(data.getRow(0).get(medicoEntrante)!=null){
+            clickMedicoTratante.click();
+            textMedicoTratante.type(data.getRow(0).get(medicoEntrante));
         }
     }
 
-    public  void  setEditarMunicipioRes(ExamplesTable datos) {
-        if(datos.getRow(0).get("municipio_residencia")!=null){
-            ingresarMuncipioResidencia(datos);
+    public void setEditPrograma(ExamplesTable data) {
+        String programa = "programa";
+        if(data.getRow(0).get(programa)!=null) {
+            clickPrograma.click();
+            textPrograma.type(data.getRow(0).get(programa));
+            textPrograma.sendKeys(Keys.ENTER);
         }
     }
 
-    public  void  setEditarDireccion(ExamplesTable datos) {
-        if(datos.getRow(0).get("direccion_domicilio")!=null){
-            ingresarDireccionDomicilio(datos);
+    public void setEditDrNombres(ExamplesTable data) {
+        String nombres = "dr_nombres";
+        if(data.getRow(0).get(nombres)!=null) {
+            drNombres.type(data.getRow(0).get(nombres));
         }
     }
 
-    public  void  setEditarSede(ExamplesTable datos) {
-        if(datos.getRow(0).get("sede")!=null){
-            ingresarSede(datos);
+    public void setEditDrParentesco (ExamplesTable data){
+        String parentesco = "dr_parentesco";
+        if(data.getRow(0).get(parentesco)!=null) {
+            clickDrParentesco.click();
+            textDrParentesco.type(data.getRow(0).get(parentesco));
+            textDrParentesco.sendKeys(Keys.ENTER);
         }
     }
 
-    public  void  setEditarZona(ExamplesTable datos) {
-        if(datos.getRow(0).get("zona")!=null){
-            ingresarZona(datos);
+    public void setEditDrTelefono (ExamplesTable data){
+        String telefono = "dr_telefono";
+        if(data.getRow(0).get(telefono)!=null) {
+            drTelefono.type(data.getRow(0).get(telefono));
         }
     }
 
@@ -455,11 +471,14 @@ public class PacientesPages extends PageObject {
         waitEvent(5);
     }
 
-    public void setCheckSaveUser() {
-        String dataMessage = "Se almacenó la información correctamente.";
-        String messageServer = tooltipConfirmSave.getTextValue();
-        if (tooltipConfirmSave.isVisible()) {
-            Assert.assertEquals("fallo el guardado de informacion",dataMessage, messageServer);
+        public void setCheckSaveUser () {
+            String dataMessage = "Se almacenó la información correctamente.";
+            String messageServer = tooltipConfirmSave.getTextValue();
+            if (tooltipConfirmSave.isVisible()) {
+                Assert.assertEquals("fallo el guardado de informacion",dataMessage, messageServer);
+            }
         }
-    }
+
 }
+
+
