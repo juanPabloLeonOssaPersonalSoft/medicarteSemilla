@@ -56,10 +56,10 @@ public class VerificacionUsuarioDefinitions {
         verificacionUsuarioSteps.editarFechaInicio(usuario);
         verificacionUsuarioSteps.editarSede(usuario);
         verificacionUsuarioSteps.editarPrimerApellido(usuario);
-        verificacionUsuarioSteps.checkSaveUser();
+
     }
     @Then("verifico el usuario modificado")
     public void ThenVerificacion( ){
-
+        verificacionUsuarioSteps.checkSaveUser();
     }
 }
