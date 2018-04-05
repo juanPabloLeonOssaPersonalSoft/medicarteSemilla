@@ -82,9 +82,9 @@ public class PacientesSteps extends ScenarioSteps {
 
     @Step
     public void EditDatosResponsable(ExamplesTable data){
-        pacientesPages.setEditDrNombres(data);
-        pacientesPages.setEditDrParentesco(data);
-        pacientesPages.setEditDrTelefono(data);
+        pacientesPages.setDrNombres(data);
+        pacientesPages.setDrParentesco(data);
+        pacientesPages.setDrTelefono(data);
     }
 
     @Step
