@@ -139,9 +139,8 @@ public class UsuarioPages extends PageObject {
     }
 
 
-    public void verificarErrorPage () {
+    public void verificarPaso () {
         Assert.assertEquals("Se almacenó la información correctamente.", lblTexto.getText());
-        System.out.println("Usuario correcto");
     }
 
     public void setVerificarNombre(ExamplesTable datos) {

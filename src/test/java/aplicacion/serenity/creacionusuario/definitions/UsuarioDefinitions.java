@@ -34,9 +34,10 @@ public class UsuarioDefinitions {
         menuSegundoNivelSteps.ingresarMenuSegundoNivel();
         adminSteps.nuevoFormulario();
         usuarioSteps.crearUsuario(usuario);
-        usuarioSteps.verificarErrorPage();
+
     }
     @Then("guardo el usuario")
     public void  verificarIngreso(){
+        usuarioSteps.verificar();
     }
 }
