@@ -419,7 +419,7 @@ public class PacientesPages extends PageObject {
             ingresarRegimen(datos);
         }
     }
-    
+
     
     public void setEditMedicoTratante(ExamplesTable data) {
         String medicoEntrante = "medico_tratante";
