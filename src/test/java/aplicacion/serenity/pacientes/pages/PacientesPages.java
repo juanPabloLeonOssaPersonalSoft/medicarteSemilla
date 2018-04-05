@@ -167,7 +167,7 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"modal-medico-tratante\"]/div/div/div[1]/button/span")
     WebElementFacade clicCerrarVentana;
 
-    @FindBy(xpath = "//*[@id=\"inputFechaNacimiento\"]")
+    @FindBy(xpath = "//*[@id=\'inputFechaNacimiento\']")
     WebElementFacade txtFechaNacimiento;
 
     public WebDriver driver;
@@ -388,9 +388,9 @@ public class PacientesPages extends PageObject {
 
     public  void  setEditarFechaNacimiento(ExamplesTable datos) {
         txtFechaNacimiento.typeAndEnter(datos.getRow(0).get("fecha_nacimiento"));
-        waitEvent(2);
-
+        waitEvent(3);
     }
+
 
     public  void  setEditarEstadoCivil(ExamplesTable datos) {
         if(datos.getRow(0).get("estado_civil")!=null){
@@ -421,36 +421,7 @@ public class PacientesPages extends PageObject {
             ingresarRegimen(datos);
         }
     }
-
-    public  void  setEditarReligion(ExamplesTable datos) {
-        if(datos.getRow(0).get("religion")!=null){
-            ingresarReligion(datos);
-        }
-    }
-
-    public  void  setEditarMunicipioRes(ExamplesTable datos) {
-        if(datos.getRow(0).get("municipio_residencia")!=null){
-            ingresarMuncipioResidencia(datos);
-        }
-    }
-
-    public  void  setEditarDireccion(ExamplesTable datos) {
-        if(datos.getRow(0).get("direccion_domicilio")!=null){
-            ingresarDireccionDomicilio(datos);
-        }
-    }
-
-    public  void  setEditarSede(ExamplesTable datos) {
-        if(datos.getRow(0).get("sede")!=null){
-            ingresarSede(datos);
-        }
-    }
-
-    public  void  setEditarZona(ExamplesTable datos) {
-        if(datos.getRow(0).get("zona")!=null){
-            ingresarZona(datos);
-        }
-    }
+    
     
     public void setEditMedicoTratante(ExamplesTable data) {
         String medicoEntrante = "medico_tratante";

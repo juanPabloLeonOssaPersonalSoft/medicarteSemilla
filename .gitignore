@@ -14,3 +14,4 @@ build/
 Practica.iml
 /
 src/test/resources/stories/visoraplicaciones/serenitytest/creacion_paciente.story___jb_tmp___
+src/test/java/aplicacion/serenity/pacientes/pages/PacientesPages.java___jb_tmp___
