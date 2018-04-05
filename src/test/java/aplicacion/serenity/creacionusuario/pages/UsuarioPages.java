@@ -76,54 +76,73 @@ public class UsuarioPages extends PageObject {
 
     public  void ingresarUsuario(ExamplesTable datos){
         esperar(2);
-        txtUsuario.typeAndTab(datos.getRow(0).get("usuario"));
+        if(datos.getRow(0).get("usuario")!=null){
+            txtUsuario.typeAndTab(datos.getRow(0).get("usuario"));
+        }
     }
 
     public  void ingresarNombres(ExamplesTable datos){
         esperar(2);
-        txtNombres.type(datos.getRow(0).get("nombres"));
+        if(datos.getRow(0).get("nombres")!=null){
+            txtNombres.type(datos.getRow(0).get("nombres"));
+        }
     }
 
     public  void ingresarPrimerApellido(ExamplesTable datos){
         esperar(2);
-        txtPrimerApellido.type(datos.getRow(0).get("primerApellido"));
+        if(datos.getRow(0).get("primerApellido")!=null){
+            txtPrimerApellido.type(datos.getRow(0).get("primerApellido"));
+        }
     }
 
     public  void ingresarRol(ExamplesTable datos){
-        cmbRol.click();
-        txtRol.type(datos.getRow(0).get("rol"));
-        txtRol.sendKeys(Keys.ENTER);
-        esperar(1);
+        esperar(2);
+        if(datos.getRow(0).get("rol")!=null){
+            cmbRol.click();
+            txtRol.type(datos.getRow(0).get("rol"));
+            txtRol.sendKeys(Keys.ENTER);
+        }
     }
 
     public  void ingresarFechaInicio(ExamplesTable datos){
         esperar(2);
-        txtFechaInicio.type(datos.getRow(0).get("fechaInicio"));
+        if(datos.getRow(0).get("fechaInicio")!=null){
+            txtFechaInicio.type(datos.getRow(0).get("fechaInicio"));
+        }
     }
 
     public  void ingresarContrasena(ExamplesTable datos){
         esperar(2);
-        txtContrasena.type(datos.getRow(0).get("contrasena"));
+        if(datos.getRow(0).get("contrasena")!=null){
+            txtContrasena.type(datos.getRow(0).get("contrasena"));
+        }
     }
 
     public  void ingresarConfirmarContrasena(ExamplesTable datos){
         esperar(2);
-        txtConfirmarContrasena.type(datos.getRow(0).get("contrasena")); }
+        if(datos.getRow(0).get("contrasena")!=null){
+            txtConfirmarContrasena.type(datos.getRow(0).get("contrasena"));
+        }
+        }
 
     public  void ingresarEmail(ExamplesTable datos){
         esperar(2);
-        txtEmail.type(datos.getRow(0).get("email"));
+        if(datos.getRow(0).get("email")!=null){
+            txtEmail.type(datos.getRow(0).get("email"));
+        }
     }
 
     public  void SeleccionarSede(ExamplesTable datos){
         esperar(2);
-        btnSeleccionarSede.click();
-        btnTodasSedes.click();
-        String sedePredeterminada= datos.getRow(0).get("sede");
-        String xpathOriginalSedePredeterminada= "//*[@id='simContainer']//table/tbody/tr[contains(.,'comodin')]/td[3]/label";
-        String xpatSedePredeterminada=xpathOriginalSedePredeterminada.replace("comodin",sedePredeterminada);
-        $(xpatSedePredeterminada).click();
-        btnAceptarSede.click();
+        if(datos.getRow(0).get("sede")!=null){
+            btnSeleccionarSede.click();
+            btnTodasSedes.click();
+            String sedePredeterminada= datos.getRow(0).get("sede");
+            String xpathOriginalSedePredeterminada= "//*[@id='simContainer']//table/tbody/tr[contains(.,'comodin')]/td[3]/label";
+            String xpatSedePredeterminada=xpathOriginalSedePredeterminada.replace("comodin",sedePredeterminada);
+            $(xpatSedePredeterminada).click();
+            btnAceptarSede.click();
+        }
     }
 
     public  void guardarUsuario( ){
@@ -177,51 +196,6 @@ public class UsuarioPages extends PageObject {
         btnCancelarSede.click();
         esperar(1);
     }
-
-    public  void  setEditarRol(ExamplesTable datos) {
-        String rolData = datos.getRow(0).get("rol");
-        if(rolData!=null){
-           ingresarRol(datos);
-        }
-        esperar(1);
-    }
-
-
-    public  void  setEditarEmail(ExamplesTable datos) {
-       esperar(2);
-        if(datos.getRow(0).get("email")!=null){
-            ingresarEmail(datos);
-        }
-    }
-    public void setEditarFechaInicio(ExamplesTable datos) {
-        esperar(2);
-        if(datos.getRow(0).get("fechaInicio")!=null){
-            ingresarFechaInicio(datos);
-        }
-    }
-
-
-    public  void  setEditarPrimerApellido(ExamplesTable datos) {
-        esperar(2);
-        if (datos.getRow(0).get("primerApellido") != null) {
-            ingresarPrimerApellido(datos);
-        }
-    }
-
-    public void setEditarSede(ExamplesTable datos) {
-        esperar(2);
-        if(datos.getRow(0).get("sede")!=null){
-            SeleccionarSede(datos);
-        }
-    }
-    public  void  setEditarNombre(ExamplesTable datos) {
-        String nombreData = datos.getRow(0).get("nombres");
-        if(nombreData!=null){
-            ingresarNombres(datos);
-        }
-        esperar(1);
-    }
-
     public void setCheckSaveUser(){
         if(divConfirmSave != null){
             MatcherAssert.assertThat("no se almaceno la información",!"Se almacenó la información correctamente.".equals(divConfirmSave.getTextValue()));
