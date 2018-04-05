@@ -68,7 +68,7 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setClicCerrarVentana();
         pacientesPages.setGrupoPoblacional(datos);
         pacientesPages.setEtnia(datos);
-        pacientesPages.setTxtTelefono(datos); 
+        pacientesPages.setTxtTelefono(datos);
         pacientesPages.setClicCerrarVentana();
         pacientesPages.ingresarReligion(datos);
         pacientesPages.ingresarMuncipioResidencia(datos);

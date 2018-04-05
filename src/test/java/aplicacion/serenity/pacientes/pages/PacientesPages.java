@@ -222,8 +222,10 @@ public class PacientesPages extends PageObject {
     }
 
     public void setClicCerrarVentana(){
-        clicCerrarVentana.click();
-        waitEvent(1);
+        if (clicCerrarVentana!=null) {
+            clicCerrarVentana.click();
+            waitEvent(1);
+        }
     }
 
 
