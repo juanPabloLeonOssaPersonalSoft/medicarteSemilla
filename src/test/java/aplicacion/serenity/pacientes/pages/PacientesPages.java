@@ -442,10 +442,7 @@ public class PacientesPages extends PageObject {
             ingresarZona(datos);
         }
     }
-
-
-
-
+    
     public void setEditMedicoTratante(ExamplesTable data) {
         String medicoEntrante = "medico_tratante";
         if(data.getRow(0).get(medicoEntrante)!=null){
