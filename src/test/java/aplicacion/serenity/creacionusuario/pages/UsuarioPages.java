@@ -18,7 +18,7 @@ public class UsuarioPages extends PageObject {
     WebElementFacade txtRol;
 
     @FindBy(xpath = "//*[@id=\'simContainer\']/ng-component/div[1]/div/div[2]/form/div[5]/div[2]/ngl-virtual-select/a[1]/input")
-    WebElementFacade textRolSelect;
+    WebElementFacade selectRol;
 
     @FindBy(xpath = "//*[@id=\"simContainer\"]/ng-component/div[1]/div/div[2]/form/div[1]/div[2]/input")
     WebElementFacade txtUsuario;
@@ -169,7 +169,7 @@ public class UsuarioPages extends PageObject {
     }
 
     public void setVerificarRol(ExamplesTable datos) {
-        Assert.assertEquals(datos.getRow(0).get("rol"), textRolSelect.getValue());
+        Assert.assertEquals(datos.getRow(0).get("rol"), selectRol.getValue());
         esperar(1);
     }
 
@@ -229,15 +229,9 @@ public class UsuarioPages extends PageObject {
 
     public void setCheckSaveUser(){
         String dataMessage = "Se almacenó la información correctamente.";
-        String messageServer = divConfirmSave.getTextValue();
-
         if(divConfirmSave != null){
             Assert.assertEquals(dataMessage, divConfirmSave.getTextValue());
-        }else{
-            Assert.assertTrue("Error Element, This was not saved!", false);
         }
-        esperar(5);
     }
-
 
 }
