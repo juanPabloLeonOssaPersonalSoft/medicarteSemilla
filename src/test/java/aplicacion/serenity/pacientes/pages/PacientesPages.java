@@ -330,25 +330,33 @@ public class PacientesPages extends PageObject {
     }
 
     public void setMedicoTratante(ExamplesTable data) {
-        clickMedicoTratante.click();
-        textMedicoTratante.type(data.getRow(0).get("medico_tratante"));
-        textMedicoTratante.sendKeys(Keys.ENTER);
+        if(data.getRow(0).get("medico_tratante")!=null) {
+            clickMedicoTratante.click();
+            textMedicoTratante.type(data.getRow(0).get("medico_tratante"));
+            textMedicoTratante.sendKeys(Keys.ENTER);
+        }
     }
 
     public void setPrograma(ExamplesTable data) {
-        clickPrograma.click();
-        textPrograma.type(data.getRow(0).get("programa"));
-        textPrograma.sendKeys(Keys.ENTER);
+        if(data.getRow(0).get("programa")!=null) {
+            clickPrograma.click();
+            textPrograma.type(data.getRow(0).get("programa"));
+            textPrograma.sendKeys(Keys.ENTER);
+        }
     }
 
     public void setDrNombres(ExamplesTable data) {
-        drNombres.type(data.getRow(0).get("dr_nombres"));
+        if(data.getRow(0).get("dr_nombres")!=null) {
+            drNombres.type(data.getRow(0).get("dr_nombres"));
+        }
     }
 
     public void setDrParentesco (ExamplesTable data){
-        clickDrParentesco.click();
-        textDrParentesco.type(data.getRow(0).get("dr_parentesco"));
-        textDrParentesco.sendKeys(Keys.ENTER);
+        if(data.getRow(0).get("dr_parentesco")!=null) {
+            clickDrParentesco.click();
+            textDrParentesco.type(data.getRow(0).get("dr_parentesco"));
+            textDrParentesco.sendKeys(Keys.ENTER);
+        }
     }
 
     public void setDrTelefono (ExamplesTable data){
@@ -437,46 +445,6 @@ public class PacientesPages extends PageObject {
     public  void  setEditarZona(ExamplesTable datos) {
         if(datos.getRow(0).get("zona")!=null){
             ingresarZona(datos);
-        }
-    }
-
-    public void setEditMedicoTratante(ExamplesTable data) {
-        String medicoEntrante = "medico_tratante";
-        if(data.getRow(0).get(medicoEntrante)!=null){
-            clickMedicoTratante.click();
-            textMedicoTratante.type(data.getRow(0).get(medicoEntrante));
-        }
-    }
-
-    public void setEditPrograma(ExamplesTable data) {
-        String programa = "programa";
-        if(data.getRow(0).get(programa)!=null) {
-            clickPrograma.click();
-            textPrograma.type(data.getRow(0).get(programa));
-            textPrograma.sendKeys(Keys.ENTER);
-        }
-    }
-
-    public void setEditDrNombres(ExamplesTable data) {
-        String nombres = "dr_nombres";
-        if(data.getRow(0).get(nombres)!=null) {
-            drNombres.type(data.getRow(0).get(nombres));
-        }
-    }
-
-    public void setEditDrParentesco (ExamplesTable data){
-        String parentesco = "dr_parentesco";
-        if(data.getRow(0).get(parentesco)!=null) {
-            clickDrParentesco.click();
-            textDrParentesco.type(data.getRow(0).get(parentesco));
-            textDrParentesco.sendKeys(Keys.ENTER);
-        }
-    }
-
-    public void setEditDrTelefono (ExamplesTable data){
-        String telefono = "dr_telefono";
-        if(data.getRow(0).get(telefono)!=null) {
-            drTelefono.type(data.getRow(0).get(telefono));
         }
     }
 
