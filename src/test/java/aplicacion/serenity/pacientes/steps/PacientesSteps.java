@@ -23,6 +23,7 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.ingresarGenero(datos);
         pacientesPages.ingresarFechaNacimiento();
         pacientesPages.setClicCerrarTooltip();
+        pacientesPages.setClicCerrarVentana();
         pacientesPages.ingresarEstadoCivil(datos);
         pacientesPages.ingresarRH(datos);
         pacientesPages.ingresarCodigoOcupacion(datos);
@@ -52,13 +53,13 @@ public class PacientesSteps extends ScenarioSteps {
 
     @Step
     public void EditPaciente(ExamplesTable datos){
-        pacientesPages.setEditarPrimerNombre(datos);
-        pacientesPages.setEditarPrimerApellido(datos);
-        pacientesPages.setEditarGenero(datos);
+        pacientesPages.ingresarPrimerNombre(datos);
+        pacientesPages.ingresarPrimerApellido(datos);
+        pacientesPages.ingresarGenero(datos);
         pacientesPages.setEditarFechaNacimiento(datos);
         pacientesPages.setClicCerrarTooltip();
         pacientesPages.setClicCerrarVentana();
-        pacientesPages.setEditarEstadoCivil(datos);
+        pacientesPages.ingresarEstadoCivil(datos);
         pacientesPages.setEditarRH(datos);
         pacientesPages.setEditarCodigoOcupacio(datos);
         pacientesPages.setEditarEscolaridad(datos);
