@@ -164,7 +164,7 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"modal-medico-tratante\"]/div/div/div[1]/button/span")
     WebElementFacade clicCerrarVentana;
 
-    @FindBy(xpath = "//*[@id=\"inputFechaNacimiento\"]")
+    @FindBy(xpath = "//*[@id=\'inputFechaNacimiento\']")
     WebElementFacade txtFechaNacimiento;
 
     public WebDriver driver;
@@ -382,7 +382,7 @@ public class PacientesPages extends PageObject {
 
     public  void  setEditarFechaNacimiento(ExamplesTable datos) {
         txtFechaNacimiento.typeAndEnter(datos.getRow(0).get("fecha_nacimiento"));
-        waitEvent(2);
+        waitEvent(3);
     }
 
     public  void  setEditarEstadoCivil(ExamplesTable datos) {
