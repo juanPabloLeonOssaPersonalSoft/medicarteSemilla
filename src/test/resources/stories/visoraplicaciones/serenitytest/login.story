@@ -9,5 +9,5 @@ Given como usuario ingreso a la pagina de Medicarte
 When ingreso las credenciales:
 |usuario|contrasena|
 |admin|admin123*|
-Then ingreso a la pagina prinacipal del sitio
+Then ingreso a la pagina principal del sitio
 

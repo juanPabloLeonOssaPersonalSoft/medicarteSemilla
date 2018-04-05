@@ -21,7 +21,7 @@ public class LoginDefinitions {
     public void ingresarDatosLogueo(ExamplesTable logueo){
         loginSteps.ingresarDatosLogin(logueo);
     }
-    @Then("ingreso a la pagina prinacipal del sitio")
+    @Then("ingreso a la pagina principal del sitio")
     public void  verificarIngreso(){
 
     }

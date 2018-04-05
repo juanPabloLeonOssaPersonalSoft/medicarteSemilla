@@ -8,7 +8,7 @@ Scenario: Crear de paciente nuevo
 GivenStories: stories/visoraplicaciones/serenitytest/login.story
 When ingreso las datos del nuevo paciente:
 |tipo_id|id|primer_nombre|primer_apellido|genero|estado_civil|rh|cod_ocupacion|escolaridad|regimen|tipo_afiliacion|empresa|ips|grupo_poblacional|etnia|telefono|religion|municipio_residencia|direccion_domicilio|sede|zona|medico_tratante|programa|dr_nombres|dr_parentesco|dr_telefono|
-|CC|1035454354|Ramon|Valdez|Masculino|Unión Libre|A+|Ingeniero Administrativo|Pregrado Completo|Contributivo|Cotizante|ALIANSALUD|Ips Aliansalud|Indigente|Ninguna De Las Anteriores|6784532|Catolica|Abejorral|CR 54 # 53 A 22|Barrancabermeja|Rural|Jaime|Osteoporosis|Ovelo Rasec|Tío(A)|3165328173|
+|TI|1035454359|Rosalba|Taborda|Masculino|Unión Libre|A+|Ingeniero Administrativo|Pregrado Completo|Contributivo|Cotizante|ALIANSALUD|Ips Aliansalud|Indigente|Ninguna De Las Anteriores|6784532|Catolica|Abejorral|CR 54 # 53 A 22|Barrancabermeja|Rural|Jaime|Osteoporosis|Ovelo Rasec|Tío(A)|3165328173|
 Then guardo el paciente
 
 Scenario: Editar datos del paciente
