@@ -29,8 +29,8 @@ public class UsuarioSteps extends ScenarioSteps {
     }
 
     @Step
-    public void verificarErrorPage(){
-        usuarioPages.verificarErrorPage();
+    public void verificar(){
+        usuarioPages.verificarPaso();
 
     }
 }
