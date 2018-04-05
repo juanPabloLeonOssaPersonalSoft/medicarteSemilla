@@ -59,9 +59,6 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
     WebElementFacade clickDia;
 
-    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[2]/a")
-    WebElementFacade clickDiaEdicion;
-
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[1]/span")
     WebElementFacade cmdEscolaridad;
 
@@ -362,9 +359,7 @@ public class PacientesPages extends PageObject {
     }
 
     public void setDrTelefono (ExamplesTable data){
-        if(data.getRow(0).get("dr_telefono")!=null) {
-            drTelefono.type(data.getRow(0).get("dr_telefono"));
-        }
+        drTelefono.type(data.getRow(0).get("dr_telefono"));
     }
 
     public  void  setEditarPrimerNombre(ExamplesTable datos) {
