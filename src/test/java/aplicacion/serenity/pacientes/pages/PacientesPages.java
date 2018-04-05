@@ -59,9 +59,6 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[1]/a")
     WebElementFacade clickDia;
 
-    @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[8]/div[2]/p-calendar/span/div/table/tbody/tr[2]/td[2]/a")
-    WebElementFacade clickDiaEdicion;
-
     @FindBy(xpath = "//*[@id=\"simContainer\"]/admin-patients/div[2]/div/div[2]/form/div[13]/div[2]/ngl-virtual-select/a[1]/span")
     WebElementFacade cmdEscolaridad;
 
@@ -218,7 +215,9 @@ public class PacientesPages extends PageObject {
     }
 
     public void setClicCerrarTooltip(){
-        clicCerrarTooltip.click();
+        if(clicCerrarTooltip!=null) {
+            clicCerrarTooltip.click();
+        }
     }
 
     public void setClicCerrarVentana(){
@@ -322,6 +321,7 @@ public class PacientesPages extends PageObject {
     public void ingresarDireccionDomicilio(ExamplesTable datos) {
         if(datos.getRow(0).get("direccion_domicilio")!=null){
             txtDireccionDomicilio.typeAndEnter(datos.getRow(0).get("direccion_domicilio"));
+            waitEvent(1);
         }
     }
 
