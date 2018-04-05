@@ -140,7 +140,7 @@ public class UsuarioPages extends PageObject {
     }
 
     public void verificarPaso() {
-        MatcherAssert.assertThat("no se almaceno la información","Se almacenó la información correctamente.".equals(lblTexto.getText()));
+        MatcherAssert.assertThat("no se almaceno la información",!"Se almacenó la información correctamente.".equals(lblTexto.getText()));
         //Assert.assertEquals("Se almacenó la información correctamente.", lblTexto.getText());
     }
 
