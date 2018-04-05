@@ -467,14 +467,12 @@ public class PacientesPages extends PageObject {
         }
     }
 
-
-
-
     public void setEditMedicoTratante(ExamplesTable data) {
         String medicoEntrante = "medico_tratante";
         if(data.getRow(0).get(medicoEntrante)!=null){
             clickMedicoTratante.click();
             textMedicoTratante.type(data.getRow(0).get(medicoEntrante));
+            textMedicoTratante.sendKeys(Keys.ENTER);
         }
     }
 
@@ -484,6 +482,7 @@ public class PacientesPages extends PageObject {
             clickPrograma.click();
             textPrograma.type(data.getRow(0).get(programa));
             textPrograma.sendKeys(Keys.ENTER);
+            waitEvent(3);
         }
     }
 
