@@ -262,32 +262,45 @@ public class PacientesPages extends PageObject {
     }
 
     public void setTipoAfiliacion(ExamplesTable datos) {
-        TipoAfiliacion.click();
-        txtTipoAliciacion.typeAndEnter(datos.getRow(0).get("tipo_afiliacion"));
+        if(datos.getRow(0).get("tipo_afiliacion")!=null){
+            TipoAfiliacion.click();
+            txtTipoAliciacion.typeAndEnter(datos.getRow(0).get("tipo_afiliacion"));
+        }
+
     }
 
     public void setEmpresa(ExamplesTable datos) {
-        Empresa.click();
-        txtEmpresa.typeAndEnter(datos.getRow(0).get("empresa"));
+        if(datos.getRow(0).get("empresa")!=null){
+            Empresa.click();
+            txtEmpresa.typeAndEnter(datos.getRow(0).get("empresa"));
+        }
     }
 
     public void setIps(ExamplesTable datos) {
-        Ips.click();
-        txtIps.typeAndEnter(datos.getRow(0).get("ips"));
+        if(datos.getRow(0).get("ips")!=null){
+            Ips.click();
+            txtIps.typeAndEnter(datos.getRow(0).get("ips"));
+        }
     }
 
     public void setGrupoPoblacional(ExamplesTable datos) {
-        GrupoPoblacional.click();
-        txtGrupoPoblacional.typeAndEnter(datos.getRow(0).get("grupo_poblacional"));
+        if(datos.getRow(0).get("grupo_poblacional")!=null){
+            GrupoPoblacional.click();
+            txtGrupoPoblacional.typeAndEnter(datos.getRow(0).get("grupo_poblacional"));
+        }
     }
 
     public void setEtnia(ExamplesTable datos) {
-        Etnia.click();
-        txtEtnia.typeAndEnter(datos.getRow(0).get("etnia"));
+        if(datos.getRow(0).get("etnia")!=null){
+            Etnia.click();
+            txtEtnia.typeAndEnter(datos.getRow(0).get("etnia"));
+        }
     }
 
     public void setTxtTelefono(ExamplesTable datos) {
-        txtTelefono.typeAndEnter(datos.getRow(0).get("telefono"));
+        if(datos.getRow(0).get("telefono")!=null){
+            txtTelefono.typeAndEnter(datos.getRow(0).get("telefono"));
+        }
     }
 
     public void ingresarReligion(ExamplesTable datos) {
@@ -360,43 +373,6 @@ public class PacientesPages extends PageObject {
         if(datos.getRow(0).get("genero")!=null){
             ingresarGenero(datos);
             waitEvent(3);
-        }
-    }
-
-    public  void  setEditarTipoAfiliacion(ExamplesTable datos) {
-        if(datos.getRow(0).get("tipo_afiliacion")!=null){
-            setTipoAfiliacion(datos);
-        }
-    }
-
-    public  void  setEditarEmpresa(ExamplesTable datos) {
-        if(datos.getRow(0).get("empresa")!=null){
-            setEmpresa(datos);
-        }
-    }
-
-    public  void  setEditarIps(ExamplesTable datos) {
-        if(datos.getRow(0).get("ips")!=null){
-            setIps(datos);
-        }
-
-    }
-
-    public  void  setEditarGrupoPoblacional(ExamplesTable datos) {
-        if(datos.getRow(0).get("grupo_poblacional")!=null){
-            setGrupoPoblacional(datos);
-        }
-    }
-
-    public  void  setEditarEtnia(ExamplesTable datos) {
-        if(datos.getRow(0).get("etnia")!=null){
-            setEtnia(datos);
-        }
-    }
-
-    public  void  setEditarTelefono(ExamplesTable datos) {
-        if(datos.getRow(0).get("telefono")!=null){
-            setTxtTelefono(datos);
         }
     }
 
