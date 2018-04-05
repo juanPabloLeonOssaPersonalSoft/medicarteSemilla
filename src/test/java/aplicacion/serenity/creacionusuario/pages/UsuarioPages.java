@@ -229,14 +229,9 @@ public class UsuarioPages extends PageObject {
 
     public void setCheckSaveUser(){
         String dataMessage = "Se almacenó la información correctamente.";
-        String messageServer = divConfirmSave.getTextValue();
-
         if(divConfirmSave != null){
             Assert.assertEquals(dataMessage, divConfirmSave.getTextValue());
-        }else{
-            Assert.assertTrue("Error Element, This was not saved!", false);
         }
-        esperar(5);
     }
 
 
