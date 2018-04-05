@@ -1,6 +1,7 @@
 repositories {
     mavenLocal()
     jcenter()
+    apply plugin: 'net.serenity-bdd.aggregator'
 }
 
 buildscript {
