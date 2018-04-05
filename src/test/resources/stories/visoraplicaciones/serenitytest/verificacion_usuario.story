@@ -8,7 +8,7 @@ Scenario: Modificacion de usuario no profesional
 GivenStories: stories/visoraplicaciones/serenitytest/login.story
 When ingreso las datos del usuario a verificar:
 |usuario|
-|Admin|
+|efbustam|
 Then verifico el usuario:
 |nombres|primerApellido|rol|fechaInicio|email|sede|
 |Fabian|Bustamante|Medicarte|01/09/2014|fabian20@medicarte.com.co|Armenia|
