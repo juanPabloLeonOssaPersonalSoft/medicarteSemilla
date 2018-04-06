@@ -226,17 +226,30 @@ public class PacientesPages extends PageObject {
 
     public void setClicCerrarTooltip(){
         waitEvent(2);
-        if(clicCerrarTooltip.isDisplayed()) {
-            clicCerrarTooltip.click();
+        try {
+            if (clicCerrarTooltip.isDisplayed()) {
+                clicCerrarTooltip.click();
+                waitEvent(1);
+            } else {
+                waitEvent(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     public void setClicCerrarVentana(){
-        waitEvent(1);
-        if (clicCerrarVentana.isDisplayed()) {
-            clicCerrarVentana.click();
-            waitEvent(2);
-        }
+        waitEvent(2);
+            try {
+                if (clicCerrarVentana.isDisplayed()) {
+                    clicCerrarVentana.click();
+                    waitEvent(1);
+                } else {
+                    waitEvent(1);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
     }
 
     public void ingresarTipoId(ExamplesTable datos) {
@@ -274,7 +287,7 @@ public class PacientesPages extends PageObject {
     }
 
 
-   public void estadoCivil(ExamplesTable datos) {
+   public void setEstadoCivil(ExamplesTable datos) {
        if(datos.getRow(0).get("estado_civil")!=null) {
            cmbEstadoCivil.click();
            txtEstadoCivil.type(datos.getRow(0).get("estado_civil"));
@@ -404,8 +417,8 @@ public class PacientesPages extends PageObject {
     public  void  setEditarFechaNacimiento(ExamplesTable datos) {
         txtFechaNacimiento.typeAndEnter(datos.getRow(0).get("fecha_nacimiento"));
         waitEvent(3);
-        setClicCerrarVentana();
         setClicCerrarTooltip();
+        setClicCerrarVentana();
     }
 
     public void guardarPaciente() {
