@@ -231,12 +231,11 @@ public class PacientesPages extends PageObject {
             if (clicCerrarTooltip.isDisplayed()) {
                 clicCerrarTooltip.click();
                 waitEvent(1);
-            } else {
-                waitEvent(1);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        waitEvent(1);
     }
 
     public void setClicCerrarVentana(){
@@ -245,12 +244,11 @@ public class PacientesPages extends PageObject {
                 if (clicCerrarVentana.isDisplayed()) {
                     clicCerrarVentana.click();
                     waitEvent(1);
-                } else {
-                    waitEvent(1);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        waitEvent(1);
     }
 
     public void ingresarTipoId(ExamplesTable datos) {
