@@ -199,15 +199,13 @@ public class PacientesPages extends PageObject {
     }
 
     public void ingresarFechaNacimiento() {
-        waitEvent(2);
+        waitEvent(1);
         clickInput.click();
         clickDia.click();
-        waitEvent(2);
         setClicCerrarTooltip();
         setClicCerrarTooltip();
         setClicCerrarVentana();
     }
-
 
    public void ingresarEscolaridad(ExamplesTable datos) {
        if(datos.getRow(0).get("escolaridad")!=null) {
@@ -226,7 +224,7 @@ public class PacientesPages extends PageObject {
     }
 
     public void setClicCerrarTooltip(){
-        waitEvent(2);
+        waitEvent(1);
         try {
             if (clicCerrarTooltip.isDisplayed()) {
                 clicCerrarTooltip.click();
@@ -234,12 +232,12 @@ public class PacientesPages extends PageObject {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            waitEvent(1);
         }
-        waitEvent(1);
     }
 
     public void setClicCerrarVentana(){
-        waitEvent(2);
+        waitEvent(1);
             try {
                 if (clicCerrarVentana.isDisplayed()) {
                     clicCerrarVentana.click();
@@ -247,8 +245,9 @@ public class PacientesPages extends PageObject {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+                waitEvent(1);
             }
-        waitEvent(1);
+
     }
 
     public void ingresarTipoId(ExamplesTable datos) {
@@ -415,7 +414,7 @@ public class PacientesPages extends PageObject {
 
     public  void  setEditarFechaNacimiento(ExamplesTable datos) {
         txtFechaNacimiento.typeAndEnter(datos.getRow(0).get("fecha_nacimiento"));
-        waitEvent(3);
+        waitEvent(2);
         setClicCerrarTooltip();
         setClicCerrarVentana();
     }
@@ -427,21 +426,16 @@ public class PacientesPages extends PageObject {
 
     public void editarPaciente() {
         btnEditarPaciente.click();
-        waitEvent(5);
+        waitEvent(1);
     }
 
     public void setCheckSaveUser () {
         String dataMessage = "Se almacenó la información correctamente.";
         String messageServer = tooltipConfirmSave.getTextValue();
-        try {
-            if (tooltipConfirmSave.isVisible()) {
-                Assert.assertEquals("fallo el guardado de informacion",dataMessage, messageServer);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (tooltipConfirmSave.isVisible()) {
+            Assert.assertEquals("fallo el guardado de informacion",dataMessage, messageServer);
         }
     }
-
 }
 
 
