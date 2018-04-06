@@ -201,9 +201,13 @@ public class PacientesPages extends PageObject {
     public void ingresarFechaNacimiento() {
         waitEvent(1);
         clickInput.click();
+        waitEvent(1);
         clickDia.click();
+        waitEvent(1);
         setClicCerrarTooltip();
+        waitEvent(1);
         setClicCerrarTooltip();
+        waitEvent(1);
         setClicCerrarVentana();
     }
 
@@ -224,7 +228,7 @@ public class PacientesPages extends PageObject {
     }
 
     public void setClicCerrarTooltip(){
-        waitEvent(1);
+        waitEvent(2);
         try {
             if (clicCerrarTooltip.isDisplayed()) {
                 clicCerrarTooltip.click();
@@ -232,12 +236,11 @@ public class PacientesPages extends PageObject {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            waitEvent(1);
         }
     }
 
     public void setClicCerrarVentana(){
-        waitEvent(1);
+        waitEvent(2);
             try {
                 if (clicCerrarVentana.isDisplayed()) {
                     clicCerrarVentana.click();
@@ -245,9 +248,7 @@ public class PacientesPages extends PageObject {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                waitEvent(1);
             }
-
     }
 
     public void ingresarTipoId(ExamplesTable datos) {
