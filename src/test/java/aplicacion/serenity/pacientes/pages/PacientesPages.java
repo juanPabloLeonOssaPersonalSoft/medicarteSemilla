@@ -204,6 +204,7 @@ public class PacientesPages extends PageObject {
         clickDia.click();
         waitEvent(2);
         setClicCerrarTooltip();
+        setClicCerrarTooltip();
         setClicCerrarVentana();
     }
 
