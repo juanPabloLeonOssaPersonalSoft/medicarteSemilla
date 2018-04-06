@@ -433,8 +433,12 @@ public class PacientesPages extends PageObject {
     public void setCheckSaveUser () {
         String dataMessage = "Se almacenó la información correctamente.";
         String messageServer = tooltipConfirmSave.getTextValue();
-        if (tooltipConfirmSave.isVisible()) {
-            Assert.assertEquals("fallo el guardado de informacion",dataMessage, messageServer);
+        try {
+            if (tooltipConfirmSave.isVisible()) {
+                Assert.assertEquals("fallo el guardado de informacion",dataMessage, messageServer);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
