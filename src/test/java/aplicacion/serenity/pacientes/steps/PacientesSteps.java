@@ -23,7 +23,8 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.ingresarGenero(datos);
         pacientesPages.ingresarFechaNacimiento();
         pacientesPages.setClicCerrarTooltip();
-        pacientesPages.ingresarEstadoCivil(datos);
+        pacientesPages.estadoCivil(datos);
+
         pacientesPages.ingresarRH(datos);
         pacientesPages.ingresarCodigoOcupacion(datos);
         pacientesPages.ingresarEscolaridad(datos);
@@ -57,7 +58,7 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.ingresarGenero(datos);
         pacientesPages.setEditarFechaNacimiento(datos);
         pacientesPages.setClicCerrarVentana();
-        pacientesPages.ingresarEstadoCivil(datos);
+        pacientesPages.estadoCivil(datos);
         pacientesPages.ingresarRH(datos);
         pacientesPages.ingresarCodigoOcupacion(datos);
         pacientesPages.ingresarEscolaridad(datos);
@@ -65,20 +66,18 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.setTipoAfiliacion(datos);
         pacientesPages.setEmpresa(datos);
         pacientesPages.setIps(datos);
-        pacientesPages.setClicCerrarVentana();
         pacientesPages.setGrupoPoblacional(datos);
         pacientesPages.setEtnia(datos);
         pacientesPages.setTxtTelefono(datos);
-        pacientesPages.setClicCerrarVentana();
         pacientesPages.ingresarReligion(datos);
         pacientesPages.ingresarMuncipioResidencia(datos);
         pacientesPages.ingresarDireccionDomicilio(datos);
-        pacientesPages.setClicCerrarVentana();
         pacientesPages.ingresarSede(datos);
         pacientesPages.ingresarZona(datos);
         pacientesPages.setMedicoTratante(datos);
         pacientesPages.setPrograma(datos);
-        pacientesPages.setClicCerrarVentana();
+
+
     }
 
     @Step
