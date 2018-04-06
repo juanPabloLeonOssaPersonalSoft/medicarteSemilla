@@ -23,7 +23,7 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.ingresarGenero(datos);
         pacientesPages.ingresarFechaNacimiento();
         pacientesPages.setClicCerrarTooltip();
-        pacientesPages.estadoCivil(datos);
+        pacientesPages.setEstadoCivil(datos);
         pacientesPages.ingresarRH(datos);
         pacientesPages.ingresarCodigoOcupacion(datos);
         pacientesPages.ingresarEscolaridad(datos);
@@ -57,7 +57,7 @@ public class PacientesSteps extends ScenarioSteps {
         pacientesPages.ingresarGenero(datos);
         pacientesPages.setEditarFechaNacimiento(datos);
         pacientesPages.setClicCerrarVentana();
-        pacientesPages.estadoCivil(datos);
+        pacientesPages.setEstadoCivil(datos);
         pacientesPages.ingresarRH(datos);
         pacientesPages.ingresarCodigoOcupacion(datos);
         pacientesPages.ingresarEscolaridad(datos);
