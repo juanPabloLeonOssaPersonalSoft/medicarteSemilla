@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
+import org.hamcrest.MatcherAssert;
 
 public class PacientesPages extends PageObject {
 
@@ -431,12 +432,10 @@ public class PacientesPages extends PageObject {
     }
 
     public void setCheckSaveUser () {
-        String dataMessage = "Se almacenó la información correctamente.";
-        String messageServer = tooltipConfirmSave.getTextValue();
-        if (tooltipConfirmSave.isVisible()) {
-            Assert.assertEquals("fallo el guardado de informacion",dataMessage, messageServer);
-        }
+        waitEvent(1);
+        MatcherAssert.assertThat("no se almaceno la información",!"Se almacenó la información correctamente.".equals(tooltipConfirmSave.getTextValue()));
     }
+
 }
 
 
