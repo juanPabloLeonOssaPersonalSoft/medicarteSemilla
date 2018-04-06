@@ -32,7 +32,6 @@ public class PacientesPages extends PageObject {
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[7]/div[2]/ngl-virtual-select/a[2]/input")
     WebElementFacade txtGenero;
 
-
     @FindBy(xpath = "//*[@id=\'simContainer\']/admin-patients/div[2]/div/div[2]/form/div[10]/div[2]/ngl-virtual-select/a[1]/input")
     WebElementFacade cmbEstadoCivil;
 
@@ -204,6 +203,8 @@ public class PacientesPages extends PageObject {
         clickInput.click();
         clickDia.click();
         waitEvent(2);
+        setClicCerrarTooltip();
+        setClicCerrarTooltip();
         setClicCerrarVentana();
     }
 
@@ -273,7 +274,7 @@ public class PacientesPages extends PageObject {
     public void ingresarPrimerApellido(ExamplesTable datos) {
         if(datos.getRow(0).get("primer_apellido")!=null) {
             txtPrimerApellido.type(datos.getRow(0).get("primer_apellido"));
-            waitEvent(3);
+            waitEvent(4);
         }
     }
 
