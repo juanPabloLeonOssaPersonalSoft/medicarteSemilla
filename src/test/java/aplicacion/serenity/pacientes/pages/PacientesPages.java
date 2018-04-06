@@ -422,13 +422,16 @@ public class PacientesPages extends PageObject {
     }
 
     public void guardarPaciente() {
-        btnGuardarPaciente.click();
         waitEvent(1);
+        btnGuardarPaciente.click();
+        waitEvent(2);
     }
 
     public void editarPaciente() {
-        btnEditarPaciente.click();
         waitEvent(1);
+        btnEditarPaciente.click();
+        waitEvent(2);
+
     }
 
     public void setCheckSaveUser () {
